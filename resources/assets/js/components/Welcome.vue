@@ -44,7 +44,7 @@
     },
     methods: {
       search_numbers() {
-          alert("123");
+	window.location.replace("/details");
       }
     }
   }
