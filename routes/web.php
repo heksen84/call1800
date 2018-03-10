@@ -22,7 +22,7 @@ Route::get('/', function () {
     return view('details');
 });*/
 
-Route::get('/details', 'DetailsController@index')->name('details');
+Route::get('/details/{search}', 'DetailsController@index')->name('details');
 
 /*Route::get('/details', function () {
     return view('details');
