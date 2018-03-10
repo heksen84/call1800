@@ -19,7 +19,7 @@
 <br>
 <br>
                 <h1>Login</h1>
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}" style="max-width:630px">
+                    <form class="form-horizontal" method="POST" action="{{ route('login') }}" style="max-width:700px">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
