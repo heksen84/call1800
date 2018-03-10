@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="keywords" content="сайт знакомств, знакомства, познакомиться, знакомство, встреча, роман, любовный роман, флирт, любовь, поиск партнера, свидание, вторая половина, отношения, путешествия, путешествие, поездка, вояж" />
-        <meta name="description" content="Love in travels - это отличный способ найти себе половинку находясь в путешествии или за границей.">
+        <meta name="keywords" content="get numbers, free numbers" />
+        <meta name="description" content="get free numbers">
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>Сеть знакомств - Love In Travels</title>
+        <title>Call1800 - get free numbers.</title>
         <link rel="stylesheet" type="text/css" href="{{ mix('css/app.css') }}">
     </head>
     <body>
