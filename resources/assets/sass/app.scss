@@ -38,8 +38,8 @@ $my_grey: rgb(80,80,80);
 
 $title-font: 'carefree';
 
-h1{
-  color:grey;
+body h1 {
+  color: $my_grey;
 }
 .carefree-font{
 	font-family: $title-font;

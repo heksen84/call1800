@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <center>
 <br>
@@ -7,6 +6,11 @@
 <b-container style="max-width: 650px;">
 <b-row>
 <b-col>
+
+  <!--<b-form-input id="emailInput"
+              required
+              placeholder="Enter a Company Name or Toll Free Number">
+  </b-form-input>-->
                 <h1>Reset Password</h1>
                 <br>
                 <div class="panel-body">

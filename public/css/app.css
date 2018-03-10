@@ -38,8 +38,8 @@
   font-weight: normal;
 }
 
-h1 {
-  color: grey;
+body h1 {
+  color: #505050;
 }
 
 .carefree-font {
