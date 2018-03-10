@@ -8,7 +8,7 @@
   <br>
   <center>
   <h1 id="title">Call1800</h1>
-  <h5 style="color:grey;margin-top:-20px">Buy, Sell or Find What You need</h5>
+  <h5 style="color:grey;margin-top:-30px">Get a toll free number</h5>
   </center>
   <br>
   <form v-on:submit.prevent="search_numbers">
