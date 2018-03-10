@@ -2,8 +2,10 @@
 @section('content')
 <center>
 <br>
+<b-container style="max-width: 650px;">
+<b-row>
+  <b-col>
                 <h1>Login</h1>
-                <div class="panel-body" style="width:600px;">
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
@@ -57,6 +59,8 @@
                             </div>
                         </div>
                     </form>
-                </div>
+    </b-col>
+  </b-row>
+</b-container>
 </center>
 @endsection
