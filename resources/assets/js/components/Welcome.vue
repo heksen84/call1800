@@ -40,7 +40,7 @@
     },
     methods: {
       search_numbers() {
-          alert("!");
+          alert("123");
       }
     }
   }

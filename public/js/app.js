@@ -1663,7 +1663,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   methods: {
     search_numbers: function search_numbers() {
-      alert("!");
+      alert("123");
     }
   }
 });
