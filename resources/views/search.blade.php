@@ -10,6 +10,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>Call1800 - get free numbers.</title>
         <link rel="stylesheet" type="text/css" href="{{ mix('css/app.css') }}">
+	<link rel="icon" href="{{ asset('./voice.ico') }}">
     </head>
     <body>
   <div id="app">
