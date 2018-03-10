@@ -50863,13 +50863,13 @@ var render = function() {
                 "b-navbar-nav",
                 [
                   _c("b-nav-item", { attrs: { href: "/login" } }, [
-                    _c("span", { staticStyle: { color: "rgb(70,90,70)" } }, [
+                    _c("span", { staticStyle: { color: "rgb(80,80,80)" } }, [
                       _vm._v("Login")
                     ])
                   ]),
                   _vm._v(" "),
                   _c("b-nav-item", { attrs: { href: "/register" } }, [
-                    _c("span", { staticStyle: { color: "rgb(70,70,70)" } }, [
+                    _c("span", { staticStyle: { color: "rgb(80,80,80)" } }, [
                       _vm._v("Register")
                     ])
                   ])
