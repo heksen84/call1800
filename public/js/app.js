@@ -50962,7 +50962,7 @@ var render = function() {
                         {
                           attrs: {
                             id: "searchGroup",
-                            label: "What",
+                            label: "Search",
                             "label-for": "emailInput"
                           }
                         },
@@ -50972,7 +50972,8 @@ var render = function() {
                               id: "emailInput",
                               type: "text",
                               required: "",
-                              placeholder: "What are you looking for?"
+                              placeholder:
+                                "Enter a Company Name or Toll Free Number"
                             },
                             model: {
                               value: _vm.form.search,

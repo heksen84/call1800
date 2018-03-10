@@ -13,13 +13,13 @@
   <br>
   <form v-on:submit.prevent="search_numbers">
   <b-form-group id="searchGroup"
-                    label="What"
+                    label="Search"
                     label-for="emailInput">
         <b-form-input id="emailInput"
                     type="text"
                     v-model="form.search"
                     required
-                    placeholder="What are you looking for?">
+                    placeholder="Enter a Company Name or Toll Free Number">
         </b-form-input>
   </b-form-group>
   <b-form-group class="text-center">
