@@ -1738,7 +1738,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   methods: {
     search_numbers: function search_numbers() {
-      window.location.replace("/details");
+      window.location = "/details";
     }
   }
 });
@@ -62862,6 +62862,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_bootstrap_vue_dist_bootstrap_vue_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_bootstrap_vue_dist_bootstrap_vue_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_welcome_vue__ = __webpack_require__("./resources/assets/js/components/welcome.vue");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_welcome_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_welcome_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_navbar_vue__ = __webpack_require__("./resources/assets/js/components/navbar.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_navbar_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_navbar_vue__);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -62877,11 +62879,12 @@ __webpack_require__("./resources/assets/js/bootstrap.js");
 
 
 
+
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_bootstrap_vue__["a" /* default */]);
 
 var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   el: '#app',
-  components: { welcome: __WEBPACK_IMPORTED_MODULE_4__components_welcome_vue___default.a }
+  components: { welcome: __WEBPACK_IMPORTED_MODULE_4__components_welcome_vue___default.a, navbar: __WEBPACK_IMPORTED_MODULE_5__components_navbar_vue___default.a }
 });
 
 /***/ }),
