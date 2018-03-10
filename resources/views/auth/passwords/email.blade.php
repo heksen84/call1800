@@ -1,11 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
+<center>
+<br>
+<br>
+<b-container style="max-width: 650px;">
+<b-row>
+<b-col>
+                <h1>Reset Password</h1>
+                <br>
                 <div class="panel-body">
                     @if (session('status'))
                         <div class="alert alert-success">
@@ -38,9 +41,8 @@
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+                  </b-col>
+                </b-row>
+              </b-container>
+              </center>
 @endsection
