@@ -7,7 +7,7 @@
   <br>
   <h1 id="title">Call1800</h1>
   <br>
-  <form v-on:submit.prevent="search">
+  <form v-on:submit.prevent="search_numbers">
   <b-form-group id="searchGroup"
                     label="What"
                     label-for="emailInput">
@@ -28,35 +28,19 @@
 </div>
 </template>
 <script>
-  import navbar from './navbar.vue'
+  //import navbar from './navbar.vue'
   export default {
-    components: { navbar },
+    //components: { navbar },
     data () {
       return {
         form: {
 					search: ""
-				},
-        methods: {
-          search() {
-              alert("!");
-/*
-            post('/api/search', this.form).then((res) => {
-            if(res.data.authenticated) {
-            }
-            }).catch((err) => {
-             console.log(err.response.data);
-             if(err.response.status === 422) {
-          }
-
-*/
-
-
-
-
-
-
-          }
-        }
+				}
+      }
+    },
+    methods: {
+      search_numbers() {
+          alert("!");
       }
     }
   }
