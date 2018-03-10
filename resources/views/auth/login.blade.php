@@ -1,12 +1,10 @@
-@extends('layouts.app')
-@section('content')
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<script src="{{ asset('js/app.js') }}"></script>
 <center>
 <br>
-<b-container style="max-width: 650px;">
-<b-row>
-  <b-col>
+<br>
                 <h1>Login</h1>
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('login') }}" style="max-width:630px">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
@@ -59,8 +57,4 @@
                             </div>
                         </div>
                     </form>
-    </b-col>
-  </b-row>
-</b-container>
 </center>
-@endsection
