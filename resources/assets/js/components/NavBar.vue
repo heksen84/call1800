@@ -11,8 +11,8 @@
     	</b-col>
     	</b-row>-->
  	 <b-navbar-nav>
-	      <b-nav-item href="/login"><span style="color:rgb(90,90,90)">Login</span></b-nav-item>
-	      <b-nav-item href="/register"><span style="color:rgb(90,90,90)">Register</span></b-nav-item>
+	      <b-nav-item href="/login"><span style="color:rgb(70,90,70)">Login</span></b-nav-item>
+	      <b-nav-item href="/register"><span style="color:rgb(70,70,70)">Register</span></b-nav-item>
 	    </b-navbar-nav>
     </b-navbar-nav>
   </b-collapse>
