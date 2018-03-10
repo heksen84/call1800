@@ -44,7 +44,7 @@
     },
     methods: {
       search_numbers() {
-	window.location = "/details/"+this.form.search;
+	window.location = "/search/"+this.form.search;
       }
     }
   }

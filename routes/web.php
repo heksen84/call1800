@@ -22,10 +22,5 @@ Route::get('/', function () {
     return view('details');
 });*/
 
-Route::get('/details/{search}', 'DetailsController@index')->name('details');
-
-/*Route::get('/details', function () {
-    return view('details');
-});*/
-
+Route::get('/search/{search_string}', 'SearchController@index')->name('search');
 Route::get('/home', 'HomeController@index')->name('home');

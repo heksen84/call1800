@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class DetailsController extends Controller
+class SearchController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class DetailsController extends Controller
      */
     public function index()
     {
-       return view('details');
+       return view('search');
     }
 
     /**
