@@ -1639,6 +1639,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -50836,7 +50840,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "b-navbar",
-    { attrs: { type: "light", variant: "light", toggleable: "" } },
+    { attrs: { type: "light", variant: "faded", toggleable: "" } },
     [
       _c("b-navbar-toggle", { attrs: { target: "nav_collapse" } }),
       _vm._v(" "),
@@ -50856,35 +50860,19 @@ var render = function() {
             { staticClass: "ml-auto" },
             [
               _c(
-                "b-row",
-                { staticClass: "text-center" },
+                "b-navbar-nav",
                 [
-                  _vm.isAuth
-                    ? _c(
-                        "b-col",
-                        { attrs: { cols: "12", md: "auto" } },
-                        [
-                          _c(
-                            "b-button",
-                            {
-                              staticClass: "my-1 mr-sm-1",
-                              attrs: { size: "sm", href: "/login" }
-                            },
-                            [_vm._v("Login")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "b-button",
-                            {
-                              staticClass: "my-1 mr-sm-1",
-                              attrs: { size: "sm", href: "/register" }
-                            },
-                            [_vm._v("Register")]
-                          )
-                        ],
-                        1
-                      )
-                    : _vm._e()
+                  _c("b-nav-item", { attrs: { href: "/login" } }, [
+                    _c("span", { staticStyle: { color: "rgb(90,90,90)" } }, [
+                      _vm._v("Login")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("b-nav-item", { attrs: { href: "/register" } }, [
+                    _c("span", { staticStyle: { color: "rgb(90,90,90)" } }, [
+                      _vm._v("Register")
+                    ])
+                  ])
                 ],
                 1
               )
