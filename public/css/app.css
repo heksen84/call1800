@@ -1,0 +1,70 @@
+::-webkit-scrollbar {
+  width: 8px;
+  background: white;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 8px;
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 8px;
+  background: white;
+  border: 1px solid black;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  height: 8px;
+  background: white;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: white;
+}
+
+.custom-file-input:lang(en) ~ .custom-file-label::after {
+  content: "Browse1";
+}
+
+@font-face {
+  font-family: 'carefree';
+  src: url(/fonts/carefree.ttf?f3db7a9cf88f94961dd173624793c336) format("truetype");
+  font-weight: normal;
+}
+
+h1 {
+  color: grey;
+}
+
+.carefree-font {
+  font-family: "carefree";
+  font-size: 40px;
+  line-height: 30px;
+}
+
+#title {
+  font-size: 70px;
+  line-height: 110px;
+  color: #505050;
+}
+
+#desc {
+  font-size: 23px;
+  margin-top: 18px;
+}
+
+#index_content h5 {
+  color: #505050;
+}
+
+.error_control {
+  color: #ff3737;
+  font-size: 12px;
+}
+
