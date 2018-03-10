@@ -1,12 +1,13 @@
 <template>
 <div>
-<!-- контент -->
+<navbar></navbar>
+  <!-- контент -->
 <b-container style="max-width: 350px;">
 <b-row>
   <b-col>
   <br>
   <h1 id="title">Call1800</h1>
-  <br>
+  <br>  
   <form v-on:submit.prevent="search_numbers">
   <b-form-group id="searchGroup"
                     label="What"
@@ -28,9 +29,9 @@
 </div>
 </template>
 <script>
-  //import navbar from './navbar.vue'
+  import navbar from './navbar.vue'
   export default {
-    //components: { navbar },
+    components: { navbar },
     data () {
       return {
         form: {

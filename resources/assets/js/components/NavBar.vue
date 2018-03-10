@@ -1,13 +1,13 @@
 <template>
-<b-navbar type="dark" variant="danger" toggleable>
+<b-navbar type="light" variant="light" toggleable>
   <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-  <b-navbar-brand style="cursor:default"><span class="carefree-font" v-on:click="goHome">&nbsp;love in travels</span></b-navbar-brand>
+  <b-navbar-brand style="cursor:default"><span v-on:click="goHome">&nbsp;<b>Call1800</b></span></b-navbar-brand>
   <b-collapse is-nav id="nav_collapse">
     <b-navbar-nav class="ml-auto">
       <b-row class="text-center">
     	<b-col cols="12" md="auto" v-if="isAuth">
-    	    <b-button size="sm" class="my-1 mr-sm-1" href="/login">Вход</b-button>
-    	    <b-button size="sm" class="my-1 mr-sm-1" variant="success" href="/register">Регистрация</b-button>
+    	    <b-button size="sm" class="my-1 mr-sm-1" href="/login">Login</b-button>
+    	    <b-button size="sm" class="my-1 mr-sm-1" href="/register">Register</b-button>
     	</b-col>
     	</b-row>
     </b-navbar-nav>
