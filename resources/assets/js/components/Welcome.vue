@@ -38,7 +38,7 @@
 				},
         methods: {
           search() {
-
+              alert("!");
 /*
             post('/api/search', this.form).then((res) => {
             if(res.data.authenticated) {

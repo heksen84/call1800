@@ -61590,7 +61590,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       },
       methods: {
         search: function search() {
-
+          alert("!");
           /*
                       post('/api/search', this.form).then((res) => {
                       if(res.data.authenticated) {
@@ -61601,7 +61601,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     }
           
           */
-
         }
       }
     };
