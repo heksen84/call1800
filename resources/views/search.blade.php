@@ -17,7 +17,7 @@
   <b-row class="text-center">
     <b-col class="text-center">
       <br>
-        <h1 style="color:grey">Details</h1>
+        <h1 style="color:grey">Results</h1>
 	advert
       <br>
       <b-card-group deck
