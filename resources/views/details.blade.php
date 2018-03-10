@@ -12,12 +12,13 @@
         <link rel="stylesheet" type="text/css" href="{{ mix('css/app.css') }}">
     </head>
     <body>
-<div id="app">
+  <div id="app">
   <b-container fluid>
   <b-row class="text-center">
     <b-col class="text-center">
       <br>
         <h1 style="color:grey">Details</h1>
+	advert
       <br>
       <b-card-group deck
                  class="mb-3">
@@ -79,6 +80,7 @@
        </b-card>
    </b-card-group>
 
+	advert
     </b-col>
   </b-row>
 </b-container>

@@ -12,10 +12,11 @@ import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import welcome from './components/welcome.vue'
+import navbar from './components/navbar.vue'
 
 Vue.use(BootstrapVue);
 
 const app = new Vue({
     el: '#app',    
-    components: { welcome }
+    components: { welcome, navbar }
 });
