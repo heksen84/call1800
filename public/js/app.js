@@ -1721,6 +1721,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -50921,74 +50924,86 @@ var render = function() {
       _vm._v(" "),
       _c(
         "b-container",
-        { staticStyle: { "max-width": "350px" } },
+        { staticStyle: { "max-width": "380px" } },
         [
           _c(
             "b-row",
             [
-              _c("b-col", [
-                _c("br"),
-                _vm._v(" "),
-                _c("h1", { attrs: { id: "title" } }, [_vm._v("Call1800")]),
-                _vm._v(" "),
-                _c("br"),
-                _vm._v(" "),
-                _c(
-                  "form",
-                  {
-                    on: {
-                      submit: function($event) {
-                        $event.preventDefault()
-                        _vm.search_numbers($event)
-                      }
-                    }
-                  },
-                  [
-                    _c(
-                      "b-form-group",
-                      {
-                        attrs: {
-                          id: "searchGroup",
-                          label: "What",
-                          "label-for": "emailInput"
-                        }
-                      },
-                      [
-                        _c("b-form-input", {
-                          attrs: {
-                            id: "emailInput",
-                            type: "text",
-                            required: "",
-                            placeholder: "What are you looking for?"
-                          },
-                          model: {
-                            value: _vm.form.search,
-                            callback: function($$v) {
-                              _vm.$set(_vm.form, "search", $$v)
-                            },
-                            expression: "form.search"
-                          }
-                        })
-                      ],
-                      1
-                    ),
+              _c(
+                "b-col",
+                [
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("center", [
+                    _c("h1", { attrs: { id: "title" } }, [_vm._v("Call1800")]),
                     _vm._v(" "),
                     _c(
-                      "b-form-group",
-                      { staticClass: "text-center" },
-                      [
-                        _c(
-                          "b-button",
-                          { attrs: { variant: "danger", type: "submit" } },
-                          [_vm._v("Search")]
-                        )
-                      ],
-                      1
+                      "h5",
+                      { staticStyle: { color: "grey", "margin-top": "-20px" } },
+                      [_vm._v("Buy, Sell or Find What You need")]
                     )
-                  ],
-                  1
-                )
-              ])
+                  ]),
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c(
+                    "form",
+                    {
+                      on: {
+                        submit: function($event) {
+                          $event.preventDefault()
+                          _vm.search_numbers($event)
+                        }
+                      }
+                    },
+                    [
+                      _c(
+                        "b-form-group",
+                        {
+                          attrs: {
+                            id: "searchGroup",
+                            label: "What",
+                            "label-for": "emailInput"
+                          }
+                        },
+                        [
+                          _c("b-form-input", {
+                            attrs: {
+                              id: "emailInput",
+                              type: "text",
+                              required: "",
+                              placeholder: "What are you looking for?"
+                            },
+                            model: {
+                              value: _vm.form.search,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "search", $$v)
+                              },
+                              expression: "form.search"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-form-group",
+                        { staticClass: "text-center" },
+                        [
+                          _c(
+                            "b-button",
+                            { attrs: { variant: "danger", type: "submit" } },
+                            [_vm._v("Search")]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
             ],
             1
           )

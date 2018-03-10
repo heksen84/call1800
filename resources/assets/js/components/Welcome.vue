@@ -2,12 +2,15 @@
 <div>
 <navbar></navbar>
   <!-- контент -->
-<b-container style="max-width: 350px;">
+<b-container style="max-width: 380px;">
 <b-row>
   <b-col>
   <br>
+  <center>
   <h1 id="title">Call1800</h1>
-  <br>  
+  <h5 style="color:grey;margin-top:-20px">Buy, Sell or Find What You need</h5>
+  </center>
+  <br>
   <form v-on:submit.prevent="search_numbers">
   <b-form-group id="searchGroup"
                     label="What"
