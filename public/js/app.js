@@ -50912,7 +50912,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "b-container",
-        { staticStyle: { "max-width": "380px" } },
+        { staticStyle: { "max-width": "370px" } },
         [
           _c(
             "b-row",
@@ -50960,8 +50960,7 @@ var render = function() {
                               id: "emailInput",
                               type: "text",
                               required: "",
-                              placeholder:
-                                "Enter a Company Name or Toll Free Number"
+                              placeholder: "Enter a Company Name"
                             },
                             model: {
                               value: _vm.form.search,

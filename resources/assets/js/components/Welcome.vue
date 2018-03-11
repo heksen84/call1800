@@ -2,7 +2,7 @@
 <div>
 <navbar></navbar>
   <!-- контент -->
-<b-container style="max-width: 380px;">
+<b-container style="max-width: 370px;">
 <b-row>
   <b-col>
   <br>
@@ -19,7 +19,7 @@
                     type="text"
                     v-model="form.search"
                     required
-                    placeholder="Enter a Company Name or Toll Free Number">
+                    placeholder="Enter a Company Name">
         </b-form-input>
   </b-form-group>
   <b-form-group class="text-center">
