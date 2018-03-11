@@ -62870,7 +62870,12 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_boot
 
 var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   el: '#app',
-  components: { welcome: __WEBPACK_IMPORTED_MODULE_4__components_welcome_vue___default.a, navbar: __WEBPACK_IMPORTED_MODULE_5__components_navbar_vue___default.a }
+  components: { welcome: __WEBPACK_IMPORTED_MODULE_4__components_welcome_vue___default.a, navbar: __WEBPACK_IMPORTED_MODULE_5__components_navbar_vue___default.a },
+  methods: {
+    hello: function hello() {
+      alert("call");
+    }
+  }
 });
 
 /***/ }),

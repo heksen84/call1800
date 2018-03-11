@@ -26,7 +26,7 @@
       <br>
       <b-card-group deck class="mb-3">
         @foreach($numbers as $num)
-       	<b-card header="<b>{{ $num->number }}</b>" class="text-center"
+       	<b-card v-on:click="hello" header="<b>{{ $num->number }}</b>" class="text-center"
 	img-src="https://lorempixel.com/600/300/food/5/"
           img-alt="Image"
           img-top>

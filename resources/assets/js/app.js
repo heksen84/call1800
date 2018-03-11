@@ -18,5 +18,10 @@ Vue.use(BootstrapVue);
 
 const app = new Vue({
     el: '#app',    
-    components: { welcome, navbar }
+    components: { welcome, navbar },
+    methods: {
+	hello() {
+	alert("call");
+	}
+    }
 });
