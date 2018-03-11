@@ -1,1 +1,1 @@
-npm run dev > $build.log
+npm run dev > .build.log

@@ -14,6 +14,11 @@
     </head>
     <body>
   <div id="app">
+
+<b-modal id="modal1" size="sm" title="Call" hide-footer>
+    <p class="my-4">12345</p>
+</b-modal>
+
   <b-container fluid>
   <b-row class="text-center">
     <b-col class="text-center">
@@ -26,7 +31,8 @@
       <br>
       <b-card-group deck class="mb-3">
         @foreach($numbers as $num)
-       	<b-card v-on:click="hello" header="<b>{{ $num->number }}</b>" class="text-center"
+	<!--v-on:click="hello"-->
+       	<b-card  v-b-modal.modal1 header="<b>{{ $num->number }}</b>" class="text-center"
 	img-src="https://lorempixel.com/600/300/food/5/"
           img-alt="Image"
           img-top>
