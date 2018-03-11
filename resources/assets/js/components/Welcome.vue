@@ -18,7 +18,6 @@
         <b-form-input id="emailInput"
                     type="text"
                     v-model="form.search"
-                    required
                     placeholder="Enter a Company Name">
         </b-form-input>
   </b-form-group>
@@ -44,6 +43,7 @@
     },
     methods: {
       search_numbers() {
+	if (this.form.search=="") this.form.search="*";
 	window.location = "/search/"+this.form.search;
       }
     }

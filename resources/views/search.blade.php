@@ -18,10 +18,8 @@
   <b-row class="text-center">
     <b-col class="text-center">
       <br>
-	<hr>
         <h2 style="color:grey">Search results for</h2>
         <h6 style="color:rgb(50,50,50);margin-top:-5px">{{ $search_string }}</h6>
-	<hr>
       <br>
 	<ins>advert</ins>
       <br>

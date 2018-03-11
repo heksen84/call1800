@@ -1727,7 +1727,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -1742,6 +1741,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   methods: {
     search_numbers: function search_numbers() {
+      if (this.form.search == "") this.form.search = "*";
       window.location = "/search/" + this.form.search;
     }
   }
@@ -50959,7 +50959,6 @@ var render = function() {
                             attrs: {
                               id: "emailInput",
                               type: "text",
-                              required: "",
                               placeholder: "Enter a Company Name"
                             },
                             model: {
