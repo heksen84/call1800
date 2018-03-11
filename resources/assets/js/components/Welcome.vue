@@ -43,7 +43,7 @@
     },
     methods: {
       search_numbers() {
-	if (this.form.search=="") this.form.search="*";
+	if (this.form.search=="") this.form.search="all";
 	window.location = "/search/"+this.form.search;
       }
     }

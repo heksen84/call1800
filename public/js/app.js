@@ -1741,7 +1741,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   methods: {
     search_numbers: function search_numbers() {
-      if (this.form.search == "") this.form.search = "*";
+      if (this.form.search == "") this.form.search = "all";
       window.location = "/search/" + this.form.search;
     }
   }
