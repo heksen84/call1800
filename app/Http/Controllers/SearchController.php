@@ -13,11 +13,8 @@ class SearchController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-//       $numbers = new Numbers;
-       $numbers = Numbers::all();
-       return view('search')->with('numbers', $numbers);
+    public function index() {
+       return view('search')->with('numbers', Numbers::all());
     }
 
     /**
