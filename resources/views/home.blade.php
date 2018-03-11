@@ -23,7 +23,7 @@
 			<h2>You are logged in!</h2>
 		    <br>
 			  <b-button variant="success">Add Number</b-button>
-			  <b-button variant="success">Delete Number</b-button>
+			  <b-button variant="danger">Delete Number</b-button>
 		    </center>
 </div>
 </body>
