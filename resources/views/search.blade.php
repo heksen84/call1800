@@ -18,18 +18,21 @@
   <b-row class="text-center">
     <b-col class="text-center">
       <br>
+	<hr>
         <h2 style="color:grey">Search results for</h2>
         <h6 style="color:rgb(50,50,50);margin-top:-5px">{{ $search_string }}</h6>
+	<hr>
       <br>
 	<ins>advert</ins>
       <br>
       <br>
       <b-card-group deck class="mb-3">
         @foreach($numbers as $num)
-       <b-card header="<b>{{ $num->number }}</b>" class="text-center">
+       	<b-card header="<b>{{ $num->number }}</b>" class="text-center">
            <p class="card-text">{{ $num->description }}</p>
-       </b-card>
+       	</b-card>
         @endforeach
+
        </b-card-group>
 	<ins>advert</ins>
     </b-col>
