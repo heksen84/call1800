@@ -6,11 +6,12 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    <br>
                     <center>
 			<h1>You are logged in!</h1>
-		     <br>
-		    <button>AddRecord</button>
-		    <button>DeleteRecord</button>
+		    <br>
+		    <button>Add number</button>
+		    <button>Delete number</button>
 		    </center>
 
 @endsection
