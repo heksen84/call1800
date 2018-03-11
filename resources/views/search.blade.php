@@ -34,7 +34,7 @@
         @foreach($numbers as $num)
 	<!--v-on:click="hello"-->
        	<b-card  v-b-modal.modal1 header="<b>{{ $num->number }}</b>" class="text-center"
-	img-src="https://lorempixel.com/600/300/food/5/"
+	img-src="{{ asset('./images/map.png') }}"
           img-alt="Image"
           img-top>
            <p class="card-text">{{ $num->description }}</p>
