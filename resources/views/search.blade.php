@@ -16,8 +16,7 @@
   <div id="app">
 	<navbar></navbar>
 	<b-modal id="modal1" size="sm" title="Call" hide-footer>
-	 <b-btn class="mt-3" block variant="success">call-1</b-btn>
-	 <b-btn class="mt-3" block variant="success">call-2</b-btn>
+	 <b-btn class="mt-3" block variant="success">call now</b-btn>
 	</b-modal>
 
   <b-container fluid>

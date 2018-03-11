@@ -1637,12 +1637,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 
 
@@ -1669,7 +1663,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         __WEBPACK_IMPORTED_MODULE_0__store__["a" /* default */].commit('setAuth', false);
       });
     },
-    goHome: function goHome() {
+    goWelcome: function goWelcome() {
       window.location = "/";
     }
   },
@@ -50845,7 +50839,7 @@ var render = function() {
       _c("b-navbar-toggle", { attrs: { target: "nav_collapse" } }),
       _vm._v(" "),
       _c("b-navbar-brand", { staticStyle: { cursor: "default" } }, [
-        _c("span", { on: { click: _vm.goHome } }, [
+        _c("span", { on: { click: _vm.goWelcome } }, [
           _vm._v(" "),
           _c("b", { staticStyle: { color: "rgb(100,100,100)" } }, [
             _vm._v("Call1800")
