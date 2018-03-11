@@ -19,7 +19,7 @@
     <b-col class="text-center">
       <br>
         <h2 style="color:grey">Search results for</h2>
-        <h5 style="color:rgb(50,50,50);margin-top:-5px">{{ $search_string }}</h5>
+        <h6 style="color:rgb(50,50,50);margin-top:-5px">{{ $search_string }}</h6>
       <br>
 	advert
       <br>
