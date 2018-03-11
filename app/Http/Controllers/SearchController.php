@@ -13,8 +13,8 @@ class SearchController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {
-       return view('search')->with('numbers', Numbers::all());
+    public function index(Request $request) {
+       return view('search')->with('numbers', Numbers::all())->with("search_string", $request->search_string );
     }
 
     /**

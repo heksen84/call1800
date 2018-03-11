@@ -18,7 +18,9 @@
   <b-row class="text-center">
     <b-col class="text-center">
       <br>
-        <h1 style="color:grey">Results</h1>
+        <h2 style="color:grey">Search results for</h2>
+        <h5 style="color:rgb(50,50,50);margin-top:-5px">{{ $search_string }}</h5>
+      <br>
 	advert
       <br>
       <br>
