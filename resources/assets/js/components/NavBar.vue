@@ -45,7 +45,7 @@ export default {
   	});
 		},
 		goHome() {
-      this.logout();
+		window.location="/";
 		}
   },
   computed: {

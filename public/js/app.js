@@ -1670,7 +1670,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       });
     },
     goHome: function goHome() {
-      this.logout();
+      window.location = "/";
     }
   },
   computed: {
