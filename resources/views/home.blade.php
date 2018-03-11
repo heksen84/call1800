@@ -1,6 +1,18 @@
-@extends('layouts.app')
-
-@section('content')
+<!doctype html>
+<html lang="{{ app()->getLocale() }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="keywords" content="get numbers, free numbers" />
+        <meta name="description" content="get free numbers">
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <title>Call1800 - get free numbers.</title>
+	<link rel="icon" href="{{ asset('./voice.ico') }}">
+    </head>
+    <body>
+<div id="app">
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
@@ -8,10 +20,13 @@
                     @endif
                     <br>
                     <center>
-			<h1>You are logged in!</h1>
+			<h2>You are logged in!</h2>
 		    <br>
-		    <button>Add number</button>
-		    <button>Delete number</button>
+			  <b-button variant="success">Add Number</b-button>
+			  <b-button variant="success">Delete Number</b-button>
 		    </center>
-
-@endsection
+</div>
+</body>
+</html>
+<link rel="stylesheet" type="text/css" href="{{ mix('css/app.css') }}">
+<script type="text/javascript" src="{{ mix('js/app.js') }}"></script>
