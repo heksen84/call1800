@@ -50847,7 +50847,9 @@ var render = function() {
       _c("b-navbar-brand", { staticStyle: { cursor: "default" } }, [
         _c("span", { on: { click: _vm.goHome } }, [
           _vm._v(" "),
-          _c("b", [_vm._v("Call1800")])
+          _c("b", { staticStyle: { color: "rgb(100,100,100)" } }, [
+            _vm._v("Call1800")
+          ])
         ])
       ]),
       _vm._v(" "),

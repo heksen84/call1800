@@ -1,7 +1,7 @@
 <template>
 <b-navbar type="light" variant="faded" toggleable>
   <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-  <b-navbar-brand style="cursor:default"><span v-on:click="goHome">&nbsp;<b>Call1800</b></span></b-navbar-brand>
+  <b-navbar-brand style="cursor:default"><span v-on:click="goHome">&nbsp;<b style="color:rgb(100,100,100)">Call1800</b></span></b-navbar-brand>
   <b-collapse is-nav id="nav_collapse">
     <b-navbar-nav class="ml-auto">
       <!--<b-row class="text-center">
