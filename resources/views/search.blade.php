@@ -21,7 +21,7 @@
         <h2 style="color:grey">Search results for</h2>
         <h6 style="color:rgb(50,50,50);margin-top:-5px">{{ $search_string }}</h6>
       <br>
-	advert
+	<ins>advert</ins>
       <br>
       <br>
       <b-card-group deck class="mb-3">
@@ -31,7 +31,7 @@
        </b-card>
         @endforeach
        </b-card-group>
-	advert	
+	<ins>advert</ins>
     </b-col>
   </b-row>
 <!--<b-pagination :total-rows="100" :per-page="10"></b-pagination>-->
