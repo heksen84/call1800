@@ -16,7 +16,9 @@
   <div id="app">
 
 <b-modal id="modal1" size="sm" title="Call" hide-footer>
-    <p class="my-4">12345</p>
+ <b-btn class="mt-3" block @click="hideModal">call-1</b-btn>
+ <b-btn class="mt-3" block @click="hideModal">call-2</b-btn>
+ <b-btn class="mt-3" block @click="hideModal">call-3</b-btn>
 </b-modal>
 
   <b-container fluid>
