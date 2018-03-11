@@ -20,6 +20,13 @@
       <br>
         <h1 style="color:grey">Results</h1>
 	advert
+
+
+        @foreach($numbers as $num)
+            <li class="list-group-item"><h5>{{ $num->website }} {{ $num->number }} {{ $num->description }}</h5></li>
+        @endforeach
+
+
       <br>
       <br>
       <b-card-group deck class="mb-3">
