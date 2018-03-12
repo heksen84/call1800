@@ -4,6 +4,6 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Numbers extends Model {
+class Categories extends Model {
     //
 }

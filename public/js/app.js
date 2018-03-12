@@ -1653,7 +1653,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   methods: {
     logout: function logout() {
-      Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* post */])('/api/logout').then(function (res) {
+      Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["b" /* post */])('/api/logout').then(function (res) {
         if (res.data.done) {
           __WEBPACK_IMPORTED_MODULE_0__store__["a" /* default */].commit('setAuth', false);
           __WEBPACK_IMPORTED_MODULE_0__store__["a" /* default */].commit('setUserName', "");
@@ -1689,6 +1689,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__navbar_vue__ = __webpack_require__("./resources/assets/js/components/navbar.vue");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__navbar_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__navbar_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers_api__ = __webpack_require__("./resources/assets/js/helpers/api.js");
 //
 //
 //
@@ -1721,16 +1722,39 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: { navbar: __WEBPACK_IMPORTED_MODULE_0__navbar_vue___default.a },
   data: function data() {
     return {
+      categories: {},
+      shoppingItems: [{ name: 'apple', price: '10' }, { name: 'orange', price: '12' }],
+
       form: {
         search: ""
       }
     };
+  },
+  created: function created() {
+    var _this = this;
+
+    this.categories = {};
+    Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/categories', null).then(function (res) {
+
+      console.log(res);
+      console.log(res.data);
+      _this.categories = res.data;
+      //this.categories.name=obj.name;
+    }).catch(function (err) {
+      console.log(err.response.data);
+      if (err.response.status === 422) {
+        //      this.error = err.response.data
+      }
+    });
   },
 
   methods: {
@@ -50983,9 +51007,13 @@ var render = function() {
                       )
                     ],
                     1
-                  )
+                  ),
+                  _vm._v(" "),
+                  _vm._l(_vm.categories, function(item) {
+                    return _c("li", [_vm._v(_vm._s(item.name))])
+                  })
                 ],
-                1
+                2
               )
             ],
             1
@@ -63034,8 +63062,8 @@ module.exports = Component.exports
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export get */
-/* harmony export (immutable) */ __webpack_exports__["a"] = post;
+/* harmony export (immutable) */ __webpack_exports__["a"] = get;
+/* harmony export (immutable) */ __webpack_exports__["b"] = post;
 /* unused harmony export del */
 /* unused harmony export interceptors */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__("./node_modules/axios/index.js");

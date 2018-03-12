@@ -25,6 +25,8 @@
     <b-button variant="danger" type="submit">Search</b-button>
   </b-form-group>
 </form>
+<!--<small v-if="categories">{{ categories }}</small>-->
+<li v-for="item in categories">{{ item.name }}</li>
   </b-col>
 </b-row>
 </b-container>
@@ -32,19 +34,45 @@
 </template>
 <script>
   import navbar from './navbar.vue'
+  import { post, get, interceptors } from './../helpers/api'
   export default {
     components: { navbar },
     data () {
       return {
+        categories: {},
+        shoppingItems: [
+          {name: 'apple', price: '10'},
+          {name: 'orange', price: '12'}
+        ],
+
         form: {
 					search: ""
 				}
       }
     },
+	created() {
+				this.categories = {}
+        get('/categories',null).then((res) => {
+
+            console.log(res);
+            console.log(res.data);
+            this.categories=res.data;
+            //this.categories.name=obj.name;
+
+		}).catch((err) => {
+			console.log(err.response.data);
+			if(err.response.status === 422) {
+	   //      this.error = err.response.data
+			}
+  	});
+
+
+
+	},
     methods: {
       search_numbers() {
-	if (this.form.search=="") this.form.search="all";
-	window.location="/search/"+this.form.search;
+	       if (this.form.search=="") this.form.search="all";
+	        window.location="/search/"+this.form.search;
       }
     }
   }
