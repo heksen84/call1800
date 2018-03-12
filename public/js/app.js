@@ -1724,6 +1724,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -1732,8 +1734,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   data: function data() {
     return {
       categories: {},
-      shoppingItems: [{ name: 'apple', price: '10' }, { name: 'orange', price: '12' }],
-
       form: {
         search: ""
       }
@@ -51009,11 +51009,21 @@ var render = function() {
                     1
                   ),
                   _vm._v(" "),
-                  _vm._l(_vm.categories, function(item) {
-                    return _c("li", [_vm._v(_vm._s(item.name))])
-                  })
+                  _c(
+                    "center",
+                    [
+                      _c("br"),
+                      _vm._v(" "),
+                      _vm._l(_vm.categories, function(item) {
+                        return _c("h6", { staticClass: "items" }, [
+                          _vm._v(_vm._s(item.name))
+                        ])
+                      })
+                    ],
+                    2
+                  )
                 ],
-                2
+                1
               )
             ],
             1

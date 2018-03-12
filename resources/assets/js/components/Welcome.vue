@@ -25,8 +25,10 @@
     <b-button variant="danger" type="submit">Search</b-button>
   </b-form-group>
 </form>
-<!--<small v-if="categories">{{ categories }}</small>-->
-<li v-for="item in categories">{{ item.name }}</li>
+<center>
+<br>
+<h6 v-for="item in categories" class="items">{{ item.name }}</h6>
+</center>
   </b-col>
 </b-row>
 </b-container>
@@ -40,11 +42,6 @@
     data () {
       return {
         categories: {},
-        shoppingItems: [
-          {name: 'apple', price: '10'},
-          {name: 'orange', price: '12'}
-        ],
-
         form: {
 					search: ""
 				}
