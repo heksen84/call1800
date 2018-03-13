@@ -30,7 +30,7 @@
 <b-container>
 <center>
 <br>
-<h4 style="color:rgb(90,90,90)"><ins>categories</ins></h4>
+<h4 style="color:rgb(90,90,90);margin-bottom:20px;"><ins>categories</ins></h4>
 <b-row v-for="i in Math.ceil(Object.keys(categories).length / 4)" v-bind:key=i>
 <b-col sm="3" v-for="item in categories.slice((i - 1) * 4, i * 4)" v-bind:key=categories.id>
   <div class="items">
