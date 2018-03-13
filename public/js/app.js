@@ -1726,6 +1726,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -1744,16 +1748,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     this.categories = {};
     Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/categories', null).then(function (res) {
-
       console.log(res);
       console.log(res.data);
       _this.categories = res.data;
-      //this.categories.name=obj.name;
     }).catch(function (err) {
       console.log(err.response.data);
-      if (err.response.status === 422) {
-        //      this.error = err.response.data
-      }
+      if (err.response.status === 422) {}
     });
   },
 
@@ -1761,6 +1761,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     search_numbers: function search_numbers() {
       if (this.form.search == "") this.form.search = "all";
       window.location = "/search/" + this.form.search;
+      //	        window.location="/search?="+this.form.search;
     }
   }
 });
@@ -51007,26 +51008,49 @@ var render = function() {
                       )
                     ],
                     1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "center",
-                    [
-                      _c("br"),
-                      _vm._v(" "),
-                      _vm._l(_vm.categories, function(item) {
-                        return _c("h6", { staticClass: "items" }, [
-                          _vm._v(_vm._s(item.name))
-                        ])
-                      })
-                    ],
-                    2
                   )
                 ],
                 1
               )
             ],
             1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "b-container",
+        [
+          _c(
+            "center",
+            [
+              _c("br"),
+              _vm._v(" "),
+              _vm._l(
+                Math.ceil(Object.keys(_vm.categories).length / 4),
+                function(i) {
+                  return _c(
+                    "b-row",
+                    { key: i },
+                    _vm._l(_vm.categories.slice((i - 1) * 4, i * 4), function(
+                      item
+                    ) {
+                      return _c(
+                        "b-col",
+                        { key: _vm.categories.id, attrs: { sm: "3" } },
+                        [
+                          _c("div", { staticClass: "items" }, [
+                            _vm._v(_vm._s(item.name))
+                          ])
+                        ]
+                      )
+                    })
+                  )
+                }
+              )
+            ],
+            2
           )
         ],
         1

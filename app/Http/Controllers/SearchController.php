@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Numbers;
-
+use Illuminate\Support\Facades\Input;
 class SearchController extends Controller
 {
     /**
@@ -14,7 +14,7 @@ class SearchController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request) {
-	if ($request->search_string=="all")
+	if ($request->search_string=="all")		
        		return view('search')->with('numbers', Numbers::all())->with("search_string", $request->search_string );
 	else
        		return view('search')->with('numbers', Numbers::where('number', 'like',"%{$request->search_string}%")->get())->with("search_string", $request->search_string );

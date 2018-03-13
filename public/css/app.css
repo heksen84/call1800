@@ -73,6 +73,10 @@ h5 {
   font-size: 12px;
 }
 
+.items {
+  margin: 5px;
+}
+
 .items:hover {
   cursor: default;
   text-decoration: underline;

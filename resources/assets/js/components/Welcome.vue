@@ -25,12 +25,16 @@
     <b-button variant="danger" type="submit">Search</b-button>
   </b-form-group>
 </form>
+</b-col>
+</b-row>
+</b-container>
+<b-container>
 <center>
 <br>
-<h6 v-for="item in categories" class="items">{{ item.name }}</h6>
-</center>
-  </b-col>
+<b-row v-for="i in Math.ceil(Object.keys(categories).length / 4)" v-bind:key=i>
+<b-col sm="3" v-for="item in categories.slice((i - 1) * 4, i * 4)" v-bind:key=categories.id><div class="items">{{ item.name }}</div></b-col>
 </b-row>
+</center>
 </b-container>
 </div>
 </template>
@@ -50,16 +54,13 @@
 	created() {
 				this.categories = {}
         get('/categories',null).then((res) => {
-
             console.log(res);
             console.log(res.data);
             this.categories=res.data;
-            //this.categories.name=obj.name;
 
 		}).catch((err) => {
 			console.log(err.response.data);
 			if(err.response.status === 422) {
-	   //      this.error = err.response.data
 			}
   	});
 
@@ -70,6 +71,7 @@
       search_numbers() {
 	       if (this.form.search=="") this.form.search="all";
 	        window.location="/search/"+this.form.search;
+//	        window.location="/search?="+this.form.search;
       }
     }
   }
