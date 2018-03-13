@@ -10,7 +10,7 @@
   <h5 style="color:grey;margin-top:-30px">Get a toll free number</h5>
   </center>
   <br>
-  <form v-on:submit.prevent="search_numbers">
+  <form v-on:submit.prevent="search_numbers" style="margin-top:-20px">
   <b-form-group id="searchGroup"
                     label="Search"
                     label-for="emailInput">
