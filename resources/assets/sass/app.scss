@@ -51,6 +51,7 @@ body h1,h2,h3,h4,h5 {
 	line-height: 110px;
   color: $my_grey;
   font-weight: bold;
+  margin-top:-5px;
 }
 
 #desc {
@@ -67,7 +68,7 @@ body h1,h2,h3,h4,h5 {
   font-size: 12px;
 }
 .items{
-  margin:8px;
+  margin:5px;
 }
 .items:hover {
  cursor:default;
