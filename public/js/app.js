@@ -1729,6 +1729,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -51024,6 +51029,10 @@ var render = function() {
             [
               _c("br"),
               _vm._v(" "),
+              _c("h4", { staticStyle: { color: "rgb(90,90,90)" } }, [
+                _c("ins", [_vm._v("categories")])
+              ]),
+              _vm._v(" "),
               _vm._l(
                 Math.ceil(Object.keys(_vm.categories).length / 4),
                 function(i) {
@@ -51038,7 +51047,7 @@ var render = function() {
                         { key: _vm.categories.id, attrs: { sm: "3" } },
                         [
                           _c("div", { staticClass: "items" }, [
-                            _vm._v(_vm._s(item.name))
+                            _vm._v("\r\n    " + _vm._s(item.name) + "\r\n  ")
                           ])
                         ]
                       )

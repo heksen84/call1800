@@ -4,7 +4,7 @@
   <!-- контент -->
 <b-container style="max-width: 370px;">
 <b-row>
-  <b-col>  
+  <b-col>
   <center>
   <h1 id="title">Call1800</h1>
   <h5 style="color:grey;margin-top:-30px">Get a toll free number</h5>
@@ -30,8 +30,13 @@
 <b-container>
 <center>
 <br>
+<h4 style="color:rgb(90,90,90)"><ins>categories</ins></h4>
 <b-row v-for="i in Math.ceil(Object.keys(categories).length / 4)" v-bind:key=i>
-<b-col sm="3" v-for="item in categories.slice((i - 1) * 4, i * 4)" v-bind:key=categories.id><div class="items">{{ item.name }}</div></b-col>
+<b-col sm="3" v-for="item in categories.slice((i - 1) * 4, i * 4)" v-bind:key=categories.id>
+  <div class="items">
+    {{ item.name }}
+  </div>
+</b-col>
 </b-row>
 </center>
 </b-container>
