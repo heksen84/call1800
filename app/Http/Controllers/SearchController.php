@@ -13,15 +13,15 @@ class SearchController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request) {
-	if ($request->search_string=="all")		
+public function index(Request $request) {
+	if ($request->search_string=="all")
        		return view('search')->with('numbers', Numbers::all())->with("search_string", $request->search_string );
 	else
        		return view('search')->with('numbers', Numbers::where('number', 'like',"%{$request->search_string}%")->get())->with("search_string", $request->search_string );
     }
 
     public function SearchAll(Request $request) {
-    	return view('search')->with('numbers', Numbers::all())->with("search_string", "" );
+    	return view('search')->with('numbers', Numbers::all())->with("search_string", $request->page );
     }
 
     /**
