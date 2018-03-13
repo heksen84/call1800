@@ -76,6 +76,7 @@ h5 {
 
 .items {
   margin: 5px;
+  width: 200px;
 }
 
 .items:hover {
