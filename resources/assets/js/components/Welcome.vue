@@ -33,9 +33,7 @@
 <h4 style="color:rgb(90,90,90);margin-bottom:20px;"><ins>categories</ins></h4>
 <b-row v-for="i in Math.ceil(Object.keys(categories).length / 4)" v-bind:key=i>
 <b-col sm="3" v-for="item in categories.slice((i - 1) * 4, i * 4)" v-bind:key=categories.id>
-  <div class="items">
-    {{ item.name }}
-  </div>
+<div class="items">{{ item.name }}</div>
 </b-col>
 </b-row>
 </center>
@@ -67,15 +65,12 @@
 			if(err.response.status === 422) {
 			}
   	});
-
-
-
 	},
     methods: {
       search_numbers() {
-	       if (this.form.search=="") this.form.search="all";
-	        window.location="/search/"+this.form.search;
-//	        window.location="/search?="+this.form.search;
+          if(this.form.search.length>0)
+          window.location="/search/"+this.form.search;
+          else window.location="/search";
       }
     }
   }

@@ -20,6 +20,10 @@ class SearchController extends Controller
        		return view('search')->with('numbers', Numbers::where('number', 'like',"%{$request->search_string}%")->get())->with("search_string", $request->search_string );
     }
 
+    public function SearchAll(Request $request) {
+    	return view('search')->with('numbers', Numbers::all())->with("search_string", "" );
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -1732,8 +1732,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 
 
@@ -1763,9 +1761,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   methods: {
     search_numbers: function search_numbers() {
-      if (this.form.search == "") this.form.search = "all";
-      window.location = "/search/" + this.form.search;
-      //	        window.location="/search?="+this.form.search;
+      if (this.form.search.length > 0) window.location = "/search/" + this.form.search;else window.location = "/search";
     }
   }
 });
@@ -51054,7 +51050,7 @@ var render = function() {
                         { key: _vm.categories.id, attrs: { sm: "3" } },
                         [
                           _c("div", { staticClass: "items" }, [
-                            _vm._v("\r\n    " + _vm._s(item.name) + "\r\n  ")
+                            _vm._v(_vm._s(item.name))
                           ])
                         ]
                       )
