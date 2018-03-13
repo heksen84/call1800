@@ -18,6 +18,7 @@
 <center>
 <br>
 <br>
+<br>
                 <h1>Register</h1>
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}" style="max-width:700px">
