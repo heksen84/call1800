@@ -4,8 +4,7 @@
   <!-- контент -->
 <b-container style="max-width: 370px;">
 <b-row>
-  <b-col>
-  <br>
+  <b-col>  
   <center>
   <h1 id="title">Call1800</h1>
   <h5 style="color:grey;margin-top:-30px">Get a toll free number</h5>

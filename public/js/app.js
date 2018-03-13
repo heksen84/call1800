@@ -1729,7 +1729,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -50941,8 +50940,6 @@ var render = function() {
               _c(
                 "b-col",
                 [
-                  _c("br"),
-                  _vm._v(" "),
                   _c("center", [
                     _c("h1", { attrs: { id: "title" } }, [_vm._v("Call1800")]),
                     _vm._v(" "),
