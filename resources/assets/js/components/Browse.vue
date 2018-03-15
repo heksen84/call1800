@@ -9,7 +9,6 @@
 <h3>{{ search_string }}</h3>
 <br>
 
-
 <b-row v-for="i in Math.ceil(Object.keys(items).length / 4)" v-bind:key=i>
   <b-col md="3" v-for="item in items.slice((i - 1) * 4, i * 4)" v-bind:key=item.id>
     <b-card-group deck class="mb-3">
