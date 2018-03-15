@@ -13,7 +13,7 @@ $my_grey: rgb(80,80,80);
  width: 8px;
  background: white;
  border: 1px solid black;
- border-radius: 6px;
+ border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:horizontal{
  height: 8px;
@@ -68,8 +68,8 @@ body h1,h2,h3,h4,h5 {
   font-size: 12px;
 }
 .items{
-  margin:5px;  
-  width:200px;
+  margin:5px;
+  width:170px;
 }
 .items:hover {
  cursor:default;

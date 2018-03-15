@@ -17,7 +17,7 @@
 <h2>details</h2>
 </center>
 </div>
-</body>
-</html>
 <link rel="stylesheet" type="text/css" href="{{ mix('css/app.css') }}">
 <script type="text/javascript" src="{{ mix('js/app.js') }}"></script>
+</body>
+</html>

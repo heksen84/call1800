@@ -12,7 +12,7 @@
   width: 8px;
   background: white;
   border: 1px solid black;
-  border-radius: 6px;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:horizontal {
@@ -76,7 +76,7 @@ h5 {
 
 .items {
   margin: 5px;
-  width: 200px;
+  width: 170px;
 }
 
 .items:hover {

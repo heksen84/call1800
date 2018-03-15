@@ -17,7 +17,8 @@
         <b-form-input id="emailInput"
                     type="text"
                     v-model="form.search"
-                    placeholder="Enter a Company Name">
+                    placeholder="Enter a Company Name"
+                    required>
         </b-form-input>
   </b-form-group>
   <b-form-group class="text-center">
@@ -32,10 +33,12 @@
 <br>
 <h4 style="color:rgb(90,90,90);margin-bottom:20px;"><ins>categories</ins></h4>
 <b-row v-for="i in Math.ceil(Object.keys(categories).length / 4)" v-bind:key=i>
-<b-col sm="3" v-for="item in categories.slice((i - 1) * 4, i * 4)" v-bind:key=categories.id>
-<div class="items">{{ item.name }}</div>
-</b-col>
+  <b-col md="3" v-for="item in categories.slice((i - 1) * 4, i * 4)" v-bind:key=categories.id>
+    <div class="items">{{ item.name }}</div>
+  </b-col>
 </b-row>
+<br>
+<h4 style="color:rgb(90,90,90);margin-bottom:20px;"><ins>searches</ins></h4>
 </center>
 </b-container>
 </div>
@@ -68,9 +71,7 @@
 	},
     methods: {
       search_numbers() {
-          if(this.form.search.length>0)
-          window.location="/search/"+this.form.search;
-          else window.location="/search";
+          window.location="/search/?company="+this.form.search;
       }
     }
   }

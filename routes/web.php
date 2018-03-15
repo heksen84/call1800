@@ -13,8 +13,8 @@
 Auth::routes();
 
 Route::get('/', function () { return view('welcome'); });
-Route::get('/search/{search_string}', 'SearchController@index')->name('search');
-Route::get('/search', 'SearchController@SearchAll')->name('search');
+Route::get('/search', 	  'SearchController@Search')->name('search');
+Route::get('/getOrgList', 'SearchController@getOrgList')->name('getOrgList');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/categories', 'CategoriesController@index')->name('categories');
 //Route::get('/{number}', function () { return view('details'); });

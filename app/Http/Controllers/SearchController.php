@@ -8,75 +8,28 @@ use App\Numbers;
 use Illuminate\Support\Facades\Input;
 class SearchController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-public function index(Request $request) {
-	if ($request->search_string=="all")
-       		return view('search')->with('numbers', Numbers::all())->with("search_string", $request->search_string );
-	else
-       		return view('search')->with('numbers', Numbers::where('number', 'like',"%{$request->search_string}%")->get())->with("search_string", $request->search_string );
+    public function Search(Request $request) {
+	return view('search')->with("search_string", $request->company);
     }
 
-    public function SearchAll(Request $request) {
-    	return view('search')->with('numbers', Numbers::all())->with("search_string", $request->page );
+    public function getOrgList() {
+	return Numbers::all()->toJson();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+
+    public function create() {
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request) {
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+    public function show($id) {
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+    public function edit($id) {
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(Request $request, $id) {
     }
 
     /**

@@ -30,6 +30,6 @@
 @endauth
 @endif-->
 </div>
+<script type="text/javascript" src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>
-<script type="text/javascript" src="{{ mix('js/app.js') }}"></script>
