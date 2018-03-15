@@ -1820,8 +1820,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     this.categories = {};
     Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/categories', null).then(function (res) {
-      console.log(res);
-      console.log(res.data);
       _this.categories = res.data;
     }).catch(function (err) {
       console.log(err.response.data);
@@ -51024,8 +51022,8 @@ var render = function() {
                 [
                   _c("br"),
                   _vm._v(" "),
-                  _c("h6", { staticStyle: { color: "grey" } }, [
-                    _vm._v("Search results for")
+                  _c("h5", { staticStyle: { color: "grey" } }, [
+                    _vm._v("Search results for:")
                   ]),
                   _vm._v(" "),
                   _c("h3", { staticStyle: { color: "rgb(70,70,70)" } }, [

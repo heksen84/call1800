@@ -59,8 +59,6 @@
 	created() {
 				this.categories = {}
         get('/categories',null).then((res) => {
-            console.log(res);
-            console.log(res.data);
             this.categories=res.data;
 
 		}).catch((err) => {

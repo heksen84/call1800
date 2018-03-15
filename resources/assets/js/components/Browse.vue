@@ -5,7 +5,7 @@
 <b-row>
 <b-col>
 <br>
-<h6 style="color:grey">Search results for</h6>
+<h5 style="color:grey">Search results for:</h5>
 <h3 style="color:rgb(70,70,70)">{{ search_string }}</h3>
 <br>
 
