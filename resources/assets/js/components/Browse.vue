@@ -5,8 +5,8 @@
 <b-row>
 <b-col>
 <br>
-<h4 style="color:grey">Search results for</h4>
-<h2 style="color:rgb(70,70,70)">{{ search_string }}</h2>
+<h6 style="color:grey">Search results for</h6>
+<h3 style="color:rgb(70,70,70)">{{ search_string }}</h3>
 <br>
 
 <b-row v-for="i in Math.ceil(Object.keys(items).length / 4)" v-bind:key=i>
