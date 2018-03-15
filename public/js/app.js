@@ -50928,7 +50928,17 @@ var render = function() {
     { attrs: { type: "light", variant: "faded", toggleable: "" } },
     [
       _c("b-navbar-toggle", { attrs: { target: "nav_collapse" } }, [
-        _c("b", { staticStyle: { color: "rgb(80,80,80)" } }, [_vm._v("menu")])
+        _c(
+          "b",
+          {
+            staticStyle: {
+              color: "rgb(80,80,80)",
+              position: "relative",
+              top: "-3px"
+            }
+          },
+          [_vm._v("menu")]
+        )
       ]),
       _vm._v(" "),
       _c("b-navbar-brand", { staticStyle: { cursor: "default" } }, [
