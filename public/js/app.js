@@ -1652,6 +1652,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -51027,7 +51028,9 @@ var render = function() {
                     _vm._v("Search results for")
                   ]),
                   _vm._v(" "),
-                  _c("h3", [_vm._v(_vm._s(_vm.search_string))]),
+                  _c("h3", { staticStyle: { color: "rgb(70,70,70)" } }, [
+                    _vm._v(_vm._s(_vm.search_string))
+                  ]),
                   _vm._v(" "),
                   _c("br"),
                   _vm._v(" "),
