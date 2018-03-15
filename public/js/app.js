@@ -1648,6 +1648,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -51007,42 +51008,56 @@ var render = function() {
               _c(
                 "b-col",
                 [
+                  _c("br"),
+                  _vm._v(" "),
                   _c("h3", { staticStyle: { color: "grey" } }, [
                     _vm._v("Search results for")
                   ]),
                   _vm._v(" "),
                   _c("h3", [_vm._v(_vm._s(_vm.search_string))]),
                   _vm._v(" "),
-                  _vm._l(_vm.items, function(item) {
-                    return _c("div", { key: item.id }, [
-                      _vm._v(_vm._s(item.website))
-                    ])
-                  }),
+                  _c("br"),
                   _vm._v(" "),
-                  _c(
-                    "b-card-group",
-                    { staticClass: "mb-3", attrs: { deck: "" } },
-                    [
-                      _c(
-                        "b-card",
-                        {
-                          staticClass: "text-center",
-                          attrs: {
-                            header: "<b>header</b>",
-                            "img-src": "image",
-                            "img-alt": "Image",
-                            "img-top": ""
-                          }
-                        },
-                        [
-                          _c("p", { staticClass: "card-text" }, [
-                            _vm._v("supertext")
-                          ])
-                        ]
-                      )
-                    ],
-                    1
-                  )
+                  _vm._l(Math.ceil(Object.keys(_vm.items).length / 4), function(
+                    i
+                  ) {
+                    return _c(
+                      "b-row",
+                      { key: i },
+                      _vm._l(_vm.items.slice((i - 1) * 4, i * 4), function(
+                        item
+                      ) {
+                        return _c(
+                          "b-col",
+                          { key: item.id, attrs: { md: "3" } },
+                          [
+                            _c(
+                              "b-card-group",
+                              { staticClass: "mb-3", attrs: { deck: "" } },
+                              [
+                                _c(
+                                  "b-card",
+                                  {
+                                    staticClass: "text-center",
+                                    attrs: {
+                                      "border-variant": "danger",
+                                      "header-text-variant": "danger",
+                                      header: "888-888-222",
+                                      "header-border-variant": "danger",
+                                      "text-variant": "grey"
+                                    }
+                                  },
+                                  [_c("p", [_vm._v(_vm._s(item.website))])]
+                                )
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        )
+                      })
+                    )
+                  })
                 ],
                 2
               )

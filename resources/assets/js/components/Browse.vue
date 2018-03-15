@@ -4,18 +4,19 @@
 <b-container>
 <b-row>
 <b-col>
+<br>
 <h3 style="color:grey">Search results for</h3>
 <h3>{{ search_string }}</h3>
-<div v-for="item in items" :key=item.id>{{ item.website}}</div>
-
-<b-card-group deck class="mb-3">
-<b-card  header="<b>header</b>" class="text-center"
-    img-src="image"
-    img-alt="Image"
-    img-top>
-     <p class="card-text">supertext</p>
-  </b-card>
- </b-card-group>
+<br>
+<b-row v-for="i in Math.ceil(Object.keys(items).length / 4)" v-bind:key=i>
+  <b-col md="3" v-for="item in items.slice((i - 1) * 4, i * 4)" v-bind:key=item.id>
+    <b-card-group deck class="mb-3">
+    <b-card  border-variant="danger" header-text-variant="danger" header="888-888-222" class="text-center" header-border-variant="danger" text-variant="grey">
+         <p>{{ item.website }}</p>
+      </b-card>
+     </b-card-group>
+  </b-col>
+</b-row>
 
 </b-col>
 </b-row>
