@@ -11,7 +11,10 @@
 <b-row v-for="i in Math.ceil(Object.keys(items).length / 4)" v-bind:key=i>
   <b-col md="3" v-for="item in items.slice((i - 1) * 4, i * 4)" v-bind:key=item.id>
     <b-card-group deck class="mb-3">
-    <b-card  border-variant="danger" header-text-variant="danger" header="888-888-222" class="text-center" header-border-variant="danger" text-variant="grey">
+    <b-card img-src="./images/map.png"
+            img-alt="Image"
+            img-top
+            header="888-888-222" class="text-center" text-variant="grey">
          <p>{{ item.website }}</p>
       </b-card>
      </b-card-group>

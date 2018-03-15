@@ -1649,6 +1649,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
@@ -51050,10 +51053,10 @@ var render = function() {
                                   {
                                     staticClass: "text-center",
                                     attrs: {
-                                      "border-variant": "danger",
-                                      "header-text-variant": "danger",
+                                      "img-src": "./images/map.png",
+                                      "img-alt": "Image",
+                                      "img-top": "",
                                       header: "888-888-222",
-                                      "header-border-variant": "danger",
                                       "text-variant": "grey"
                                     }
                                   },
