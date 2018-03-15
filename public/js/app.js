@@ -50934,7 +50934,7 @@ var render = function() {
             staticStyle: {
               color: "rgb(80,80,80)",
               position: "relative",
-              top: "-3px"
+              top: "-1px"
             }
           },
           [_vm._v("menu")]
