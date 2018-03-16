@@ -17,6 +17,10 @@ class CategoriesController extends Controller
 	return Categories::all()->toJson();
     }
 
+    public function getCategoryItems(Request $request) {
+	return view('categories')->with("item", $request->item);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
