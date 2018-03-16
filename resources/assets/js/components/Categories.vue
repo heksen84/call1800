@@ -7,7 +7,7 @@
 <br>
 <h2 style="color:rgb(90,90,90)"><ins>{{ item }}</ins></h2>
 <br>
-<b-table striped hover :items="items"></b-table>
+<!--<b-table striped hover :items="items"></b-table>-->
 </b-col>
 </b-row>
 </center>
