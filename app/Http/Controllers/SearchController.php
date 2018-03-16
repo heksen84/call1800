@@ -12,10 +12,23 @@ class SearchController extends Controller
 	return view('search')->with("search_string", $request->company);
     }
 
-    public function getOrgList() {
-	return Numbers::all()->toJson();
-    }
+    public function getOrgList()
+    {
+      $attachment_ids = array();
 
+      for ($i=0;$i<5;$i++) {
+        $attachment_ids[] = array(
+          "number" => $i,
+          "company_name" => "123",
+          "business_info" => "123",
+          "website" => "123",
+          "location" => "123",
+          "categories" => "123");
+        }
+        $attachment_ids = json_encode($attachment_ids);
+        return $attachment_ids;
+       //return Numbers::all()->toJson();
+    }
 
     public function create() {
     }
