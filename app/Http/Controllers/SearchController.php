@@ -15,13 +15,15 @@ class SearchController extends Controller
     public function getOrgList()
     {
       $attachment_ids = array();
+	    $jsonurl = "http://151.80.37.10:5000/tollfreenumber?query=google";
+	    $json = file_get_contents($jsonurl);
 
       for ($i=0;$i<5;$i++) {
         $attachment_ids[] = array(
           "number" => $i,
-          "company_name" => "123",
+          "company_name" => "1",
           "business_info" => "123",
-          "website" => "123",
+          "website" => "site-".$i,
           "location" => "123",
           "categories" => "123");
         }
