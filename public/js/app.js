@@ -47427,7 +47427,7 @@ module.exports = startCase;
 
 /***/ }),
 
-/***/ "./node_modules/opentact/lib/opentact.js":
+/***/ "./node_modules/opentact-js-sdk/lib/opentact.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(setImmediate, clearImmediate) {(function webpackUniversalModuleDefinition(root, factory) {
@@ -111979,8 +111979,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_welcome_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_welcome_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_browse_vue__ = __webpack_require__("./resources/assets/js/components/browse.vue");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_browse_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_browse_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_opentact__ = __webpack_require__("./node_modules/opentact/lib/opentact.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_opentact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_opentact__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_opentact_js_sdk__ = __webpack_require__("./node_modules/opentact-js-sdk/lib/opentact.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_opentact_js_sdk___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_opentact_js_sdk__);
 
 /**
  * First we will load all of this project's JavaScript dependencies which

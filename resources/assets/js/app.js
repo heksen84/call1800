@@ -13,7 +13,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import welcome from './components/welcome.vue'
 import browse from './components/browse.vue'
-import { opentact } from 'opentact'
+import {Opentact} from 'opentact-js-sdk'
 
 Vue.use(BootstrapVue);
 
