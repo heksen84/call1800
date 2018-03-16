@@ -1828,6 +1828,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
 
   methods: {
+    redirect: function redirect(event) {
+      console.log(event.target.textContent);
+      window.location = event.target.textContent;
+    },
     search_numbers: function search_numbers() {
       window.location = "/search/?company=" + this.form.search;
     }
@@ -51227,11 +51231,16 @@ var render = function() {
                     ) {
                       return _c(
                         "b-col",
-                        { key: _vm.categories.id, attrs: { md: "3" } },
+                        { key: item.name, attrs: { md: "3" } },
                         [
-                          _c("div", { staticClass: "items" }, [
-                            _vm._v(_vm._s(item.name))
-                          ])
+                          _c(
+                            "div",
+                            {
+                              staticClass: "items",
+                              on: { click: _vm.redirect }
+                            },
+                            [_vm._v(_vm._s(item.name))]
+                          )
                         ]
                       )
                     })
