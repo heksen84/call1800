@@ -18,7 +18,7 @@ class CategoriesController extends Controller
     }
 
     public function getCategoryItems(Request $request) {
-	return view('categories')->with("item", $request->item);
+	     return view('categories')->with("item", $request->item);
     }
 
     /**

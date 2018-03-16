@@ -17,6 +17,6 @@ Route::get('/search', 	  'SearchController@Search')->name('search');
 Route::get('/getOrgList', 'SearchController@getOrgList')->name('getOrgList');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/categories', 'CategoriesController@index')->name('categories');
-Route::get('/categories/{category}', 'CategoriesController@getCategoryItems')->name('getCategoryItems');
+Route::get('/categories/{item}', 'CategoriesController@getCategoryItems')->name('getCategoryItems');
 //Route::get('/{number}', function () { return view('details'); });
 //Route::get('/search/', function () { return view('details'); });
