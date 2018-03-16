@@ -14,28 +14,22 @@
 </template>
 
 <script type="text/javascript">
-import store from './../store'
 import { post, interceptors } from './../helpers/api'
 
 export default {
-  components: { store },
   data () {
     return 	{
         user: {
-          name: store.state.user.name
         }
 			}
 	},
   methods: {
     logout() {
       post('/api/logout').then((res) => {
-        if(res.data.done) {
-          store.commit('setAuth', false);
-          store.commit('setUserName', "");
+        if(res.data.done) {          
         }
 		}).catch((err) => {
-			console.log(err.response.data);
-      store.commit('setAuth', false);
+			console.log(err.response.data);      
   	});
 		},
 		goWelcome() {
@@ -43,15 +37,6 @@ export default {
 		}
   },
   computed: {
-    isAuth()  {
-      /*
-      --------------------------------------------------------------------
-       кнопки авторизации в панели отображаются только через v-if = true,
-       поэтому переворачиваем значение auth
-       --------------------------------------------------------------------
-       */
-      return !store.state.user.auth;
-    }
 }
 }
 </script>
