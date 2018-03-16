@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Numbers;
 use Illuminate\Support\Facades\Input;
+use App\Http\Controllers\Controller;
+use Vinelab\Http\Client as HttpClient;
+use App\Numbers;
+
 class SearchController extends Controller
 {
     public function Search(Request $request) {
@@ -14,11 +16,20 @@ class SearchController extends Controller
 
     public function getOrgList()
     {
-      $attachment_ids = array();
 	    $jsonurl = "http://151.80.37.10:5000/tollfreenumber?query=google";
 	    $json = file_get_contents($jsonurl);
 
-      for ($i=0;$i<5;$i++) {
+	    if ($json) {
+		$dec = json_decode(str_replace(array("\r", "\n"), '', $json), true);
+		if (!$dec) return "не декодирует!";
+	    	$data= $dec[0]["Number: "];
+	    	return $data;
+	    }
+
+		
+//        $attachment_ids[] = array( "number" => $json);
+//	return $attachment_ids["number"];
+/*      for ($i=0;$i<5;$i++) {
         $attachment_ids[] = array(
           "number" => $i,
           "company_name" => "1",
@@ -28,8 +39,10 @@ class SearchController extends Controller
           "categories" => "123");
         }
         $attachment_ids = json_encode($attachment_ids);
-        return $attachment_ids;
+        return $attachment_ids;*/
        //return Numbers::all()->toJson();
+
+	
     }
 
     public function create() {
