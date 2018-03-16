@@ -58,7 +58,7 @@
     },
 	created() {
 				this.categories = {}
-        get('/categories',null).then((res) => {
+        get('/categories', null).then((res) => {
             this.categories=res.data;
 
 		}).catch((err) => {
@@ -70,7 +70,7 @@
     methods: {
       redirect: function(event) {
         console.log(event.target.textContent);
-          window.location=event.target.textContent;
+          window.location="categories/"+event.target.textContent.toLowerCase();;
 
       },
       search_numbers() {

@@ -1811,7 +1811,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   methods: {
     redirect: function redirect(event) {
       console.log(event.target.textContent);
-      window.location = event.target.textContent;
+      window.location = "categories/" + event.target.textContent.toLowerCase();;
     },
     search_numbers: function search_numbers() {
       window.location = "/search/?company=" + this.form.search;
