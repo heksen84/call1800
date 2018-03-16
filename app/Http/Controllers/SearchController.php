@@ -21,7 +21,7 @@ class SearchController extends Controller
 
 	    if ($json) {
 		$dec = json_decode(str_replace(array("\r", "\n"), '', $json), true);
-		if (!$dec) return "не декодирует!";
+		if (!$dec) return "[ json_decode ]: Bad json!";
 	    	$data= $dec[0]["Number: "];
 	    	return $data;
 	    }
