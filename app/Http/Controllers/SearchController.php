@@ -14,28 +14,34 @@ class SearchController extends Controller
 	return view('search')->with("search_string", $request->company);
     }
 
-    public function getOrgList()
+    public function getOrgList(Request $request)
     {
-	    $jsonurl = "http://151.80.37.10:5000/tollfreenumber?query=google";
-	    $json = file_get_contents($jsonurl);
+      $attachment_ids = array();
+      
+	    $url = array(
+			   "http://151.80.37.10:5000/tollfreenumber?query=",
+			   "http://151.80.37.10:5000/inter800?query=",
+			   "http://151.80.37.10:5000/tollfreeda?query="
+			 );
 
-	    if ($json) {
-		$dec = json_decode(str_replace(array("\r", "\n"), '', $json), true);
-		if (!$dec) return "[ json_decode ]: Bad json!";
-		for($i=0;$i<count($dec);$i++){
-        		$attachment_ids[] = array(
-          		"number" => $dec[$i]["Number: "],
-          		"company_name" => $dec[$i]["Company Name: "],
-          		"business_info" => $dec[$i]["Business Info: "],
-          		"website" => "site-".$i,
-          		"location" => "123",
-          		"categories" => "123");
-        		}
-                 	return $attachment_ids;
-		}		
-		
+   	     $json = file_get_contents($url[0].$request->org_name);
+ 	       if ($json) {
+		         $dec = json_decode(str_replace(array("\r", "\n"), '', $json ), true);
+		           if (!$dec) return "[ json_decode ]: Bad json!";
+		             for($i=0;$i<count($dec);$i++){
+        		         $attachment_ids[] = array(
+          		           "number" => $dec[$i]["Number: "],
+          		             "company_name" => $dec[$i]["Company Name: "],
+          		               "business_info" => $dec[$i]["Business Info: "],
+          		                 "website" => "site-".$i,
+          		                   "location" => "123",
+          		                     "categories" => "123");
+        		                       }
+		       }
+           return $attachment_ids;
+
        //return Numbers::all()->toJson();
-	
+
     }
 
     public function create() {

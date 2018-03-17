@@ -18,7 +18,7 @@
             class="text-center" text-variant="grey">
             <b><p>{{ item.number }}</p></b>
             <p>{{ item.company_name }}</p>
-            <p>{{ item.business_info }}</p>
+            <!--{{ item.business_info }}</p>-->
       </b-card>
      </b-card-group>
   </b-col>
@@ -43,7 +43,8 @@
     },
 	created() {
 	   this.items = {}
-        get('/getOrgList', { org_name: this.search_string }).then((res) => {
+        console.log("org_name"+this.search_string);      
+        get('/getOrgList/'+this.search_string, null).then((res) => {
             console.log(res);
             this.items=res.data;
 

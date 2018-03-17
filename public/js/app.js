@@ -1670,7 +1670,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     var _this = this;
 
     this.items = {};
-    Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/getOrgList', { org_name: this.search_string }).then(function (res) {
+    console.log("org_name" + this.search_string);
+    //  get('/getOrgList', { "org_name": this.search_string }).then((res) => {
+    Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/getOrgList/' + this.search_string, null).then(function (res) {
       console.log(res);
       _this.items = res.data;
     }).catch(function (err) {
@@ -100033,13 +100035,7 @@ var render = function() {
                                       _c("p", [_vm._v(_vm._s(item.number))])
                                     ]),
                                     _vm._v(" "),
-                                    _c("p", [
-                                      _vm._v(_vm._s(item.company_name))
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("p", [
-                                      _vm._v(_vm._s(item.business_info))
-                                    ])
+                                    _c("p", [_vm._v(_vm._s(item.company_name))])
                                   ]
                                 )
                               ],
