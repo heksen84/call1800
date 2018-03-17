@@ -8,6 +8,7 @@
 <div v-if="!Object.keys(items).length">
 <center>
 <h4 style="color:grey">Please wait...</h4>
+<div class="loader"></div>
 </center>
 </div>
 

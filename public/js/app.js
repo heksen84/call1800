@@ -1663,6 +1663,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -100006,7 +100007,9 @@ var render = function() {
                           _c("center", [
                             _c("h4", { staticStyle: { color: "grey" } }, [
                               _vm._v("Please wait...")
-                            ])
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "loader" })
                           ])
                         ],
                         1
