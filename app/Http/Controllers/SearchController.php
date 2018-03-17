@@ -17,17 +17,18 @@ class SearchController extends Controller
     public function getOrgList(Request $request)
     {
       $attachment_ids = array();
-      
+
 	    $url = array(
 			   "http://151.80.37.10:5000/tollfreenumber?query=",
 			   "http://151.80.37.10:5000/inter800?query=",
 			   "http://151.80.37.10:5000/tollfreeda?query="
 			 );
 
-   	     $json = file_get_contents($url[0].$request->org_name);
+   	     $json = file_get_contents($url[0].$request->org_name);         
  	       if ($json) {
-		         $dec = json_decode(str_replace(array("\r", "\n"), '', $json ), true);
-		           if (!$dec) return "[ json_decode ]: Bad json!";
+             $dec = json_decode(str_replace(array("\r", "\n"), '', $json ), true);
+             //return count($dec);
+		           if (!$dec) return "Bad json";
 		             for($i=0;$i<count($dec);$i++){
         		         $attachment_ids[] = array(
           		           "number" => $dec[$i]["Number: "],
@@ -37,9 +38,10 @@ class SearchController extends Controller
           		                   "location" => "123",
           		                     "categories" => "123");
         		                       }
-		       }
-           return $attachment_ids;
+                                   return $attachment_ids;
+           }
 
+           return null;
        //return Numbers::all()->toJson();
 
     }

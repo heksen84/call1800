@@ -1655,6 +1655,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -1670,8 +1678,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     var _this = this;
 
     this.items = {};
-    console.log("org_name" + this.search_string);
-    //  get('/getOrgList', { "org_name": this.search_string }).then((res) => {
+    console.log("org_name: " + this.search_string);
     Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/getOrgList/' + this.search_string, null).then(function (res) {
       console.log(res);
       _this.items = res.data;
@@ -99992,13 +99999,31 @@ var render = function() {
                 [
                   _c("br"),
                   _vm._v(" "),
-                  _c("h5", { staticStyle: { color: "grey" } }, [
-                    _vm._v("Search results for:")
-                  ]),
+                  !Object.keys(_vm.items).length
+                    ? _c(
+                        "div",
+                        [
+                          _c("center", [
+                            _c("h5", { staticStyle: { color: "grey" } }, [
+                              _vm._v("Please wait...")
+                            ])
+                          ])
+                        ],
+                        1
+                      )
+                    : _vm._e(),
                   _vm._v(" "),
-                  _c("h3", { staticStyle: { color: "rgb(70,70,70)" } }, [
-                    _vm._v(_vm._s(_vm.search_string))
-                  ]),
+                  Object.keys(_vm.items).length > 0
+                    ? _c("div", [
+                        _c("h5", { staticStyle: { color: "grey" } }, [
+                          _vm._v("Search results for:")
+                        ]),
+                        _vm._v(" "),
+                        _c("h3", { staticStyle: { color: "rgb(70,70,70)" } }, [
+                          _vm._v(_vm._s(_vm.search_string))
+                        ])
+                      ])
+                    : _vm._e(),
                   _vm._v(" "),
                   _c("br"),
                   _vm._v(" "),

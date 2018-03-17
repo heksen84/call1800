@@ -5,8 +5,16 @@
 <b-row>
 <b-col>
 <br>
+<div v-if="!Object.keys(items).length">
+<center>
+<h5 style="color:grey">Please wait...</h5>
+</center>
+</div>
+
+<div v-if="Object.keys(items).length>0">
 <h5 style="color:grey">Search results for:</h5>
 <h3 style="color:rgb(70,70,70)">{{ search_string }}</h3>
+</div>
 <br>
 
 <b-row v-for="i in Math.ceil(Object.keys(items).length / 4)" v-bind:key=i>
@@ -43,7 +51,7 @@
     },
 	created() {
 	   this.items = {}
-        console.log("org_name"+this.search_string);      
+        console.log("org_name: "+this.search_string);
         get('/getOrgList/'+this.search_string, null).then((res) => {
             console.log(res);
             this.items=res.data;
