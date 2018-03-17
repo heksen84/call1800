@@ -100004,7 +100004,7 @@ var render = function() {
                         "div",
                         [
                           _c("center", [
-                            _c("h5", { staticStyle: { color: "grey" } }, [
+                            _c("h4", { staticStyle: { color: "grey" } }, [
                               _vm._v("Please wait...")
                             ])
                           ])
@@ -100019,8 +100019,12 @@ var render = function() {
                           _vm._v("Search results for:")
                         ]),
                         _vm._v(" "),
-                        _c("h3", { staticStyle: { color: "rgb(70,70,70)" } }, [
-                          _vm._v(_vm._s(_vm.search_string))
+                        _c("ins", [
+                          _c(
+                            "h3",
+                            { staticStyle: { color: "rgb(70,70,70)" } },
+                            [_vm._v(_vm._s(_vm.search_string))]
+                          )
                         ])
                       ])
                     : _vm._e(),
