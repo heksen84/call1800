@@ -15,8 +15,10 @@
     <b-card img-src="./images/map.png"
             img-alt="Image"
             img-top
-            header="888-888-222" class="text-center" text-variant="grey">
-            <p>{{ item.website }}</p>
+            class="text-center" text-variant="grey">
+            <b><p>{{ item.number }}</p></b>
+            <p>{{ item.company_name }}</p>
+            <p>{{ item.business_info }}</p>
       </b-card>
      </b-card-group>
   </b-col>

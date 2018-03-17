@@ -22,26 +22,19 @@ class SearchController extends Controller
 	    if ($json) {
 		$dec = json_decode(str_replace(array("\r", "\n"), '', $json), true);
 		if (!$dec) return "[ json_decode ]: Bad json!";
-	    	$data= $dec[0]["Number: "];
-	    	return $data;
-	    }
-
+		for($i=0;$i<count($dec);$i++){
+        		$attachment_ids[] = array(
+          		"number" => $dec[$i]["Number: "],
+          		"company_name" => $dec[$i]["Company Name: "],
+          		"business_info" => $dec[$i]["Business Info: "],
+          		"website" => "site-".$i,
+          		"location" => "123",
+          		"categories" => "123");
+        		}
+                 	return $attachment_ids;
+		}		
 		
-//        $attachment_ids[] = array( "number" => $json);
-//	return $attachment_ids["number"];
-/*      for ($i=0;$i<5;$i++) {
-        $attachment_ids[] = array(
-          "number" => $i,
-          "company_name" => "1",
-          "business_info" => "123",
-          "website" => "site-".$i,
-          "location" => "123",
-          "categories" => "123");
-        }
-        $attachment_ids = json_encode($attachment_ids);
-        return $attachment_ids;*/
        //return Numbers::all()->toJson();
-
 	
     }
 

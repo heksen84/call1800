@@ -1653,6 +1653,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -100023,11 +100025,22 @@ var render = function() {
                                       "img-src": "./images/map.png",
                                       "img-alt": "Image",
                                       "img-top": "",
-                                      header: "888-888-222",
                                       "text-variant": "grey"
                                     }
                                   },
-                                  [_c("p", [_vm._v(_vm._s(item.website))])]
+                                  [
+                                    _c("b", [
+                                      _c("p", [_vm._v(_vm._s(item.number))])
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("p", [
+                                      _vm._v(_vm._s(item.company_name))
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("p", [
+                                      _vm._v(_vm._s(item.business_info))
+                                    ])
+                                  ]
                                 )
                               ],
                               1
