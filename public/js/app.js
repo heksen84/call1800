@@ -1680,7 +1680,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     this.items = {};
     console.log("org_name: " + this.search_string);
-    Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/getOrgList/' + this.search_string, null).then(function (res) {
+    Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/getOrgList/' + this.search_string + '/0', null).then(function (res) {
       console.log(res);
       _this.items = res.data;
     }).catch(function (err) {

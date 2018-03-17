@@ -16,16 +16,20 @@ class SearchController extends Controller
 
     public function getOrgList(Request $request)
     {
-      $attachment_ids = array();
 
+		
+            $attachment_ids = array();
 	    $url = array(
 			   "http://151.80.37.10:5000/tollfreenumber?query=",
 			   "http://151.80.37.10:5000/inter800?query=",
 			   "http://151.80.37.10:5000/tollfreeda?query="
 			 );
 
+	     //$request->server_index
+
    	     $json = file_get_contents($url[0].$request->org_name);         
- 	       if ($json) {
+	     
+	     if ($json) {
              $dec = json_decode(str_replace(array("\r", "\n"), '', $json ), true);
              //return count($dec);
 		           if (!$dec) return "Bad json";

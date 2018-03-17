@@ -53,7 +53,7 @@
 	created() {
 	   this.items = {}
         console.log("org_name: "+this.search_string);
-        get('/getOrgList/'+this.search_string, null).then((res) => {
+        get('/getOrgList/'+this.search_string+'/0', null).then((res) => {
             console.log(res);
             this.items=res.data;
 

@@ -14,7 +14,7 @@ Auth::routes();
 
 Route::get('/', function () { return view('welcome'); });
 Route::get('/search', 	  'SearchController@Search')->name('search');
-Route::get('/getOrgList/{org_name}', 'SearchController@getOrgList')->name('getOrgList');
+Route::get('/getOrgList/{org_name}/{server_index}', 'SearchController@getOrgList')->name('getOrgList');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/categories', 'CategoriesController@index')->name('categories');
 Route::get('/categories/{item}', 'CategoriesController@getCategoryItems')->name('getCategoryItems');
