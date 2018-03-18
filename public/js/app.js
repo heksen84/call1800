@@ -51355,14 +51355,6 @@ var render = function() {
                   _c(
                     "b-navbar-nav",
                     [
-                      _c("b-nav-item", { attrs: { href: "/home" } }, [
-                        _c(
-                          "span",
-                          { staticStyle: { color: "rgb(80,80,80)" } },
-                          [_vm._v("Add company")]
-                        )
-                      ]),
-                      _vm._v(" "),
                       _c("b-nav-item", { attrs: { href: "/login" } }, [
                         _c(
                           "span",
@@ -51376,6 +51368,14 @@ var render = function() {
                           "span",
                           { staticStyle: { color: "rgb(80,80,80)" } },
                           [_vm._v("Register")]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("b-nav-item", { attrs: { href: "/home" } }, [
+                        _c(
+                          "span",
+                          { staticStyle: { color: "rgb(80,80,80)" } },
+                          [_vm._v("Add company")]
                         )
                       ])
                     ],
