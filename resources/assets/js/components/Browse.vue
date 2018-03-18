@@ -9,7 +9,7 @@
 <!-- загрузка -->
 <div v-if="!Object.keys(items1).length">
 <center>
-<h4 style="color:rgb(50,50,50)">{{ search_string }} search</h4>
+<!--<h4 style="color:rgb(50,50,50)">{{ search_string }} search</h4>-->
 <h4 style="color:rgb(140,140,140);margin-top:-5px;">please wait</h4>
 <div class="loader"></div>
 </center>

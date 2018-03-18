@@ -13,8 +13,16 @@
     </head>
     <body>
 <div id="app">
+
+  @if (Auth::guest())
+    guest
+  @else
+    registered
+  @endif
 		    <br>
         <center>
+        <h3>Hello, {{ Auth::user()->name }}!</h3>
+        <br>
 			  <b-button variant="success">Add Number</b-button>
 			  <b-button variant="danger">Delete Number</b-button>
 		    </center>

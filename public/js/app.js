@@ -100092,12 +100092,6 @@ var render = function() {
                         _c("center", [
                           _c(
                             "h4",
-                            { staticStyle: { color: "rgb(50,50,50)" } },
-                            [_vm._v(_vm._s(_vm.search_string) + " search")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "h4",
                             {
                               staticStyle: {
                                 color: "rgb(140,140,140)",
