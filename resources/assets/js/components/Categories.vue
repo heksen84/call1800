@@ -27,7 +27,7 @@
     },
 	created() {
 	   this.items = {}
-        get('/getOrgList', { org_name: this.search_string }).then((res) => {
+      /*  get('/getOrgList', { org_name: this.search_string }).then((res) => {
             console.log(res);
             this.items=res.data;
 
@@ -35,7 +35,7 @@
 			console.log(err.response.data);
 			if(err.response.status === 422) {
 			}
-  	});
+  	});*/
 	},
   methods: {
   }

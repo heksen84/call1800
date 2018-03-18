@@ -1760,16 +1760,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     };
   },
   created: function created() {
-    var _this = this;
-
     this.items = {};
-    Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/getOrgList', { org_name: this.search_string }).then(function (res) {
-      console.log(res);
-      _this.items = res.data;
-    }).catch(function (err) {
-      console.log(err.response.data);
-      if (err.response.status === 422) {}
-    });
+    /*  get('/getOrgList', { org_name: this.search_string }).then((res) => {
+          console.log(res);
+          this.items=res.data;
+    }).catch((err) => {
+    console.log(err.response.data);
+    if(err.response.status === 422) {
+    }
+    });*/
   },
 
   methods: {}
