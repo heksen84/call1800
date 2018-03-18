@@ -6,8 +6,9 @@
   <b-collapse is-nav id="nav_collapse" v-if="!auth">
     <b-navbar-nav class="ml-auto">
  	 <b-navbar-nav>
+              <b-nav-item href="/home"><span style="color:rgb(80,80,80)">Add company</span></b-nav-item>
 	      <b-nav-item href="/login"><span style="color:rgb(80,80,80)">Login</span></b-nav-item>
-	      <b-nav-item href="/register"><span style="color:rgb(80,80,80)">Register</span></b-nav-item>
+	      <b-nav-item href="/register"><span style="color:rgb(80,80,80)">Register</span></b-nav-item>     
 	    </b-navbar-nav>
     </b-navbar-nav>
   </b-collapse>
