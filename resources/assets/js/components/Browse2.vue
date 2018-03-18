@@ -5,9 +5,7 @@
 <b-row>
 <b-col>
 <br>
-
-<!-- загрузка -->
-<div v-if="!Object.keys(items1).length">
+<div v-if="!Object.keys(items).length">
 <center>
 <h4 style="color:rgb(50,50,50)">{{ search_string }} search</h4>
 <h4 style="color:rgb(140,140,140);margin-top:-5px;">please wait</h4>
@@ -15,8 +13,7 @@
 </center>
 </div>
 
-<!-- результат -->
-<div v-if="Object.keys(items1).length > 0">
+<div v-if="Object.keys(items).length>0">
 <h5 style="color:grey">Search results for:</h5>
 <ins><h3 style="color:rgb(70,70,70)">{{ search_string }}</h3></ins>
 </div>
@@ -38,8 +35,6 @@
   </b-col>
 </b-row>
 -->
-
-
 </b-col>
 </b-row>
 </center>
@@ -58,43 +53,20 @@
       }
     },
 	created() {
-
-	     this.items1 = {}
-       this.items2 = {}
-       this.items3 = {}
-
+	   this.items = {}
         console.log("org_name: "+this.search_string);
 
-        // 1 запрос
-        get('/getOrgList/'+this.search_string+'/0', null).then((res) => {
+        for (var i=0;i<3;i++) {
+        get('/getOrgList/'+this.search_string+'/'+i, null).then((res) => {
             console.log(res);
-            this.items1=res.data;
-		    }).catch((err) => {
-			  console.log(err.response.data);
-			  if(err.response.status === 422) {
-			  }
-  	    });
+            this.items=res.data;
 
-        // 2 запрос
-        get('/getOrgList/'+this.search_string+'/1', null).then((res) => {
-            console.log(res);
-            this.items2=res.data;
-		    }).catch((err) => {
-			  console.log(err.response.data);
-			  if(err.response.status === 422) {
-			  }
-  	    });
-
-        // 3 запрос
-        get('/getOrgList/'+this.search_string+'/2', null).then((res) => {
-            console.log(res);
-            this.items3=res.data;
-		    }).catch((err) => {
-			  console.log(err.response.data);
-			  if(err.response.status === 422) {
-			  }
-  	    });
-
+		}).catch((err) => {
+			console.log(err.response.data);
+			if(err.response.status === 422) {
+			}
+  	});
+  }
 	},
   methods: {
   }

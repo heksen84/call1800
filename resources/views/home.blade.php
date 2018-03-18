@@ -9,19 +9,12 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>Call1800 - get free numbers.</title>
-	<link rel="icon" href="{{ asset('./voice.ico') }}">
+	      <link rel="icon" href="{{ asset('./voice.ico') }}">
     </head>
     <body>
 <div id="app">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                    <br>
-                    <center>
-			<h2>You are logged in!</h2>
 		    <br>
+        <center>
 			  <b-button variant="success">Add Number</b-button>
 			  <b-button variant="danger">Delete Number</b-button>
 		    </center>

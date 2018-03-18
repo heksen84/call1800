@@ -1,6 +1,6 @@
 <template>
 <div>
-<navbar></navbar>
+<navbar :auth="auth"></navbar>
   <!-- контент -->
 <b-container style="max-width: 370px;">
 <b-row>
@@ -47,6 +47,7 @@
   import navbar from './navbar.vue'
   import { post, get, interceptors } from './../helpers/api'
   export default {
+    props: ['auth'],
     components: { navbar },
     data () {
       return {
@@ -57,6 +58,7 @@
       }
     },
 	created() {
+        //alert(this.auth);
 				this.categories = {}
         get('/categories', null).then((res) => {
             this.categories=res.data;

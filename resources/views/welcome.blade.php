@@ -14,21 +14,11 @@
     </head>
     <body>
 <div id="app">
-<welcome></welcome>
-<!--@if (Route::has('login'))
-@auth
-<a href="{{ url('/home') }}">Home</a>
-
-<welcome auth="true"></welcome>
-
+@if (Auth::guest())
+  <welcome :auth="false"></welcome>
 @else
-      <a href="{{ route('login') }}">Login</a>
-      <a href="{{ route('register') }}">Register</a>
-
-<welcome auth="false"></welcome>
-
-@endauth
-@endif-->
+  <welcome :auth="true"></welcome>
+@endif
 </div>
 <script type="text/javascript" src="{{ mix('js/app.js') }}"></script>
 </body>

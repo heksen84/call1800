@@ -1664,6 +1664,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -1678,11 +1685,34 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   created: function created() {
     var _this = this;
 
-    this.items = {};
+    this.items1 = {};
+    this.items2 = {};
+    this.items3 = {};
+
     console.log("org_name: " + this.search_string);
+
+    // 1 запрос
     Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/getOrgList/' + this.search_string + '/0', null).then(function (res) {
       console.log(res);
-      _this.items = res.data;
+      _this.items1 = res.data;
+    }).catch(function (err) {
+      console.log(err.response.data);
+      if (err.response.status === 422) {}
+    });
+
+    // 2 запрос
+    Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/getOrgList/' + this.search_string + '/1', null).then(function (res) {
+      console.log(res);
+      _this.items2 = res.data;
+    }).catch(function (err) {
+      console.log(err.response.data);
+      if (err.response.status === 422) {}
+    });
+
+    // 3 запрос
+    Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/getOrgList/' + this.search_string + '/2', null).then(function (res) {
+      console.log(res);
+      _this.items3 = res.data;
     }).catch(function (err) {
       console.log(err.response.data);
       if (err.response.status === 422) {}
@@ -1768,15 +1798,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['auth'],
   data: function data() {
     return {
       user: {}
     };
   },
+  created: function created() {},
 
   methods: {
     logout: function logout() {
@@ -1852,6 +1893,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['auth'],
   components: { navbar: __WEBPACK_IMPORTED_MODULE_0__navbar_vue___default.a },
   data: function data() {
     return {
@@ -1864,6 +1906,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   created: function created() {
     var _this = this;
 
+    //alert(this.auth);
     this.categories = {};
     Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/categories', null).then(function (res) {
       _this.categories = res.data;
@@ -99930,37 +99973,81 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c(
-        "b-collapse",
-        { attrs: { "is-nav": "", id: "nav_collapse" } },
-        [
-          _c(
-            "b-navbar-nav",
-            { staticClass: "ml-auto" },
+      !_vm.auth
+        ? _c(
+            "b-collapse",
+            { attrs: { "is-nav": "", id: "nav_collapse" } },
             [
               _c(
                 "b-navbar-nav",
+                { staticClass: "ml-auto" },
                 [
-                  _c("b-nav-item", { attrs: { href: "/login" } }, [
-                    _c("span", { staticStyle: { color: "rgb(80,80,80)" } }, [
-                      _vm._v("Login")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("b-nav-item", { attrs: { href: "/register" } }, [
-                    _c("span", { staticStyle: { color: "rgb(80,80,80)" } }, [
-                      _vm._v("Register")
-                    ])
-                  ])
+                  _c(
+                    "b-navbar-nav",
+                    [
+                      _c("b-nav-item", { attrs: { href: "/login" } }, [
+                        _c(
+                          "span",
+                          { staticStyle: { color: "rgb(80,80,80)" } },
+                          [_vm._v("Login")]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("b-nav-item", { attrs: { href: "/register" } }, [
+                        _c(
+                          "span",
+                          { staticStyle: { color: "rgb(80,80,80)" } },
+                          [_vm._v("Register")]
+                        )
+                      ])
+                    ],
+                    1
+                  )
                 ],
                 1
               )
             ],
             1
           )
-        ],
-        1
-      )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.auth
+        ? _c(
+            "b-collapse",
+            { attrs: { "is-nav": "", id: "nav_collapse" } },
+            [
+              _c(
+                "b-navbar-nav",
+                { staticClass: "ml-auto" },
+                [
+                  _c(
+                    "b-navbar-nav",
+                    [
+                      _c("b-nav-item", { attrs: { href: "/home" } }, [
+                        _c(
+                          "span",
+                          { staticStyle: { color: "rgb(80,80,80)" } },
+                          [_vm._v("Add company")]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("b-nav-item", { attrs: { href: "/logout" } }, [
+                        _c(
+                          "span",
+                          { staticStyle: { color: "rgb(80,80,80)" } },
+                          [_vm._v("Logout")]
+                        )
+                      ])
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        : _vm._e()
     ],
     1
   )
@@ -99995,93 +100082,54 @@ var render = function() {
           _c(
             "b-row",
             [
-              _c(
-                "b-col",
-                [
-                  _c("br"),
-                  _vm._v(" "),
-                  !Object.keys(_vm.items).length
-                    ? _c(
-                        "div",
-                        [
-                          _c("center", [
-                            _c("h4", { staticStyle: { color: "grey" } }, [
-                              _vm._v("Please wait...")
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "loader" })
-                          ])
-                        ],
-                        1
-                      )
-                    : _vm._e(),
-                  _vm._v(" "),
-                  Object.keys(_vm.items).length > 0
-                    ? _c("div", [
-                        _c("h5", { staticStyle: { color: "grey" } }, [
-                          _vm._v("Search results for:")
-                        ]),
-                        _vm._v(" "),
-                        _c("ins", [
+              _c("b-col", [
+                _c("br"),
+                _vm._v(" "),
+                !Object.keys(_vm.items1).length
+                  ? _c(
+                      "div",
+                      [
+                        _c("center", [
                           _c(
-                            "h3",
-                            { staticStyle: { color: "rgb(70,70,70)" } },
-                            [_vm._v(_vm._s(_vm.search_string))]
-                          )
+                            "h4",
+                            { staticStyle: { color: "rgb(50,50,50)" } },
+                            [_vm._v(_vm._s(_vm.search_string) + " search")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "h4",
+                            {
+                              staticStyle: {
+                                color: "rgb(140,140,140)",
+                                "margin-top": "-5px"
+                              }
+                            },
+                            [_vm._v("please wait")]
+                          ),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "loader" })
+                        ])
+                      ],
+                      1
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                Object.keys(_vm.items1).length > 0
+                  ? _c("div", [
+                      _c("h5", { staticStyle: { color: "grey" } }, [
+                        _vm._v("Search results for:")
+                      ]),
+                      _vm._v(" "),
+                      _c("ins", [
+                        _c("h3", { staticStyle: { color: "rgb(70,70,70)" } }, [
+                          _vm._v(_vm._s(_vm.search_string))
                         ])
                       ])
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _c("br"),
-                  _vm._v(" "),
-                  _vm._l(Math.ceil(Object.keys(_vm.items).length / 4), function(
-                    i
-                  ) {
-                    return _c(
-                      "b-row",
-                      { key: i },
-                      _vm._l(_vm.items.slice((i - 1) * 4, i * 4), function(
-                        item
-                      ) {
-                        return _c(
-                          "b-col",
-                          { key: item.id, attrs: { md: "3" } },
-                          [
-                            _c(
-                              "b-card-group",
-                              { staticClass: "mb-3", attrs: { deck: "" } },
-                              [
-                                _c(
-                                  "b-card",
-                                  {
-                                    staticClass: "text-center",
-                                    attrs: {
-                                      "img-src": "./images/map.png",
-                                      "img-alt": "Image",
-                                      "img-top": "",
-                                      "text-variant": "grey"
-                                    }
-                                  },
-                                  [
-                                    _c("b", [
-                                      _c("p", [_vm._v(_vm._s(item.number))])
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("p", [_vm._v(_vm._s(item.company_name))])
-                                  ]
-                                )
-                              ],
-                              1
-                            )
-                          ],
-                          1
-                        )
-                      })
-                    )
-                  })
-                ],
-                2
-              )
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _c("br")
+              ])
             ],
             1
           )
@@ -100114,7 +100162,7 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("navbar"),
+      _c("navbar", { attrs: { auth: _vm.auth } }),
       _vm._v(" "),
       _c(
         "b-container",
