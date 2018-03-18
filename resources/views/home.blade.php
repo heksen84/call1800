@@ -12,15 +12,7 @@
 	      <link rel="icon" href="{{ asset('./voice.ico') }}">
     </head>
     <body>
-<div id="app">
-<center>
-<addorg username={{ Auth::user()->name }}></addorg>
-<br>
-        <br>
-			  <b-button variant="success">Add Number</b-button>
-			  <b-button variant="danger">Delete Number</b-button>
-		    </center>
-</div>
+<div id="app"><addorg username={{ Auth::user()->name }}></addorg></div>
 <link rel="stylesheet" type="text/css" href="{{ mix('css/app.css') }}">
 <script type="text/javascript" src="{{ mix('js/app.js') }}"></script>
 </body>

@@ -5,16 +5,13 @@
 <b-container>
 <b-row>
 <b-col>
-<h3>Hello, {{ username }}!</h3>
+<center><h3>Hello, {{ username }}!</h3></center>
 <br>
 <b-nav fill tabs>
   <b-nav-item active>New company</b-nav-item>
   <b-nav-item>My companies</b-nav-item>
 </b-nav>
-
-
-
-
+<br>
 <b-form @submit="onSubmit" @reset="onReset">
       <b-form-group id="exampleInputGroup1"
                     label="Email address:"
