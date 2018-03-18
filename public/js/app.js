@@ -1641,12 +1641,39 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['auth'],
+  props: ['username'],
   components: { navbar: __WEBPACK_IMPORTED_MODULE_0__navbar_vue___default.a },
   data: function data() {
     return {
@@ -51096,8 +51123,79 @@ var render = function() {
       _vm._v(" "),
       _c(
         "b-container",
-        { staticStyle: { "max-width": "370px" } },
-        [_c("b-row", [_c("b-col")], 1)],
+        [
+          _c(
+            "b-row",
+            [
+              _c(
+                "b-col",
+                [
+                  _c("h3", [_vm._v("Hello, " + _vm._s(_vm.username) + "!")]),
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c(
+                    "b-nav",
+                    { attrs: { fill: "", tabs: "" } },
+                    [
+                      _c("b-nav-item", { attrs: { active: "" } }, [
+                        _vm._v("New company")
+                      ]),
+                      _vm._v(" "),
+                      _c("b-nav-item", [_vm._v("My companies")])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "b-form",
+                    { on: { submit: _vm.onSubmit, reset: _vm.onReset } },
+                    [
+                      _c(
+                        "b-form-group",
+                        {
+                          attrs: {
+                            id: "exampleInputGroup1",
+                            label: "Email address:",
+                            "label-for": "exampleInput1",
+                            description:
+                              "We'll never share your email with anyone else."
+                          }
+                        },
+                        [
+                          _c("b-form-input", {
+                            attrs: {
+                              id: "exampleInput1",
+                              type: "email",
+                              required: "",
+                              placeholder: "Enter email"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-button",
+                        { attrs: { type: "submit", variant: "primary" } },
+                        [_vm._v("Submit")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-button",
+                        { attrs: { type: "reset", variant: "danger" } },
+                        [_vm._v("Reset")]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
         1
       ),
       _vm._v(" "),

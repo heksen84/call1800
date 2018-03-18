@@ -13,10 +13,9 @@
     </head>
     <body>
 <div id="app">
-<addorg></addorg>
+<center>
+<addorg username={{ Auth::user()->name }}></addorg>
 <br>
-        <center>
-        <h3>Hello, {{ Auth::user()->name }}!</h3>
         <br>
 			  <b-button variant="success">Add Number</b-button>
 			  <b-button variant="danger">Delete Number</b-button>
