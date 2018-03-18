@@ -1680,6 +1680,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -51145,6 +51146,8 @@ var render = function() {
                   _c("center", [
                     _c("h3", [_vm._v("Hello, " + _vm._s(_vm.username) + "!")])
                   ]),
+                  _vm._v(" "),
+                  _c("br"),
                   _vm._v(" "),
                   _c("br"),
                   _vm._v(" "),

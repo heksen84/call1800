@@ -7,6 +7,7 @@
 <b-col>
 <center><h3>Hello, {{ username }}!</h3></center>
 <br>
+<br>
 <b-nav fill tabs>
   <b-nav-item active>New company</b-nav-item>
   <b-nav-item>My companies</b-nav-item>
