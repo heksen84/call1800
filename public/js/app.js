@@ -1665,6 +1665,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -51157,7 +51172,7 @@ var render = function() {
                         {
                           attrs: {
                             id: "exampleInputGroup1",
-                            label: "Email address:",
+                            label: "Number:",
                             "label-for": "exampleInput1",
                             description:
                               "We'll never share your email with anyone else."
@@ -51167,9 +51182,33 @@ var render = function() {
                           _c("b-form-input", {
                             attrs: {
                               id: "exampleInput1",
-                              type: "email",
+                              type: "text",
                               required: "",
-                              placeholder: "Enter email"
+                              placeholder: "Enter number"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-form-group",
+                        {
+                          attrs: {
+                            id: "exampleInputGroup1",
+                            label: "Name:",
+                            "label-for": "exampleInput1",
+                            description:
+                              "We'll never share your email with anyone else."
+                          }
+                        },
+                        [
+                          _c("b-form-input", {
+                            attrs: {
+                              id: "exampleInput1",
+                              type: "text",
+                              required: "",
+                              placeholder: "Enter name"
                             }
                           })
                         ],
