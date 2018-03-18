@@ -75,10 +75,10 @@
       console.log( "xmpp connected", conn.xmpp );
     });
 
-    /*client.login({
-      identity: "<<your identity uuid>>",
-      token: "<<your session token>>"
-    });*/
+    client.login({
+      identity: "123",
+      token: "123"
+    });
 
     /*client.on( "call:starting", function(session) {
       console.log( "session id: ", session.id );

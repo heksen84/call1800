@@ -13,7 +13,8 @@
     </head>
     <body>
 <div id="app">
-		    <br>
+<addorg></addorg>
+<br>
         <center>
         <h3>Hello, {{ Auth::user()->name }}!</h3>
         <br>

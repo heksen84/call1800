@@ -13,13 +13,14 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import welcome from './components/welcome.vue'
 import browse from './components/browse.vue'
+import addorg from './components/addorg.vue'
 import categories from './components/categories.vue'
 
 Vue.use(BootstrapVue);
 
 const app = new Vue({
     el: '#app',
-    components: { welcome, browse, categories },
+    components: { welcome, browse, categories, addorg },
     methods: {
       hello() {
 	       alert("call");
