@@ -14,7 +14,6 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import welcome from './components/welcome.vue'
 import browse from './components/browse.vue'
 import categories from './components/categories.vue'
-import {Opentact} from 'opentact-js-sdk'
 
 Vue.use(BootstrapVue);
 

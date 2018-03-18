@@ -46,6 +46,7 @@
 <script>
   import navbar from './navbar.vue'
   import { post, get, interceptors } from './../helpers/api'
+
   export default {
     props: ['auth'],
     components: { navbar },
@@ -58,7 +59,6 @@
       }
     },
 	created() {
-        //alert(this.auth);
 				this.categories = {}
         get('/categories', null).then((res) => {
             this.categories=res.data;

@@ -49,6 +49,7 @@
 <script>
   import navbar from './navbar.vue'
   import { post, get, interceptors } from './../helpers/api'
+
   export default {
     props: ['search_string'],
     components: { navbar },
@@ -58,6 +59,34 @@
       }
     },
 	created() {
+
+    var client = new Opentact({
+      sipProxy: "158.69.112.28",
+      sipWsUrl: "wss://158.69.112.28:8443",
+      sipDebug: true,
+      xmppWsUrl: "wss://xmpp.opentact.org:5280/websocket",
+      xmppHost: "xmpp.opentact.org",
+      xmppDebug: true,
+      xmppAutoReconnect: true
+    });
+
+    client.on( "connection", function(conn) {
+      console.log( "sip registered", conn.sip );
+      console.log( "xmpp connected", conn.xmpp );
+    });
+
+    /*client.login({
+      identity: "<<your identity uuid>>",
+      token: "<<your session token>>"
+    });*/
+
+    /*client.on( "call:starting", function(session) {
+      console.log( "session id: ", session.id );
+      console.log( "call with:  ", session.remoteUser );
+      console.log( "has audio:  ", session.audio );
+      console.log( "has video:  ", session.video );
+      // update your UI here
+    });*/
 
 	     this.items1 = {}
        this.items2 = {}

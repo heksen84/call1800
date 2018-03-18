@@ -14,6 +14,7 @@
 </head>
 <body>
 <div id="app"><browse search_string="{{ $search_string }}"></browse></div>
+<script type="text/javascript" src="{{ asset('js/opentact.min.js') }}"></script>
 <script type="text/javascript" src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>
