@@ -130,7 +130,6 @@
             this.loader=false;
 		    }).catch((err) => {
 			  this.error = true;
-			  this.error = err.response.statusText;
 			  console.log(err.response.data);
       });
 

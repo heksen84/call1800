@@ -1844,7 +1844,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       _this.loader = false;
     }).catch(function (err) {
       _this.error = true;
-      _this.error = err.response.statusText;
       console.log(err.response.data);
     });
   },
