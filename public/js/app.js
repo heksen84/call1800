@@ -1683,6 +1683,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -51174,56 +51176,69 @@ var render = function() {
                   _vm._v(" "),
                   _c("br"),
                   _vm._v(" "),
+                  _c("br"),
+                  _vm._v(" "),
                   _c(
-                    "b-form",
-                    { on: { submit: _vm.onSubmit, reset: _vm.onReset } },
+                    "center",
                     [
-                      _c("b-form-input", {
-                        attrs: {
-                          id: "Input2",
-                          type: "text",
-                          required: "",
-                          placeholder: "Enter number"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("br"),
-                      _vm._v(" "),
-                      _c("b-form-input", {
-                        attrs: {
-                          id: "Input2",
-                          type: "text",
-                          required: "",
-                          placeholder: "Enter company name"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("br"),
-                      _vm._v(" "),
-                      _c("b-form-textarea", {
-                        attrs: {
-                          id: "textarea1",
-                          placeholder: "Enter description",
-                          rows: 3,
-                          "max-rows": 6
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("br"),
-                      _vm._v(" "),
                       _c(
-                        "center",
+                        "b-form",
+                        {
+                          staticStyle: { width: "380px" },
+                          on: { submit: _vm.onSubmit, reset: _vm.onReset }
+                        },
                         [
-                          _c(
-                            "b-button",
-                            { attrs: { type: "submit", variant: "primary" } },
-                            [_vm._v("Save")]
-                          ),
+                          _c("b-form-input", {
+                            attrs: {
+                              id: "Input2",
+                              type: "text",
+                              required: "",
+                              placeholder: "Enter number"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("b-form-input", {
+                            attrs: {
+                              id: "Input2",
+                              type: "text",
+                              required: "",
+                              placeholder: "Enter company name"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("b-form-textarea", {
+                            attrs: {
+                              id: "textarea1",
+                              placeholder: "Enter description",
+                              rows: 3,
+                              "max-rows": 6
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("br"),
                           _vm._v(" "),
                           _c(
-                            "b-button",
-                            { attrs: { type: "reset", variant: "danger" } },
-                            [_vm._v("Reset")]
+                            "center",
+                            [
+                              _c(
+                                "b-button",
+                                {
+                                  attrs: { type: "submit", variant: "primary" }
+                                },
+                                [_vm._v("Save")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "b-button",
+                                { attrs: { type: "reset", variant: "danger" } },
+                                [_vm._v("Reset")]
+                              )
+                            ],
+                            1
                           )
                         ],
                         1

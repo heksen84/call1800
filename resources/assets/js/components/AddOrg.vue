@@ -13,8 +13,9 @@
   <b-nav-item>My companies</b-nav-item>
 </b-nav>
 <br>
-<b-form @submit="onSubmit" @reset="onReset">
-
+<br>
+<center>
+<b-form @submit="onSubmit" @reset="onReset" style="width:380px;">
       <b-form-group id="exampleInputGroup1"
                     label="Number:"
                     label-for="Input2"
@@ -46,6 +47,7 @@
         <b-button type="reset" variant="danger">Reset</b-button>
       </center>
     </b-form>
+  </center>
 
 </b-col>
 </b-row>
