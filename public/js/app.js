@@ -51509,7 +51509,11 @@ var render = function() {
                               "margin-top": "-5px"
                             }
                           },
-                          [_vm._v("Server not work")]
+                          [
+                            _vm._v("Service not work"),
+                            _c("br"),
+                            _vm._v("No data")
+                          ]
                         )
                       ])
                     ],

@@ -8,7 +8,7 @@
 
 <!-- ошибка -->
 <div v-show="error">
-<center><h3 style="color:rgb(255,100,100);margin-top:-5px;">Server not work</h3></center>
+<center><h3 style="color:rgb(255,100,100);margin-top:-5px;">Service not work<br>No data</h3></center>
 </div>
 
 <!-- загрузка -->
