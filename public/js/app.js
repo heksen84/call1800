@@ -1754,6 +1754,35 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -1763,39 +1792,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   components: { navbar: __WEBPACK_IMPORTED_MODULE_0__navbar_vue___default.a },
   data: function data() {
     return {
-      items: {}
+      loader: true,
+      items1: {},
+      items2: {},
+      items3: {}
     };
   },
   created: function created() {
     var _this = this;
-
-    var client = new Opentact({
-      sipProxy: "158.69.112.28",
-      sipWsUrl: "wss://158.69.112.28:8443",
-      sipDebug: true,
-      xmppWsUrl: "wss://xmpp.opentact.org:5280/websocket",
-      xmppHost: "xmpp.opentact.org",
-      xmppDebug: true,
-      xmppAutoReconnect: true
-    });
-
-    client.on("connection", function (conn) {
-      console.log("sip registered", conn.sip);
-      console.log("xmpp connected", conn.xmpp);
-    });
-
-    client.login({
-      identity: "123",
-      token: "123"
-    });
-
-    /*client.on( "call:starting", function(session) {
-      console.log( "session id: ", session.id );
-      console.log( "call with:  ", session.remoteUser );
-      console.log( "has audio:  ", session.audio );
-      console.log( "has video:  ", session.video );
-      // update your UI here
-    });*/
 
     this.items1 = {};
     this.items2 = {};
@@ -1807,27 +1811,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/getOrgList/' + this.search_string + '/0', null).then(function (res) {
       console.log(res);
       _this.items1 = res.data;
+      _this.loader = false;
     }).catch(function (err) {
       console.log(err.response.data);
-      if (err.response.status === 422) {}
     });
 
     // 2 запрос
     Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/getOrgList/' + this.search_string + '/1', null).then(function (res) {
       console.log(res);
       _this.items2 = res.data;
+      _this.loader = false;
     }).catch(function (err) {
       console.log(err.response.data);
-      if (err.response.status === 422) {}
     });
 
     // 3 запрос
     Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/getOrgList/' + this.search_string + '/2', null).then(function (res) {
       console.log(res);
       _this.items3 = res.data;
+      _this.loader = false;
     }).catch(function (err) {
       console.log(err.response.data);
-      if (err.response.status === 422) {}
     });
   },
 
@@ -51460,48 +51464,224 @@ var render = function() {
           _c(
             "b-row",
             [
-              _c("b-col", [
-                _c("br"),
-                _vm._v(" "),
-                !Object.keys(_vm.items1).length
-                  ? _c(
-                      "div",
-                      [
-                        _c("center", [
+              _c(
+                "b-col",
+                [
+                  _c("br"),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.loader,
+                          expression: "loader"
+                        }
+                      ]
+                    },
+                    [
+                      _c("center", [
+                        _c(
+                          "h4",
+                          {
+                            staticStyle: {
+                              color: "rgb(140,140,140)",
+                              "margin-top": "-5px"
+                            }
+                          },
+                          [_vm._v("please wait")]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "loader" })
+                      ])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  Object.keys(_vm.items1).length > 0
+                    ? _c("div", [
+                        _c("h5", { staticStyle: { color: "grey" } }, [
+                          _vm._v("Search results for:")
+                        ]),
+                        _vm._v(" "),
+                        _c("ins", [
                           _c(
-                            "h4",
-                            {
-                              staticStyle: {
-                                color: "rgb(140,140,140)",
-                                "margin-top": "-5px"
-                              }
-                            },
-                            [_vm._v("please wait")]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "loader" })
-                        ])
-                      ],
-                      1
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                Object.keys(_vm.items1).length > 0
-                  ? _c("div", [
-                      _c("h5", { staticStyle: { color: "grey" } }, [
-                        _vm._v("Search results for:")
-                      ]),
-                      _vm._v(" "),
-                      _c("ins", [
-                        _c("h3", { staticStyle: { color: "rgb(70,70,70)" } }, [
-                          _vm._v(_vm._s(_vm.search_string))
+                            "h3",
+                            { staticStyle: { color: "rgb(70,70,70)" } },
+                            [_vm._v(_vm._s(_vm.search_string))]
+                          )
                         ])
                       ])
-                    ])
-                  : _vm._e(),
-                _vm._v(" "),
-                _c("br")
-              ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _vm._l(
+                    Math.ceil(Object.keys(_vm.items1).length / 4),
+                    function(i) {
+                      return _c(
+                        "b-row",
+                        { key: i },
+                        _vm._l(_vm.items1.slice((i - 1) * 4, i * 4), function(
+                          item
+                        ) {
+                          return _c(
+                            "b-col",
+                            { key: item.id, attrs: { md: "3" } },
+                            [
+                              _c(
+                                "b-card-group",
+                                { staticClass: "mb-3", attrs: { deck: "" } },
+                                [
+                                  _c(
+                                    "b-card",
+                                    {
+                                      staticClass: "text-center",
+                                      attrs: {
+                                        "img-src": "./images/map.png",
+                                        "img-alt": "Image",
+                                        "img-top": "",
+                                        "text-variant": "grey"
+                                      }
+                                    },
+                                    [
+                                      _c("b", [
+                                        _c("p", [_vm._v(_vm._s(item.number))])
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", [
+                                        _vm._v(_vm._s(item.company_name))
+                                      ]),
+                                      _vm._v(
+                                        "\n            " +
+                                          _vm._s(item.business_info)
+                                      ),
+                                      _c("p")
+                                    ]
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        })
+                      )
+                    }
+                  ),
+                  _vm._v(" "),
+                  _vm._l(
+                    Math.ceil(Object.keys(_vm.items2).length / 4),
+                    function(i) {
+                      return _c(
+                        "b-row",
+                        { key: i },
+                        _vm._l(_vm.items2.slice((i - 1) * 4, i * 4), function(
+                          item
+                        ) {
+                          return _c(
+                            "b-col",
+                            { key: item.id, attrs: { md: "3" } },
+                            [
+                              _c(
+                                "b-card-group",
+                                { staticClass: "mb-3", attrs: { deck: "" } },
+                                [
+                                  _c(
+                                    "b-card",
+                                    {
+                                      staticClass: "text-center",
+                                      attrs: {
+                                        "img-src": "./images/map.png",
+                                        "img-alt": "Image",
+                                        "img-top": "",
+                                        "text-variant": "grey"
+                                      }
+                                    },
+                                    [
+                                      _c("b", [
+                                        _c("p", [_vm._v(_vm._s(item.number))])
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", [
+                                        _vm._v(_vm._s(item.company_name))
+                                      ]),
+                                      _vm._v(
+                                        "\n            " +
+                                          _vm._s(item.business_info)
+                                      ),
+                                      _c("p")
+                                    ]
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        })
+                      )
+                    }
+                  ),
+                  _vm._v(" "),
+                  _vm._l(
+                    Math.ceil(Object.keys(_vm.items3).length / 4),
+                    function(i) {
+                      return _c(
+                        "b-row",
+                        { key: i },
+                        _vm._l(_vm.items3.slice((i - 1) * 4, i * 4), function(
+                          item
+                        ) {
+                          return _c(
+                            "b-col",
+                            { key: item.id, attrs: { md: "3" } },
+                            [
+                              _c(
+                                "b-card-group",
+                                { staticClass: "mb-3", attrs: { deck: "" } },
+                                [
+                                  _c(
+                                    "b-card",
+                                    {
+                                      staticClass: "text-center",
+                                      attrs: {
+                                        "img-src": "./images/map.png",
+                                        "img-alt": "Image",
+                                        "img-top": "",
+                                        "text-variant": "grey"
+                                      }
+                                    },
+                                    [
+                                      _c("b", [
+                                        _c("p", [_vm._v(_vm._s(item.number))])
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", [
+                                        _vm._v(_vm._s(item.company_name))
+                                      ]),
+                                      _vm._v(
+                                        "\n            " +
+                                          _vm._s(item.business_info)
+                                      ),
+                                      _c("p")
+                                    ]
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        })
+                      )
+                    }
+                  )
+                ],
+                2
+              )
             ],
             1
           )
