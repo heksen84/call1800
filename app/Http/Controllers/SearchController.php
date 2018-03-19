@@ -129,7 +129,6 @@ class SearchController extends Controller {
 
       return null;
        //return Numbers::all()->toJson();
-
     }
 
     public function create() {

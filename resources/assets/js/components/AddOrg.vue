@@ -15,35 +15,37 @@
 <br>
 <b-form @submit="onSubmit" @reset="onReset">
 
-
-
       <b-form-group id="exampleInputGroup1"
                     label="Number:"
-                    label-for="exampleInput1"
-                    description="We'll never share your email with anyone else.">
-        <b-form-input id="exampleInput1"
-                      type="text"             
+                    label-for="Input2"
+        <b-form-input id="Input2"
+                      type="text"
                       required
                       placeholder="Enter number">
         </b-form-input>
       </b-form-group>
-
-
-
-      <b-form-group id="exampleInputGroup1"
+      <br>
+      <b-form-group id="exampleInputGroup2"
                     label="Name:"
-                    label-for="exampleInput1"
-                    description="We'll never share your email with anyone else.">
-        <b-form-input id="exampleInput1"
-                      type="text"             
+                    label-for="Input2"
+        <b-form-input id="Input2"
+                      type="text"
                       required
-                      placeholder="Enter name">
+                      placeholder="Enter company name">
         </b-form-input>
+        <br>
+        <b-form-textarea id="textarea1"
+                     placeholder="Enter description"
+                     :rows="3"
+                     :max-rows="6">
+        </b-form-textarea>
       </b-form-group>
-      <b-button type="submit" variant="primary">Submit</b-button>
-      <b-button type="reset" variant="danger">Reset</b-button>
+      <br>
+      <center>
+        <b-button type="submit" variant="primary">Save</b-button>
+        <b-button type="reset" variant="danger">Reset</b-button>
+      </center>
     </b-form>
-
 
 </b-col>
 </b-row>
@@ -57,6 +59,7 @@
 </div>
 </template>
 <script>
+
   import navbar from './navbar.vue'
   import { post, get, interceptors } from './../helpers/api'
 
