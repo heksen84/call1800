@@ -87,7 +87,7 @@
     data () {
       return {
         loader: true,
-	error:  "",
+	error:  false,
         items1: {},
         items2: {},
         items3: {}
@@ -107,7 +107,7 @@
             this.loader=false;
 		    }).catch((err) => {
 		               this.loader = false;
-			       this.error = err.response.statusText;
+  			       this.error = true;
 			       console.log(err.response);
 			       console.log(err.response.data);
   	    });
@@ -119,7 +119,7 @@
             this.loader=false;
 		    }).catch((err) => {
  		          this.loader = false;
-			  this.error = err.response.statusText;
+			  this.error = true;
 			  console.log(err.response.data);
   	    });
 
@@ -129,7 +129,7 @@
             this.items3=res.data;
             this.loader=false;
 		    }).catch((err) => {
-	                  this.loader = false;
+			  this.error = true;
 			  this.error = err.response.statusText;
 			  console.log(err.response.data);
       });

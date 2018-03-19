@@ -1799,7 +1799,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   data: function data() {
     return {
       loader: true,
-      error: "",
+      error: false,
       items1: {},
       items2: {},
       items3: {}
@@ -1821,7 +1821,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       _this.loader = false;
     }).catch(function (err) {
       _this.loader = false;
-      _this.error = err.response.statusText;
+      _this.error = true;
       console.log(err.response);
       console.log(err.response.data);
     });
@@ -1833,7 +1833,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       _this.loader = false;
     }).catch(function (err) {
       _this.loader = false;
-      _this.error = err.response.statusText;
+      _this.error = true;
       console.log(err.response.data);
     });
 
@@ -1843,7 +1843,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       _this.items3 = res.data;
       _this.loader = false;
     }).catch(function (err) {
-      _this.loader = false;
+      _this.error = true;
       _this.error = err.response.statusText;
       console.log(err.response.data);
     });
