@@ -1787,6 +1787,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -1797,6 +1799,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   data: function data() {
     return {
       loader: true,
+      error: "",
       items1: {},
       items2: {},
       items3: {}
@@ -1817,6 +1820,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       _this.items1 = res.data;
       _this.loader = false;
     }).catch(function (err) {
+      _this.loader = false;
+      _this.error = err.response.statusText;
+      console.log(err.response);
       console.log(err.response.data);
     });
 
@@ -1826,6 +1832,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       _this.items2 = res.data;
       _this.loader = false;
     }).catch(function (err) {
+      _this.loader = false;
+      _this.error = err.response.statusText;
       console.log(err.response.data);
     });
 
@@ -1835,6 +1843,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       _this.items3 = res.data;
       _this.loader = false;
     }).catch(function (err) {
+      _this.loader = false;
+      _this.error = err.response.statusText;
       console.log(err.response.data);
     });
   },
@@ -51485,6 +51495,35 @@ var render = function() {
                         {
                           name: "show",
                           rawName: "v-show",
+                          value: _vm.error,
+                          expression: "error"
+                        }
+                      ]
+                    },
+                    [
+                      _c("center", [
+                        _c(
+                          "h4",
+                          {
+                            staticStyle: {
+                              color: "rgb(255,100,100)",
+                              "margin-top": "-5px"
+                            }
+                          },
+                          [_vm._v(_vm._s(_vm.error))]
+                        )
+                      ])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
                           value: _vm.loader,
                           expression: "loader"
                         }
@@ -51502,7 +51541,6 @@ var render = function() {
                           },
                           [_vm._v("please wait")]
                         ),
-                        _vm._v(" "),
                         _c("div", { staticClass: "loader" })
                       ])
                     ],

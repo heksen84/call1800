@@ -6,12 +6,14 @@
 <b-col>
 <br>
 
+<!-- ошибка -->
+<div v-show="error">
+<center><h4 style="color:rgb(255,100,100);margin-top:-5px;">{{ error }}</h4></center>
+</div>
+
 <!-- загрузка -->
 <div v-show="loader">
-<center>
-<h4 style="color:rgb(140,140,140);margin-top:-5px;">please wait</h4>
-<div class="loader"></div>
-</center>
+<center><h4 style="color:rgb(140,140,140);margin-top:-5px;">please wait</h4><div class="loader"></div></center>
 </div>
 
 <!-- результат -->
@@ -85,14 +87,14 @@
     data () {
       return {
         loader: true,
+	error:  "",
         items1: {},
         items2: {},
         items3: {}
       }
     },
 	created() {
-
-	     this.items1 = {}
+       this.items1 = {}
        this.items2 = {}
        this.items3 = {}
 
@@ -104,6 +106,9 @@
             this.items1=res.data;
             this.loader=false;
 		    }).catch((err) => {
+		               this.loader = false;
+			       this.error = err.response.statusText;
+			       console.log(err.response);
 			       console.log(err.response.data);
   	    });
 
@@ -113,6 +118,8 @@
             this.items2=res.data;
             this.loader=false;
 		    }).catch((err) => {
+ 		          this.loader = false;
+			  this.error = err.response.statusText;
 			  console.log(err.response.data);
   	    });
 
@@ -122,6 +129,8 @@
             this.items3=res.data;
             this.loader=false;
 		    }).catch((err) => {
+	                  this.loader = false;
+			  this.error = err.response.statusText;
 			  console.log(err.response.data);
       });
 
