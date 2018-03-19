@@ -47,8 +47,7 @@ function jsonFixer($json){
     return $result;
   }
 
-class SearchController extends Controller
-{
+class SearchController extends Controller {
     public function Search(Request $request) {
 	     return view('search')->with("search_string", $request->company);
     }
