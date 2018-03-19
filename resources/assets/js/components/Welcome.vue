@@ -6,6 +6,7 @@
 <b-row>
   <b-col>
   <center>
+  <br>
   <h1 id="title">Call1800</h1>
   <h5 style="color:grey;margin-top:-30px">Get a toll free number</h5>
   </center>
