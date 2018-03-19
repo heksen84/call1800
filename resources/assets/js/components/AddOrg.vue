@@ -48,7 +48,6 @@
       </center>
     </b-form>
   </center>
-
 </b-col>
 </b-row>
 </b-container>
@@ -62,10 +61,10 @@
 </template>
 <script>
 
-  import navbar from './navbar.vue'
-  import { post, get, interceptors } from './../helpers/api'
+import navbar from './navbar.vue'
+import { post, get, interceptors } from './../helpers/api'
 
-  export default {
+export default {
     props: ['username'],
     components: { navbar },
     data () {
@@ -75,6 +74,5 @@
     },
     created() {
     }
- }
-
+}
 </script>
