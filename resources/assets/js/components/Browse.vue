@@ -8,7 +8,7 @@
 
 <!-- ошибка -->
 <div v-show="error">
-<center><h4 style="color:rgb(255,100,100);margin-top:-5px;">{{ error }}</h4></center>
+<center><h3 style="color:rgb(255,100,100);margin-top:-5px;">Server not work</h3></center>
 </div>
 
 <!-- загрузка -->

@@ -51503,14 +51503,14 @@ var render = function() {
                     [
                       _c("center", [
                         _c(
-                          "h4",
+                          "h3",
                           {
                             staticStyle: {
                               color: "rgb(255,100,100)",
                               "margin-top": "-5px"
                             }
                           },
-                          [_vm._v(_vm._s(_vm.error))]
+                          [_vm._v("Server not work")]
                         )
                       ])
                     ],
