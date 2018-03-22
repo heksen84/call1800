@@ -51501,16 +51501,12 @@ var render = function() {
                     },
                     [
                       _c("center", [
-                        _c(
-                          "h3",
-                          {
-                            staticStyle: {
-                              color: "rgb(255,100,100)",
-                              "margin-top": "-5px"
-                            }
-                          },
-                          [_vm._v("No data")]
-                        )
+                        _c("h3", {
+                          staticStyle: {
+                            color: "rgb(255,100,100)",
+                            "margin-top": "-5px"
+                          }
+                        })
                       ])
                     ],
                     1
