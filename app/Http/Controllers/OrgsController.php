@@ -19,12 +19,11 @@ class OrgsController extends Controller
     }
 
     public function getOrgs(Request $request) {
-	     //return view('categories')->with("item", ucfirst($request->item));
 	return Categories::all()->toJson();
     }
 
     public function addCompany(Request $request) {
-	if (DB::table('orgs')->insert(['id' => null, 'number' => $request->number, 'company_name' => $request->name, 'business_info' => $request->orginfo, 'website' => $request->website ]))
+	if (DB::table('orgs')->insert(['id' => null, 'number' => $request->number, 'company_name' => $request->name, 'business_info' => $request->orginfo, 'website' => $request->website, 'category_id' => $request->category_id]))
 	return "record added";
 	return "error append record";
     }

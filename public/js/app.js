@@ -1744,14 +1744,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   methods: {
     saveItemId: function saveItemId(id) {
-      this.category_id = id;
-      alert(this.category_id);
+      this.form.category_id = id;
     },
     save: function save() {
       var _this2 = this;
 
       alert(this.selected);
-      Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('addCompany/' + this.form.number + "/" + this.form.name + "/" + this.form.website + "/" + this.form.org_info).then(function (res) {
+      Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('addCompany/' + this.form.number + "/" + this.form.name + "/" + this.form.website + "/" + this.form.org_info + "/" + this.form.category_id).then(function (res) {
         console.log(res);
         alert("record added");
         _this2.form = {};
