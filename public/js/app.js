@@ -1707,6 +1707,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -1717,15 +1718,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   components: { navbar: __WEBPACK_IMPORTED_MODULE_0__navbar_vue___default.a },
   data: function data() {
     return {
-
       selected: null,
-      options: [{ value: null, text: 'Category' }, { value: 'a', text: 'This is First option' }, { value: 'b', text: 'Selected Option' }, { value: { 'C': '3PO' }, text: 'This is an option with object value' }, { value: 'd', text: 'This one is disabled', disabled: true }],
       categories: {},
       form: {
         number: "",
         name: "",
         website: "",
-        org_info: ""
+        org_info: "",
+        category_id: null
       }
     };
   },
@@ -1735,6 +1735,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     this.categories = {};
     Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/categories', null).then(function (res) {
       _this.categories = res.data;
+      console.log(res.data);
     }).catch(function (err) {
       console.log(err.response.data);
       if (err.response.status === 422) {}
@@ -1742,9 +1743,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
 
   methods: {
+    saveItemId: function saveItemId(id) {
+      this.category_id = id;
+      alert(this.category_id);
+    },
     save: function save() {
       var _this2 = this;
 
+      alert(this.selected);
       Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('addCompany/' + this.form.number + "/" + this.form.name + "/" + this.form.website + "/" + this.form.org_info).then(function (res) {
         console.log(res);
         alert("record added");
@@ -51381,21 +51387,38 @@ var render = function() {
                         ),
                         _vm._v(" "),
                         _c(
-                          "div",
+                          "b-form-select",
+                          {
+                            staticClass: "mb-3",
+                            model: {
+                              value: _vm.selected,
+                              callback: function($$v) {
+                                _vm.selected = $$v
+                              },
+                              expression: "selected"
+                            }
+                          },
                           [
-                            _c("b-form-select", {
-                              staticClass: "mb-3",
-                              attrs: { options: _vm.options },
-                              model: {
-                                value: _vm.selected,
-                                callback: function($$v) {
-                                  _vm.selected = $$v
+                            _c("option", { domProps: { value: null } }, [
+                              _vm._v("Please select category")
+                            ]),
+                            _vm._v(" "),
+                            _vm._l(_vm.categories, function(item) {
+                              return _c(
+                                "option",
+                                {
+                                  key: item.id,
+                                  on: {
+                                    click: function($event) {
+                                      _vm.saveItemId(item.id)
+                                    }
+                                  }
                                 },
-                                expression: "selected"
-                              }
+                                [_vm._v(" " + _vm._s(item.name) + " ")]
+                              )
                             })
                           ],
-                          1
+                          2
                         ),
                         _vm._v(" "),
                         _c(

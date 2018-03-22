@@ -59,9 +59,10 @@
 
 <b-form-group>
 
-<div>
-    <b-form-select v-model="selected" :options="options" class="mb-3" />
-</div>
+<b-form-select v-model="selected" class="mb-3">
+      <option :value="null">Please select category</option>
+      <option v-for="item in categories" v-bind:key=item.id v-on:click="saveItemId(item.id)"> {{ item.name }} </option>
+</b-form-select>
 
 </b-form-group
 
@@ -92,29 +93,22 @@ export default {
     components: { navbar },
     data () {
       return {
-
       selected: null,
-      options: [
-        { value: null, text: 'Category' },
-        { value: 'a', text: 'This is First option' },
-        { value: 'b', text: 'Selected Option' },
-        { value: {'C': '3PO'}, text: 'This is an option with object value' },
-        { value: 'd', text: 'This one is disabled', disabled: true }
-      ],
-        categories: {},
+      categories: {},
 	form: {
-		number: "",
-		name: "",
-		website: "",
-		org_info: ""
+		number:   "",
+		name: 	  "",
+		website:  "",
+		org_info: "",
+		category_id: null
 	 }
       	}
     },
     created() {
-	this.categories = {}
+	this.categories = {}	
         get('/categories', null).then((res) => {
             this.categories=res.data;
-
+		console.log(res.data);
 		}).catch((err) => {
 			console.log(err.response.data);
 			if(err.response.status === 422) {
@@ -122,7 +116,13 @@ export default {
   	});
     },
     methods: {
+	saveItemId: function (id) {
+      	this.category_id = id;
+	alert(this.category_id);
+      },
       save() {
+	
+	alert(this.selected);
 	get('addCompany/'+this.form.number+"/"+this.form.name+"/"+this.form.website+"/"+this.form.org_info).then((res) => {        
             console.log(res);
             alert("record added");
