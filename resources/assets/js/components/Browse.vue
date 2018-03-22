@@ -94,6 +94,10 @@
       }
     },
 	created() {
+	
+
+	alert("!");
+
        this.items1 = {}
        this.items2 = {}
        this.items3 = {}
