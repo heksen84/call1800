@@ -1707,7 +1707,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -51329,7 +51328,7 @@ var render = function() {
                           "b-form-group",
                           {
                             attrs: {
-                              label: "website",
+                              label: "Website",
                               "label-for": "websiteInput"
                             }
                           },
@@ -51394,12 +51393,7 @@ var render = function() {
                                 },
                                 expression: "selected"
                               }
-                            }),
-                            _vm._v(" "),
-                            _c("div", [
-                              _vm._v("Selected: "),
-                              _c("strong", [_vm._v(_vm._s(_vm.selected))])
-                            ])
+                            })
                           ],
                           1
                         ),

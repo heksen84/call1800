@@ -38,7 +38,7 @@
 </b-form-group>
 
 <b-form-group
-		    label="website"
+		    label="Website"
                     label-for="websiteInput">
         <b-form-input id="websiteInput"
                     type="text"
@@ -61,7 +61,6 @@
 
 <div>
     <b-form-select v-model="selected" :options="options" class="mb-3" />
-    <div>Selected: <strong>{{ selected }}</strong></div>
 </div>
 
 </b-form-group
