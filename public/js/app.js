@@ -1701,6 +1701,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -1711,6 +1718,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   components: { navbar: __WEBPACK_IMPORTED_MODULE_0__navbar_vue___default.a },
   data: function data() {
     return {
+
+      selected: null,
+      options: [{ value: null, text: 'Category' }, { value: 'a', text: 'This is First option' }, { value: 'b', text: 'Selected Option' }, { value: { 'C': '3PO' }, text: 'This is an option with object value' }, { value: 'd', text: 'This one is disabled', disabled: true }],
       categories: {},
       form: {
         number: "",
@@ -1720,16 +1730,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
     };
   },
-  created: function created() {},
+  created: function created() {
+    var _this = this;
+
+    this.categories = {};
+    Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/categories', null).then(function (res) {
+      _this.categories = res.data;
+    }).catch(function (err) {
+      console.log(err.response.data);
+      if (err.response.status === 422) {}
+    });
+  },
 
   methods: {
     save: function save() {
-      var _this = this;
+      var _this2 = this;
 
       Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('addCompany/' + this.form.number + "/" + this.form.name + "/" + this.form.website + "/" + this.form.org_info).then(function (res) {
         console.log(res);
         alert("record added");
-        _this.form = {};
+        _this2.form = {};
       }).catch(function (err) {
         console.log(err.response);
         console.log(err.response.data);
@@ -51357,6 +51377,29 @@ var render = function() {
                                 expression: "form.org_info"
                               }
                             })
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          [
+                            _c("b-form-select", {
+                              staticClass: "mb-3",
+                              attrs: { options: _vm.options },
+                              model: {
+                                value: _vm.selected,
+                                callback: function($$v) {
+                                  _vm.selected = $$v
+                                },
+                                expression: "selected"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("div", [
+                              _vm._v("Selected: "),
+                              _c("strong", [_vm._v(_vm._s(_vm.selected))])
+                            ])
                           ],
                           1
                         ),

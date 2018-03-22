@@ -57,7 +57,14 @@
     </b-form-textarea>
 </b-form-group
 
+<b-form-group>
 
+<div>
+    <b-form-select v-model="selected" :options="options" class="mb-3" />
+    <div>Selected: <strong>{{ selected }}</strong></div>
+</div>
+
+</b-form-group
 
   <b-form-group class="text-center">
     <b-button variant="danger" type="submit">Save</b-button>
@@ -86,6 +93,15 @@ export default {
     components: { navbar },
     data () {
       return {
+
+      selected: null,
+      options: [
+        { value: null, text: 'Category' },
+        { value: 'a', text: 'This is First option' },
+        { value: 'b', text: 'Selected Option' },
+        { value: {'C': '3PO'}, text: 'This is an option with object value' },
+        { value: 'd', text: 'This one is disabled', disabled: true }
+      ],
         categories: {},
 	form: {
 		number: "",
@@ -96,6 +112,15 @@ export default {
       	}
     },
     created() {
+	this.categories = {}
+        get('/categories', null).then((res) => {
+            this.categories=res.data;
+
+		}).catch((err) => {
+			console.log(err.response.data);
+			if(err.response.status === 422) {
+			}
+  	});
     },
     methods: {
       save() {
