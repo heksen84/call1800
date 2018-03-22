@@ -1683,6 +1683,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -1693,10 +1711,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   components: { navbar: __WEBPACK_IMPORTED_MODULE_0__navbar_vue___default.a },
   data: function data() {
     return {
-      categories: {}
+      categories: {},
+      form: {
+        number: "",
+        name: "",
+        org_info: "",
+        website: ""
+      }
     };
   },
-  created: function created() {}
+  created: function created() {},
+
+  methods: {
+    save: function save() {
+      alert("!");
+    }
+  }
+
 });
 
 /***/ }),
@@ -51198,74 +51229,137 @@ var render = function() {
                   _vm._v(" "),
                   _c("br"),
                   _vm._v(" "),
-                  _c(
-                    "center",
-                    [
-                      _c(
-                        "b-form",
-                        {
-                          staticStyle: { width: "380px" },
-                          on: { submit: _vm.onSubmit, reset: _vm.onReset }
-                        },
-                        [
-                          _c("b-form-input", {
+                  _c("center", [
+                    _c(
+                      "form",
+                      {
+                        staticStyle: { "margin-top": "-15px", width: "400px" },
+                        on: {
+                          submit: function($event) {
+                            $event.preventDefault()
+                            _vm.save($event)
+                          }
+                        }
+                      },
+                      [
+                        _c(
+                          "b-form-group",
+                          {
                             attrs: {
-                              id: "Input2",
-                              type: "text",
-                              required: "",
-                              placeholder: "Enter number"
+                              label: "Number",
+                              "label-for": "numberInput"
                             }
-                          }),
-                          _vm._v(" "),
-                          _c("br"),
-                          _vm._v(" "),
-                          _c("b-form-input", {
-                            attrs: {
-                              id: "Input2",
-                              type: "text",
-                              required: "",
-                              placeholder: "Enter company name"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("br"),
-                          _vm._v(" "),
-                          _c("b-form-textarea", {
-                            attrs: {
-                              id: "textarea1",
-                              placeholder: "Enter description",
-                              rows: 3,
-                              "max-rows": 6
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("br"),
-                          _vm._v(" "),
-                          _c(
-                            "center",
-                            [
-                              _c(
-                                "b-button",
-                                {
-                                  attrs: { type: "submit", variant: "primary" }
+                          },
+                          [
+                            _c("b-form-input", {
+                              attrs: {
+                                id: "numberInput",
+                                type: "text",
+                                placeholder: "Enter a phone number",
+                                required: ""
+                              },
+                              model: {
+                                value: _vm.form.number,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.form, "number", $$v)
                                 },
-                                [_vm._v("Save")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "b-button",
-                                { attrs: { type: "reset", variant: "danger" } },
-                                [_vm._v("Reset")]
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
+                                expression: "form.number"
+                              }
+                            })
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "b-form-group",
+                          {
+                            attrs: { label: "Name", "label-for": "nameInput" }
+                          },
+                          [
+                            _c("b-form-input", {
+                              attrs: {
+                                id: "nameInput",
+                                type: "text",
+                                placeholder: "Enter a company name",
+                                required: ""
+                              },
+                              model: {
+                                value: _vm.form.name,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.form, "name", $$v)
+                                },
+                                expression: "form.name"
+                              }
+                            })
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "b-form-group",
+                          {
+                            attrs: {
+                              label: "website",
+                              "label-for": "websiteInput"
+                            }
+                          },
+                          [
+                            _c("b-form-input", {
+                              attrs: {
+                                id: "websiteInput",
+                                type: "text",
+                                placeholder: "Enter a company website"
+                              },
+                              model: {
+                                value: _vm.form.website,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.form, "website", $$v)
+                                },
+                                expression: "form.website"
+                              }
+                            })
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "b-form-group",
+                          {
+                            attrs: {
+                              label: "Company description",
+                              "label-for": "orginfoInput"
+                            }
+                          },
+                          [
+                            _c("b-form-textarea", {
+                              attrs: {
+                                id: "textarea1",
+                                placeholder: "Enter company description",
+                                rows: 6,
+                                "max-rows": 6,
+                                required: ""
+                              },
+                              model: {
+                                value: _vm.form.org_info,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.form, "org_info", $$v)
+                                },
+                                expression: "form.org_info"
+                              }
+                            })
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "b-button",
+                          { attrs: { variant: "danger", type: "submit" } },
+                          [_vm._v("Search")]
+                        )
+                      ],
+                      1
+                    )
+                  ])
                 ],
                 1
               )

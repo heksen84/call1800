@@ -14,39 +14,57 @@
 </b-nav>-->
 <br>
 <center>
-<b-form @submit="onSubmit" @reset="onReset" style="width:380px;">
-      <b-form-group id="exampleInputGroup1"
-                    label="Number:"
-                    label-for="Input2"
-        <b-form-input id="Input2"
-                      type="text"
-                      required
-                      placeholder="Enter number">
+
+ <form v-on:submit.prevent="save" style="margin-top:-15px;width:400px">
+  <b-form-group
+		    label="Number"
+                    label-for="numberInput">
+        <b-form-input id="numberInput"
+                    type="text"
+                    v-model="form.number"
+                    placeholder="Enter a phone number"
+                    required>
         </b-form-input>
-      </b-form-group>
-      <br>
-      <b-form-group id="exampleInputGroup2"
-                    label="Name:"
-                    label-for="Input2"
-        <b-form-input id="Input2"
-                      type="text"
-                      required
-                      placeholder="Enter company name">
+  </b-form-group>
+<b-form-group
+		    label="Name"
+                    label-for="nameInput">
+        <b-form-input id="nameInput"
+                    type="text"
+                    v-model="form.name"
+                    placeholder="Enter a company name"
+                    required>
         </b-form-input>
-        <br>
-        <b-form-textarea id="textarea1"
-                     placeholder="Enter description"
-                     :rows="3"
-                     :max-rows="6">
-        </b-form-textarea>
-      </b-form-group>
-      <br>
-      <center>
-        <b-button type="submit" variant="primary">Save</b-button>
-        <b-button type="reset" variant="danger">Reset</b-button>
-      </center>
-    </b-form>
-  </center>
+</b-form-group>
+
+<b-form-group
+		    label="website"
+                    label-for="websiteInput">
+        <b-form-input id="websiteInput"
+                    type="text"
+                    v-model="form.website"
+                    placeholder="Enter a company website">
+        </b-form-input>
+</b-form-group>
+
+<b-form-group label="Company description"
+                    label-for="orginfoInput">
+   <b-form-textarea id="textarea1"
+                     v-model="form.org_info"
+                     placeholder="Enter company description"
+                     :rows="6"
+                     :max-rows="6" required>
+    </b-form-textarea>
+</b-form-group
+
+
+
+  <b-form-group class="text-center">
+    <b-button variant="danger" type="submit">Search</b-button>
+  </b-form-group>
+</form>
+
+</center>
 </b-col>
 </b-row>
 </b-container>
@@ -69,9 +87,21 @@ export default {
     data () {
       return {
         categories: {},
-      }
+	form: {
+		number: "",
+		name: "",
+		org_info: "",
+		website: ""
+	 }
+      	}
     },
     created() {
+    },
+    methods: {
+      save() {
+          alert("!");
+      }
     }
+
 }
 </script>
