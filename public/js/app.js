@@ -1708,6 +1708,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -1725,7 +1730,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         name: "",
         website: "",
         org_info: "",
-        category_id: null
+        category_id: null,
+        country_id: null
       }
     };
   },
@@ -1743,8 +1749,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
 
   methods: {
-    saveItemId: function saveItemId(id) {
+    saveCategoryId: function saveCategoryId(id) {
       this.form.category_id = id;
+    },
+    saveCountryId: function saveCountryId(id) {
+      this.form.country_id = id;
     },
     save: function save() {
       var _this2 = this;
@@ -51408,7 +51417,42 @@ var render = function() {
                                   key: item.id,
                                   on: {
                                     click: function($event) {
-                                      _vm.saveItemId(item.id)
+                                      _vm.saveCategoryId(item.id)
+                                    }
+                                  }
+                                },
+                                [_vm._v(" " + _vm._s(item.name) + " ")]
+                              )
+                            })
+                          ],
+                          2
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "b-form-select",
+                          {
+                            staticClass: "mb-3",
+                            model: {
+                              value: _vm.selected,
+                              callback: function($$v) {
+                                _vm.selected = $$v
+                              },
+                              expression: "selected"
+                            }
+                          },
+                          [
+                            _c("option", { domProps: { value: null } }, [
+                              _vm._v("Please select country")
+                            ]),
+                            _vm._v(" "),
+                            _vm._l(_vm.categories, function(item) {
+                              return _c(
+                                "option",
+                                {
+                                  key: item.id,
+                                  on: {
+                                    click: function($event) {
+                                      _vm.saveCountryId(item.id)
                                     }
                                   }
                                 },

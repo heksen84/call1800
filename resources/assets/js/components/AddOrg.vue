@@ -58,12 +58,17 @@
 </b-form-group
 
 <b-form-group>
-
 <b-form-select v-model="selected" class="mb-3">
       <option :value="null">Please select category</option>
-      <option v-for="item in categories" v-bind:key=item.id v-on:click="saveItemId(item.id)"> {{ item.name }} </option>
+      <option v-for="item in categories" v-bind:key=item.id v-on:click="saveCategoryId(item.id)"> {{ item.name }} </option>
 </b-form-select>
+</b-form-group
 
+<b-form-group>
+<b-form-select v-model="selected" class="mb-3">
+      <option :value="null">Please select country</option>
+      <option v-for="item in categories" v-bind:key=item.id v-on:click="saveCountryId(item.id)"> {{ item.name }} </option>
+</b-form-select>
 </b-form-group
 
   <b-form-group class="text-center">
@@ -100,7 +105,8 @@ export default {
 		name: 	  "",
 		website:  "",
 		org_info: "",
-		category_id: null
+		category_id: null,
+		country_id:  null
 	 }
       	}
     },
@@ -116,8 +122,11 @@ export default {
   	});
     },
     methods: {
-	saveItemId: function (id) {
+	saveCategoryId: function (id) {
       	this.form.category_id = id;
+      },
+	saveCountryId: function (id) {
+      	this.form.country_id = id;
       },
       save() {
 	get('addCompany/'+this.form.number+"/"+this.form.name+"/"+this.form.website+"/"+this.form.org_info+"/"+this.form.category_id).then((res) => {        

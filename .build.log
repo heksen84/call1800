@@ -6,9 +6,9 @@
 > @ development C:\OSPanel\domains\call1800
 > cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js
 
- DONE  Compiled successfully in 4056ms16:41:24
+ DONE  Compiled successfully in 3862ms17:23:26
 
                                               Asset     Size  Chunks                    Chunk Names
 fonts/carefree.ttf?f3db7a9cf88f94961dd173624793c336  64.8 kB          [emitted]         
-                                         \js\app.js  2.16 MB       0  [emitted]  [big]  \js\app
+                                         \js\app.js  2.17 MB       0  [emitted]  [big]  \js\app
                                        \css\app.css  1.83 kB       0  [emitted]         \js\app
