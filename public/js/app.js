@@ -1724,10 +1724,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   methods: {
     save: function save() {
-      alert("!");
+      var _this = this;
 
-      Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["b" /* post */])('/addOrg/', null).then(function (res) {
+      Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('addCompany/' + this.form.number + "/" + this.form.name + "/" + this.form.website + "/" + this.form.org_info).then(function (res) {
         console.log(res);
+        alert("record added");
+        _this.form = {};
       }).catch(function (err) {
         console.log(err.response);
         console.log(err.response.data);
@@ -51215,7 +51217,7 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("navbar", { attrs: { auth: _vm.auth } }),
+      _c("navbar"),
       _vm._v(" "),
       _c(
         "b-container",
@@ -51241,6 +51243,7 @@ var render = function() {
                       "form",
                       {
                         staticStyle: { "margin-top": "-15px", width: "400px" },
+                        attrs: { method: "POST" },
                         on: {
                           submit: function($event) {
                             $event.preventDefault()

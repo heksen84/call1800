@@ -1,6 +1,6 @@
 <template>
 <div>
-<navbar :auth="auth"></navbar>
+<navbar></navbar>
 <!-- контент -->
 <b-container>
 <b-row>
@@ -15,7 +15,7 @@
 <br>
 <center>
 
- <form v-on:submit.prevent="save" style="margin-top:-15px;width:400px">
+ <form v-on:submit.prevent="save" style="margin-top:-15px;width:400px" method="POST">
   <b-form-group
 		    label="Number"
                     label-for="numberInput">
@@ -91,7 +91,7 @@ export default {
 		number: "",
 		name: "",
 		website: "",
-		org_info: "",
+		org_info: ""
 	 }
       	}
     },
@@ -99,10 +99,11 @@ export default {
     },
     methods: {
       save() {
-          alert("!");
-
-	post('/addOrg/', null).then((res) => {        
+	get('addCompany/'+this.form.number+"/"+this.form.name+"/"+this.form.website+"/"+this.form.org_info).then((res) => {        
             console.log(res);
+            alert("record added");
+	    this.form={};
+
 	}).catch((err) => {		              
 	      console.log(err.response);
               console.log(err.response.data);

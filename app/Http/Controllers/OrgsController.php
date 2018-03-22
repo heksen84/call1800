@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Orgs;
+use DB;
 
 class OrgsController extends Controller
 {
@@ -20,6 +21,12 @@ class OrgsController extends Controller
     public function getOrgs(Request $request) {
 	     //return view('categories')->with("item", ucfirst($request->item));
 	return Categories::all()->toJson();
+    }
+
+    public function addCompany(Request $request) {
+	if (DB::table('orgs')->insert(['id' => null, 'number' => $request->number, 'company_name' => $request->name, 'business_info' => $request->orginfo, 'website' => $request->website ]))
+	return "record added";
+	return "error append record";
     }
 
     /**
