@@ -1710,9 +1710,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 
 
@@ -1723,7 +1720,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   components: { navbar: __WEBPACK_IMPORTED_MODULE_0__navbar_vue___default.a },
   data: function data() {
     return {
-      selected: null,
+      selected1: null,
+      selected2: null,
       categories: {},
       form: {
         number: "",
@@ -1732,7 +1730,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         org_info: "",
         category_id: null,
         country_id: null
-      }
+      },
+      countries: [{ value: null, text: 'Please select a country' }, { value: 0, text: 'USA' }, { value: 1, text: 'Canada' }]
     };
   },
   created: function created() {
@@ -51398,11 +51397,11 @@ var render = function() {
                           {
                             staticClass: "mb-3",
                             model: {
-                              value: _vm.selected,
+                              value: _vm.selected1,
                               callback: function($$v) {
-                                _vm.selected = $$v
+                                _vm.selected1 = $$v
                               },
-                              expression: "selected"
+                              expression: "selected1"
                             }
                           },
                           [
@@ -51428,40 +51427,17 @@ var render = function() {
                           2
                         ),
                         _vm._v(" "),
-                        _c(
-                          "b-form-select",
-                          {
-                            staticClass: "mb-3",
-                            model: {
-                              value: _vm.selected,
-                              callback: function($$v) {
-                                _vm.selected = $$v
-                              },
-                              expression: "selected"
-                            }
-                          },
-                          [
-                            _c("option", { domProps: { value: null } }, [
-                              _vm._v("Please select country")
-                            ]),
-                            _vm._v(" "),
-                            _vm._l(_vm.categories, function(item) {
-                              return _c(
-                                "option",
-                                {
-                                  key: item.id,
-                                  on: {
-                                    click: function($event) {
-                                      _vm.saveCountryId(item.id)
-                                    }
-                                  }
-                                },
-                                [_vm._v(" " + _vm._s(item.name) + " ")]
-                              )
-                            })
-                          ],
-                          2
-                        ),
+                        _c("b-form-select", {
+                          staticClass: "mb-3",
+                          attrs: { options: _vm.countries },
+                          model: {
+                            value: _vm.selected2,
+                            callback: function($$v) {
+                              _vm.selected2 = $$v
+                            },
+                            expression: "selected2"
+                          }
+                        }),
                         _vm._v(" "),
                         _c(
                           "b-button",

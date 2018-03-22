@@ -58,17 +58,14 @@
 </b-form-group
 
 <b-form-group>
-<b-form-select v-model="selected" class="mb-3">
+<b-form-select v-model="selected1" class="mb-3">
       <option :value="null">Please select category</option>
       <option v-for="item in categories" v-bind:key=item.id v-on:click="saveCategoryId(item.id)"> {{ item.name }} </option>
 </b-form-select>
 </b-form-group
 
 <b-form-group>
-<b-form-select v-model="selected" class="mb-3">
-      <option :value="null">Please select country</option>
-      <option v-for="item in categories" v-bind:key=item.id v-on:click="saveCountryId(item.id)"> {{ item.name }} </option>
-</b-form-select>
+<b-form-select v-model="selected2" class="mb-3" :options="countries"></b-form-select>
 </b-form-group
 
   <b-form-group class="text-center">
@@ -98,7 +95,8 @@ export default {
     components: { navbar },
     data () {
       return {
-      selected: null,
+      selected1: null,
+      selected2: null,
       categories: {},
 	form: {
 		number:   "",
@@ -107,7 +105,12 @@ export default {
 		org_info: "",
 		category_id: null,
 		country_id:  null
-	 }
+	 },
+	countries: [
+        	 { value: null, text: 'Please select a country' },
+	         { value: 0, text: 'USA' },	
+	         { value: 1, text: 'Canada' }
+	        ]
       	}
     },
     created() {
