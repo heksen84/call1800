@@ -21,8 +21,8 @@
 </div>
 <br>
 
-<b-row v-for="i in Math.ceil(Object.keys(items0).length / 4)" v-bind:key=i>
-  <b-col md="3" v-for="item in items0.slice((i - 1) * 4, i * 4)" v-bind:key=item.id>
+<b-row v-for="i in Math.ceil(Object.keys(items4).length / 4)" v-bind:key=i>
+  <b-col md="3" v-for="item in items4.slice((i - 1) * 4, i * 4)" v-bind:key=item.id>
     <b-card-group deck class="mb-3">
     <b-card img-src="./images/map.png"
             img-alt="Image"
@@ -50,7 +50,6 @@
      </b-card-group>
   </b-col>
 </b-row>
-
 
 <b-row v-for="i in Math.ceil(Object.keys(items2).length / 4)" v-bind:key=i>
   <b-col md="3" v-for="item in items2.slice((i - 1) * 4, i * 4)" v-bind:key=item.id>
@@ -83,7 +82,6 @@
   </b-col>
 </b-row>
 
-
 </b-col>
 </b-row>
 </center>
@@ -101,27 +99,28 @@
       return {
         loader: true,
 	error:  false,
-        items0: {},
         items1: {},
         items2: {},
-        items3: {}
+        items3: {},
+        items4: {}
       }
     },
 	
        created() {
 
-       this.items0 = {}
        this.items1 = {}
        this.items2 = {}
        this.items3 = {}
+       this.items4 = {}
 
         console.log("org_name: "+this.search_string);
 
-        /*
-        // 0 запрос
-        get('/getOrgList/'+this.search_string+'/0', null).then((res) => {
+        // from database
+        get('/getOrgList/'+this.search_string+'/3', null).then((res) => {
+            console.log("---- database ------");
             console.log(res);
-            this.items1=res.data;
+            console.log("---- database ------");
+            this.items4=res.data;
             this.loader=false;
 		    }).catch((err) => {
 		               this.loader = false;
@@ -129,7 +128,6 @@
 			       console.log(err.response);
 			       console.log(err.response.data);
   	    });
-  	*/
 
         // 1 запрос
         get('/getOrgList/'+this.search_string+'/0', null).then((res) => {

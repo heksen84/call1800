@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Categories;
+use App\Orgs;
 
-class CategoriesController extends Controller
+class OrgsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +17,9 @@ class CategoriesController extends Controller
 	return Categories::all()->toJson();
     }
 
-    public function getCategoryItems(Request $request) {
-	     return view('categories')->with("item", ucfirst($request->item));
+    public function getOrgs(Request $request) {
+	     //return view('categories')->with("item", ucfirst($request->item));
+	return Categories::all()->toJson();
     }
 
     /**

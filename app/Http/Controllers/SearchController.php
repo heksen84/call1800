@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Input;
 use App\Http\Controllers\Controller;
 use Vinelab\Http\Client as HttpClient;
 use App\Numbers;
+use App\Orgs;
 
 
 function jsonFixer($json){
@@ -61,7 +62,12 @@ class SearchController extends Controller {
 			                 "http://151.80.37.10:5000/inter800?query=",
 			                 "http://151.80.37.10:5000/tollfreeda?query=");
 
-      // 0 server
+       // 3 server from database
+       if ($request->server_index == 3 ){
+          return Orgs::all()->toJson();
+       }
+
+       // 0 server
        if ($request->server_index==0){
          $json = file_get_contents($url[$request->server_index].$request->org_name);
 

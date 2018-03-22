@@ -1799,10 +1799,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -1814,35 +1810,35 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     return {
       loader: true,
       error: false,
-      items0: {},
       items1: {},
       items2: {},
-      items3: {}
+      items3: {},
+      items4: {}
     };
   },
   created: function created() {
     var _this = this;
 
-    this.items0 = {};
     this.items1 = {};
     this.items2 = {};
     this.items3 = {};
+    this.items4 = {};
 
     console.log("org_name: " + this.search_string);
 
-    /*
-    // 0 запрос
-    get('/getOrgList/'+this.search_string+'/0', null).then((res) => {
-        console.log(res);
-        this.items1=res.data;
-        this.loader=false;
-    }).catch((err) => {
-             this.loader = false;
-        this.error = true;
+    // from database
+    Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/getOrgList/' + this.search_string + '/3', null).then(function (res) {
+      console.log("---- database ------");
+      console.log(res);
+      console.log("---- database ------");
+      _this.items4 = res.data;
+      _this.loader = false;
+    }).catch(function (err) {
+      _this.loader = false;
+      _this.error = true;
       console.log(err.response);
       console.log(err.response.data);
     });
-    */
 
     // 1 запрос
     Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/getOrgList/' + this.search_string + '/0', null).then(function (res) {
@@ -51576,12 +51572,12 @@ var render = function() {
                   _c("br"),
                   _vm._v(" "),
                   _vm._l(
-                    Math.ceil(Object.keys(_vm.items0).length / 4),
+                    Math.ceil(Object.keys(_vm.items4).length / 4),
                     function(i) {
                       return _c(
                         "b-row",
                         { key: i },
-                        _vm._l(_vm.items0.slice((i - 1) * 4, i * 4), function(
+                        _vm._l(_vm.items4.slice((i - 1) * 4, i * 4), function(
                           item
                         ) {
                           return _c(
