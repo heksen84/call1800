@@ -60,7 +60,7 @@
 
 
   <b-form-group class="text-center">
-    <b-button variant="danger" type="submit">Search</b-button>
+    <b-button variant="danger" type="submit">Save</b-button>
   </b-form-group>
 </form>
 
@@ -90,8 +90,8 @@ export default {
 	form: {
 		number: "",
 		name: "",
+		website: "",
 		org_info: "",
-		website: ""
 	 }
       	}
     },
@@ -100,6 +100,13 @@ export default {
     methods: {
       save() {
           alert("!");
+
+	post('/addOrg/', null).then((res) => {        
+            console.log(res);
+	}).catch((err) => {		              
+	      console.log(err.response);
+              console.log(err.response.data);
+        });
       }
     }
 

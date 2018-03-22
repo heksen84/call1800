@@ -1715,8 +1715,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       form: {
         number: "",
         name: "",
-        org_info: "",
-        website: ""
+        website: "",
+        org_info: ""
       }
     };
   },
@@ -1725,6 +1725,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   methods: {
     save: function save() {
       alert("!");
+
+      Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["b" /* post */])('/addOrg/', null).then(function (res) {
+        console.log(res);
+      }).catch(function (err) {
+        console.log(err.response);
+        console.log(err.response.data);
+      });
     }
   }
 
@@ -51354,7 +51361,7 @@ var render = function() {
                         _c(
                           "b-button",
                           { attrs: { variant: "danger", type: "submit" } },
-                          [_vm._v("Search")]
+                          [_vm._v("Save")]
                         )
                       ],
                       1
