@@ -51512,7 +51512,7 @@ var render = function() {
                           [
                             _vm._v("Service not work"),
                             _c("br"),
-                            _vm._v("No data")
+                            _vm._v("No data!")
                           ]
                         )
                       ])
@@ -51605,7 +51605,7 @@ var render = function() {
                                         _vm._v(_vm._s(item.company_name))
                                       ]),
                                       _vm._v(
-                                        "\n            " +
+                                        "\r\n            " +
                                           _vm._s(item.business_info)
                                       ),
                                       _c("p")
@@ -51659,7 +51659,7 @@ var render = function() {
                                         _vm._v(_vm._s(item.company_name))
                                       ]),
                                       _vm._v(
-                                        "\n            " +
+                                        "\r\n            " +
                                           _vm._s(item.business_info)
                                       ),
                                       _c("p")
@@ -51713,7 +51713,7 @@ var render = function() {
                                         _vm._v(_vm._s(item.company_name))
                                       ]),
                                       _vm._v(
-                                        "\n            " +
+                                        "\r\n            " +
                                           _vm._s(item.business_info)
                                       ),
                                       _c("p")
