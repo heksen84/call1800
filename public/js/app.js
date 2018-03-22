@@ -1808,8 +1808,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   created: function created() {
     var _this = this;
 
-    alert("!");
-
     this.items1 = {};
     this.items2 = {};
     this.items3 = {};
@@ -51511,11 +51509,7 @@ var render = function() {
                               "margin-top": "-5px"
                             }
                           },
-                          [
-                            _vm._v("Service not work"),
-                            _c("br"),
-                            _vm._v("No data!")
-                          ]
+                          [_vm._v("No data")]
                         )
                       ])
                     ],

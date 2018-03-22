@@ -8,7 +8,7 @@
 
 <!-- ошибка -->
 <div v-show="error">
-<center><h3 style="color:rgb(255,100,100);margin-top:-5px;">Service not work<br>No data!</h3></center>
+<center><h3 style="color:rgb(255,100,100);margin-top:-5px;">No data</h3></center>
 </div>
 
 <!-- загрузка -->
@@ -94,9 +94,6 @@
       }
     },
 	created() {
-	
-
-	alert("!");
 
        this.items1 = {}
        this.items2 = {}
