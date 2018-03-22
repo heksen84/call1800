@@ -1683,7 +1683,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -1789,6 +1788,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -1800,6 +1814,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     return {
       loader: true,
       error: false,
+      items0: {},
       items1: {},
       items2: {},
       items3: {}
@@ -1808,11 +1823,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   created: function created() {
     var _this = this;
 
+    this.items0 = {};
     this.items1 = {};
     this.items2 = {};
     this.items3 = {};
 
     console.log("org_name: " + this.search_string);
+
+    /*
+    // 0 запрос
+    get('/getOrgList/'+this.search_string+'/0', null).then((res) => {
+        console.log(res);
+        this.items1=res.data;
+        this.loader=false;
+    }).catch((err) => {
+             this.loader = false;
+        this.error = true;
+      console.log(err.response);
+      console.log(err.response.data);
+    });
+    */
 
     // 1 запрос
     Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/getOrgList/' + this.search_string + '/0', null).then(function (res) {
@@ -51170,21 +51200,6 @@ var render = function() {
                   _vm._v(" "),
                   _c("br"),
                   _vm._v(" "),
-                  _c(
-                    "b-nav",
-                    { attrs: { fill: "", tabs: "" } },
-                    [
-                      _c("b-nav-item", { attrs: { active: "" } }, [
-                        _vm._v("New company")
-                      ]),
-                      _vm._v(" "),
-                      _c("b-nav-item", [_vm._v("My companies")])
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c("br"),
-                  _vm._v(" "),
                   _c("br"),
                   _vm._v(" "),
                   _c(
@@ -51559,6 +51574,60 @@ var render = function() {
                     : _vm._e(),
                   _vm._v(" "),
                   _c("br"),
+                  _vm._v(" "),
+                  _vm._l(
+                    Math.ceil(Object.keys(_vm.items0).length / 4),
+                    function(i) {
+                      return _c(
+                        "b-row",
+                        { key: i },
+                        _vm._l(_vm.items0.slice((i - 1) * 4, i * 4), function(
+                          item
+                        ) {
+                          return _c(
+                            "b-col",
+                            { key: item.id, attrs: { md: "3" } },
+                            [
+                              _c(
+                                "b-card-group",
+                                { staticClass: "mb-3", attrs: { deck: "" } },
+                                [
+                                  _c(
+                                    "b-card",
+                                    {
+                                      staticClass: "text-center",
+                                      attrs: {
+                                        "img-src": "./images/map.png",
+                                        "img-alt": "Image",
+                                        "img-top": "",
+                                        "text-variant": "grey"
+                                      }
+                                    },
+                                    [
+                                      _c("b", [
+                                        _c("p", [_vm._v(_vm._s(item.number))])
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", [
+                                        _vm._v(_vm._s(item.company_name))
+                                      ]),
+                                      _vm._v(
+                                        "\r\n            " +
+                                          _vm._s(item.business_info)
+                                      ),
+                                      _c("p")
+                                    ]
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        })
+                      )
+                    }
+                  ),
                   _vm._v(" "),
                   _vm._l(
                     Math.ceil(Object.keys(_vm.items1).length / 4),

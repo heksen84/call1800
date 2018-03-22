@@ -12,9 +12,7 @@
 </div>
 
 <!-- загрузка -->
-<div v-show="loader">
-<center><h4 style="color:rgb(140,140,140);margin-top:-5px;">please wait</h4><div class="loader"></div></center>
-</div>
+<div v-show="loader"><center><h4 style="color:rgb(140,140,140);margin-top:-5px;">please wait</h4><div class="loader"></div></center></div>
 
 <!-- результат -->
 <div v-if="Object.keys(items1).length > 0">
@@ -22,6 +20,21 @@
 <ins><h3 style="color:rgb(70,70,70)">{{ search_string }}</h3></ins>
 </div>
 <br>
+
+<b-row v-for="i in Math.ceil(Object.keys(items0).length / 4)" v-bind:key=i>
+  <b-col md="3" v-for="item in items0.slice((i - 1) * 4, i * 4)" v-bind:key=item.id>
+    <b-card-group deck class="mb-3">
+    <b-card img-src="./images/map.png"
+            img-alt="Image"
+            img-top
+            class="text-center" text-variant="grey">
+            <b><p>{{ item.number }}</p></b>
+            <p>{{ item.company_name }}</p>
+            {{ item.business_info }}</p>
+      </b-card>
+     </b-card-group>
+  </b-col>
+</b-row>
 
 <b-row v-for="i in Math.ceil(Object.keys(items1).length / 4)" v-bind:key=i>
   <b-col md="3" v-for="item in items1.slice((i - 1) * 4, i * 4)" v-bind:key=item.id>
@@ -88,18 +101,35 @@
       return {
         loader: true,
 	error:  false,
+        items0: {},
         items1: {},
         items2: {},
         items3: {}
       }
     },
-	created() {
+	
+       created() {
 
+       this.items0 = {}
        this.items1 = {}
        this.items2 = {}
        this.items3 = {}
 
         console.log("org_name: "+this.search_string);
+
+        /*
+        // 0 запрос
+        get('/getOrgList/'+this.search_string+'/0', null).then((res) => {
+            console.log(res);
+            this.items1=res.data;
+            this.loader=false;
+		    }).catch((err) => {
+		               this.loader = false;
+  			       this.error = true;
+			       console.log(err.response);
+			       console.log(err.response.data);
+  	    });
+  	*/
 
         // 1 запрос
         get('/getOrgList/'+this.search_string+'/0', null).then((res) => {
