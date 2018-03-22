@@ -21,8 +21,8 @@
 </div>
 <br>
 
-<b-row v-for="i in Math.ceil(Object.keys(items4).length / 4)" v-bind:key=i>
-  <b-col md="3" v-for="item in items4.slice((i - 1) * 4, i * 4)" v-bind:key=item.id>
+<b-row v-for="i in Math.ceil(Object.keys(items4).length / 4)" :key="row">
+  <b-col md="3" v-for="item in items4.slice((i - 1) * 4, i * 4)" :key="123">
     <b-card-group deck class="mb-3">
     <b-card img-src="./images/map.png"
             img-alt="Image"
@@ -51,8 +51,8 @@
   </b-col>
 </b-row>
 
-<b-row v-for="i in Math.ceil(Object.keys(items2).length / 4)" v-bind:key=i>
-  <b-col md="3" v-for="item in items2.slice((i - 1) * 4, i * 4)" v-bind:key=item.id>
+<b-row v-for="i in Math.ceil(Object.keys(items2).length / 4)" :key="index">
+  <b-col md="3" v-for="item in items2.slice((i - 1) * 4, i * 4)" :key="index">
     <b-card-group deck class="mb-3">
     <b-card img-src="./images/map.png"
             img-alt="Image"
@@ -67,8 +67,8 @@
 </b-row>
 
 
-<b-row v-for="i in Math.ceil(Object.keys(items3).length / 4)" v-bind:key=i>
-  <b-col md="3" v-for="item in items3.slice((i - 1) * 4, i * 4)" v-bind:key=item.id>
+<b-row v-for="i in Math.ceil(Object.keys(items3).length / 4)" :key="index">
+  <b-col md="3" v-for="item in items3.slice((i - 1) * 4, i * 4)" :key="index">
     <b-card-group deck class="mb-3">
     <b-card img-src="./images/map.png"
             img-alt="Image"

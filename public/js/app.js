@@ -51680,13 +51680,13 @@ var render = function() {
                     function(i) {
                       return _c(
                         "b-row",
-                        { key: i },
+                        { key: _vm.row },
                         _vm._l(_vm.items4.slice((i - 1) * 4, i * 4), function(
                           item
                         ) {
                           return _c(
                             "b-col",
-                            { key: item.id, attrs: { md: "3" } },
+                            { key: 123, attrs: { md: "3" } },
                             [
                               _c(
                                 "b-card-group",
@@ -51788,13 +51788,13 @@ var render = function() {
                     function(i) {
                       return _c(
                         "b-row",
-                        { key: i },
+                        { key: _vm.index },
                         _vm._l(_vm.items2.slice((i - 1) * 4, i * 4), function(
                           item
                         ) {
                           return _c(
                             "b-col",
-                            { key: item.id, attrs: { md: "3" } },
+                            { key: _vm.index, attrs: { md: "3" } },
                             [
                               _c(
                                 "b-card-group",
@@ -51842,13 +51842,13 @@ var render = function() {
                     function(i) {
                       return _c(
                         "b-row",
-                        { key: i },
+                        { key: _vm.index },
                         _vm._l(_vm.items3.slice((i - 1) * 4, i * 4), function(
                           item
                         ) {
                           return _c(
                             "b-col",
-                            { key: item.id, attrs: { md: "3" } },
+                            { key: _vm.index, attrs: { md: "3" } },
                             [
                               _c(
                                 "b-card-group",

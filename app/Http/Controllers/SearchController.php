@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use Vinelab\Http\Client as HttpClient;
 use App\Numbers;
 use App\Orgs;
-
+use DB;
 
 function jsonFixer($json){
     $patterns     = [];
@@ -64,7 +64,7 @@ class SearchController extends Controller {
 
        // 3 server from database
        if ($request->server_index == 3 ){
-          return Orgs::all()->toJson();
+		return json_encode(Orgs::where('company_name', $request->org_name)->get());
        }
 
        // 0 server
