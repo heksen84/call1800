@@ -120,13 +120,10 @@ export default {
       	this.form.category_id = id;
       },
       save() {
-	
-	alert(this.selected);
 	get('addCompany/'+this.form.number+"/"+this.form.name+"/"+this.form.website+"/"+this.form.org_info+"/"+this.form.category_id).then((res) => {        
             console.log(res);
             alert("record added");
 	    this.form={};
-
 	}).catch((err) => {		              
 	      console.log(err.response);
               console.log(err.response.data);
