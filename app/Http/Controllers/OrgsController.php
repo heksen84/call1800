@@ -47,7 +47,7 @@ class OrgsController extends Controller
                 $dec = json_decode(str_replace(array("\r", "\n"), '', $json ), true);
    		if (!$dec) return "addCompany: Bad json!";
    		for( $j=0; $j<count($dec); $j++ ) {
-                 if (strtoupper($dec[$i]["Company Name: "]) == strtoupper($request->name) || strtoupper($dec[$i]["Number: "]) == strtoupper($request->number)) return "found";
+                 if (strtoupper($dec[$j]["Company Name: "]) == strtoupper($request->name) || strtoupper($dec[$j]["Number: "]) == strtoupper($request->number)) return "found";
              	}
               }
 	   }
