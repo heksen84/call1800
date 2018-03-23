@@ -1773,9 +1773,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 								}
 						}).catch(function (err) {
 								_this2.$refs.myModalRef.hide();
-								alert(err.response.data);
 								console.log(err.response);
 								console.log(err.response.data);
+								alert(err.response.data.message);
 						});
 				}
 		}

@@ -149,9 +149,9 @@ export default {
 	    }
 	}).catch((err) => {		              
    	      this.$refs.myModalRef.hide();
-	      alert(err.response.data);
 	      console.log(err.response);
               console.log(err.response.data);
+	      alert(err.response.data.message);
         });
       }
     }
