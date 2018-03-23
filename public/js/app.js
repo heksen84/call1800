@@ -1718,7 +1718,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -51300,6 +51299,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "b-container",
+        { staticStyle: { "max-width": "370px" } },
         [
           _c(
             "b-modal",
@@ -51336,7 +51336,7 @@ var render = function() {
                     _c(
                       "form",
                       {
-                        staticStyle: { "margin-top": "-15px", width: "310px" },
+                        staticStyle: { "margin-top": "-15px" },
                         attrs: { method: "POST" },
                         on: {
                           submit: function($event) {

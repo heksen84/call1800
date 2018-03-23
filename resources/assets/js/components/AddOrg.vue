@@ -1,9 +1,8 @@
 <template>
 <div>
 <navbar></navbar>
-<b-container>
 
-
+<b-container style="max-width: 370px">
 <b-modal ref="myModalRef" hide-footer hide-header-close>
 <div class="d-block text-center"><h3>Checking, please wait!</h3></div>
 <br>
@@ -24,7 +23,7 @@
 <br>
 <center>
 
- <form v-on:submit.prevent="save" style="margin-top:-15px;width:310px" method="POST">
+ <form v-on:submit.prevent="save" style="margin-top:-15px" method="POST">
   <b-form-group
 		    label="Number"
                     label-for="numberInput">
