@@ -22,14 +22,15 @@
 <br>
 
 <b-row v-for="(i,index) in Math.ceil(Object.keys(items4).length / 4)" :key="Math.random() * (100000 - 0) + 0">
-  <b-col md="3" v-for="item in items4.slice((i - 1) * 4, i * 4)" :key="item.number" v-on:click="showFull($event)" class="col_card">
+  <b-col md="3" v-for="item in items4.slice((i - 1) * 4, i * 4)" :key="item.number" class="col_card">
     <b-card-group deck class="mb-3">
-    <b-card 	    
+    <b-card
+	    v-on:click="showFull($event)" 	    
 	    img-src="./images/map.png"
             img-alt="Image"
             img-top
             class="text-center" text-variant="grey">
-            <b><p class="number">{{ item.number }}</p></b>
+            <p class="number">{{ item.number }}</p>
             <p class="company">{{ item.company_name }}</p>
             <p class="info">{{ item.business_info }}</p>
 	    <b-button variant="danger" size="sm">call</b-button>
@@ -40,14 +41,15 @@
 
 
 <b-row v-for="(i,index) in Math.ceil(Object.keys(items1).length / 4)" :key="Math.random() * (100000 - 0) + 0">
-  <b-col md="3" v-for="(item, index) in items1.slice((i - 1) * 4, i * 4)" :key="item.number" v-on:click="showFull($event)" class="col_card">
+  <b-col md="3" v-for="(item, index) in items1.slice((i - 1) * 4, i * 4)" :key="item.number" class="col_card">
     <b-card-group deck class="mb-3">
     <b-card 
+	    v-on:click="showFull($event)"
 	    img-src="./images/map.png"
             img-alt="Image"
             img-top
             class="text-center" text-variant="grey">
-            <b><p class="number">{{ item.number }}</p></b>
+            <p class="number">{{ item.number }}</p>
             <p class="company">{{ item.company_name }}</p>
             <p class="info">{{ item.business_info }}</p>
 	    <b-button variant="danger" size="sm">call</b-button>
@@ -57,14 +59,15 @@
 </b-row>
 
 <b-row v-for="i in Math.ceil(Object.keys(items2).length / 4)" :key="Math.random() * (100000 - 0) + 0">
-  <b-col md="3" v-for="(item, index) in items2.slice((i - 1) * 4, i * 4)" :key="item.number" v-on:click="showFull($event)" class="col_card">
+  <b-col md="3" v-for="(item, index) in items2.slice((i - 1) * 4, i * 4)" :key="item.number" class="col_card">
     <b-card-group deck class="mb-3">
     <b-card 
+	    v-on:click="showFull($event)"
 	    img-src="./images/map.png"
             img-alt="Image"
             img-top
             class="text-center" text-variant="grey">
-            <b><p class="number">{{ item.number }}</p></b>
+            <p class="number">{{ item.number }}</p>
             <p class="company">{{ item.company_name }}</p>
             <p class="info">{{ item.business_info }}</p>
 	    <b-button variant="danger" size="sm">call</b-button>
@@ -75,14 +78,15 @@
 
 
 <b-row v-for="i in Math.ceil(Object.keys(items3).length / 4)" :key="Math.random() * (100000 - 0) + 0">
-  <b-col md="3" v-for="(item, index) in items3.slice((i - 1) * 4, i * 4)" :key="item.number" v-on:click="showFull($event)" class="col_card">
+  <b-col md="3" v-for="(item, index) in items3.slice((i - 1) * 4, i * 4)" :key="item.number" class="col_card">
     <b-card-group deck class="mb-3">
     <b-card 
+	    v-on:click="showFull($event)" 
 	    img-src="./images/map.png"
             img-alt="Image"
             img-top
             class="text-center" text-variant="grey">
-            <b><p class="number">{{ item.number }}</p></b>
+            <p class="number">{{ item.number }}</p>
             <p class="company">{{ item.company_name }}</p>
             <p class="info">{{ item.business_info }}</p>
 	    <b-button variant="danger" size="sm">call</b-button>
@@ -198,10 +202,14 @@
 // ИСПОЛЬЗОВАТЬ CHILD NODES
 // -------------------------------
 
+var number =  e.target.childNodes[0].innerText;
+var name   =  e.target.childNodes[1].nextSibling.innerText;
+var info   =  e.target.childNodes[3].nextSibling.innerText;
 
+console.log(number);
+console.log(name);
+console.log(info);
 
-        console.log(e.target);
-//	alert(e.target.innerText);
 //          window.location="/info";
 
 

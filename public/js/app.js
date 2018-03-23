@@ -1883,6 +1883,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -1976,9 +1980,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       // ИСПОЛЬЗОВАТЬ CHILD NODES
       // -------------------------------
 
+      var number = e.target.childNodes[0].innerText;
+      var name = e.target.childNodes[1].nextSibling.innerText;
+      var info = e.target.childNodes[3].nextSibling.innerText;
 
-      console.log(e.target);
-      //	alert(e.target.innerText);
+      console.log(number);
+      console.log(name);
+      console.log(info);
+
       //          window.location="/info";
 
     }
@@ -1995,7 +2004,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__navbar_vue__ = __webpack_require__("./resources/assets/js/components/navbar.vue");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__navbar_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__navbar_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers_api__ = __webpack_require__("./resources/assets/js/helpers/api.js");
-//
 //
 //
 //
@@ -51825,12 +51833,7 @@ var render = function() {
                             {
                               key: item.number,
                               staticClass: "col_card",
-                              attrs: { md: "3" },
-                              on: {
-                                click: function($event) {
-                                  _vm.showFull($event)
-                                }
-                              }
+                              attrs: { md: "3" }
                             },
                             [
                               _c(
@@ -51846,13 +51849,16 @@ var render = function() {
                                         "img-alt": "Image",
                                         "img-top": "",
                                         "text-variant": "grey"
+                                      },
+                                      on: {
+                                        click: function($event) {
+                                          _vm.showFull($event)
+                                        }
                                       }
                                     },
                                     [
-                                      _c("b", [
-                                        _c("p", { staticClass: "number" }, [
-                                          _vm._v(_vm._s(item.number))
-                                        ])
+                                      _c("p", { staticClass: "number" }, [
+                                        _vm._v(_vm._s(item.number))
                                       ]),
                                       _vm._v(" "),
                                       _c("p", { staticClass: "company" }, [
@@ -51902,12 +51908,7 @@ var render = function() {
                             {
                               key: item.number,
                               staticClass: "col_card",
-                              attrs: { md: "3" },
-                              on: {
-                                click: function($event) {
-                                  _vm.showFull($event)
-                                }
-                              }
+                              attrs: { md: "3" }
                             },
                             [
                               _c(
@@ -51923,13 +51924,16 @@ var render = function() {
                                         "img-alt": "Image",
                                         "img-top": "",
                                         "text-variant": "grey"
+                                      },
+                                      on: {
+                                        click: function($event) {
+                                          _vm.showFull($event)
+                                        }
                                       }
                                     },
                                     [
-                                      _c("b", [
-                                        _c("p", { staticClass: "number" }, [
-                                          _vm._v(_vm._s(item.number))
-                                        ])
+                                      _c("p", { staticClass: "number" }, [
+                                        _vm._v(_vm._s(item.number))
                                       ]),
                                       _vm._v(" "),
                                       _c("p", { staticClass: "company" }, [
@@ -51979,12 +51983,7 @@ var render = function() {
                             {
                               key: item.number,
                               staticClass: "col_card",
-                              attrs: { md: "3" },
-                              on: {
-                                click: function($event) {
-                                  _vm.showFull($event)
-                                }
-                              }
+                              attrs: { md: "3" }
                             },
                             [
                               _c(
@@ -52000,13 +51999,16 @@ var render = function() {
                                         "img-alt": "Image",
                                         "img-top": "",
                                         "text-variant": "grey"
+                                      },
+                                      on: {
+                                        click: function($event) {
+                                          _vm.showFull($event)
+                                        }
                                       }
                                     },
                                     [
-                                      _c("b", [
-                                        _c("p", { staticClass: "number" }, [
-                                          _vm._v(_vm._s(item.number))
-                                        ])
+                                      _c("p", { staticClass: "number" }, [
+                                        _vm._v(_vm._s(item.number))
                                       ]),
                                       _vm._v(" "),
                                       _c("p", { staticClass: "company" }, [
@@ -52056,12 +52058,7 @@ var render = function() {
                             {
                               key: item.number,
                               staticClass: "col_card",
-                              attrs: { md: "3" },
-                              on: {
-                                click: function($event) {
-                                  _vm.showFull($event)
-                                }
-                              }
+                              attrs: { md: "3" }
                             },
                             [
                               _c(
@@ -52077,13 +52074,16 @@ var render = function() {
                                         "img-alt": "Image",
                                         "img-top": "",
                                         "text-variant": "grey"
+                                      },
+                                      on: {
+                                        click: function($event) {
+                                          _vm.showFull($event)
+                                        }
                                       }
                                     },
                                     [
-                                      _c("b", [
-                                        _c("p", { staticClass: "number" }, [
-                                          _vm._v(_vm._s(item.number))
-                                        ])
+                                      _c("p", { staticClass: "number" }, [
+                                        _vm._v(_vm._s(item.number))
                                       ]),
                                       _vm._v(" "),
                                       _c("p", { staticClass: "company" }, [
