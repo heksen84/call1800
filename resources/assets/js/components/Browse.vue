@@ -179,15 +179,14 @@
 
 	},
   methods: {
-    getItemIndex() {
-      
+    getItemIndex() {      
       console.log("INDEX");
-
       this.item_index++;
       return this.item_index;
     },
     showFull(e) {
-	alert(e.target.innerText);
+//	alert(e.target.innerText);
+          window.location="/info";
     }
   }
   }

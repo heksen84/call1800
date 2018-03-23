@@ -18,6 +18,10 @@ class OrgsController extends Controller
 	return Categories::all()->toJson();
     }
 
+    public function getInfo() {
+	return "In progress...";
+    }
+
     public function getOrgs(Request $request) {
 	return Categories::all()->toJson();
     }

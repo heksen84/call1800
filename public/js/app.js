@@ -1962,14 +1962,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   methods: {
     getItemIndex: function getItemIndex() {
-
       console.log("INDEX");
-
       this.item_index++;
       return this.item_index;
     },
     showFull: function showFull(e) {
-      alert(e.target.innerText);
+      //	alert(e.target.innerText);
+      window.location = "/info";
     }
   }
 });
