@@ -11,17 +11,20 @@
 
 <b-row>
 <b-col>
-<center><h3>Hello, {{ username }}!</h3></center>
+<center>
+<!--<h3>Hello, {{ username }}!</h3>-->
 <br>
-<br>
+<h2>New company</h2>
+</center>
 <!--<b-nav fill tabs>
   <b-nav-item active>New company</b-nav-item>
   <b-nav-item>My companies</b-nav-item>
 </b-nav>-->
 <br>
+<br>
 <center>
 
- <form v-on:submit.prevent="save" style="margin-top:-15px;width:400px" method="POST">
+ <form v-on:submit.prevent="save" style="margin-top:-15px;width:320px" method="POST">
   <b-form-group
 		    label="Number"
                     label-for="numberInput">
@@ -83,12 +86,12 @@
 </b-col>
 </b-row>
 </b-container>
-<b-container>
+<!--<b-container>
 <center>
 <br>
 <br>
 </center>
-</b-container>
+</b-container>-->
 </div>
 </template>
 <script>
@@ -151,7 +154,7 @@ export default {
    	      this.$refs.myModalRef.hide();
 	      console.log(err.response);
               console.log(err.response.data);
-	      alert(err.response.data.message);
+	      alert("Error:\n"+err.response.data.message);
         });
       }
     }

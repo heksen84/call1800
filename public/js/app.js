@@ -1716,6 +1716,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
@@ -1775,7 +1778,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 								_this2.$refs.myModalRef.hide();
 								console.log(err.response);
 								console.log(err.response.data);
-								alert(err.response.data.message);
+								alert("Error:\n" + err.response.data.message);
 						});
 				}
 		}
@@ -51313,10 +51316,10 @@ var render = function() {
                 "b-col",
                 [
                   _c("center", [
-                    _c("h3", [_vm._v("Hello, " + _vm._s(_vm.username) + "!")])
+                    _c("br"),
+                    _vm._v(" "),
+                    _c("h2", [_vm._v("New company")])
                   ]),
-                  _vm._v(" "),
-                  _c("br"),
                   _vm._v(" "),
                   _c("br"),
                   _vm._v(" "),
@@ -51326,7 +51329,7 @@ var render = function() {
                     _c(
                       "form",
                       {
-                        staticStyle: { "margin-top": "-15px", width: "400px" },
+                        staticStyle: { "margin-top": "-15px", width: "320px" },
                         attrs: { method: "POST" },
                         on: {
                           submit: function($event) {
@@ -51510,9 +51513,7 @@ var render = function() {
           )
         ],
         1
-      ),
-      _vm._v(" "),
-      _c("b-container", [_c("center", [_c("br"), _vm._v(" "), _c("br")])], 1)
+      )
     ],
     1
   )
