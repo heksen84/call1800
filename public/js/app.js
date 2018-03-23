@@ -1891,7 +1891,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       item_index: 0,
       row_index: 0,
       loader: true,
-      error: false,
+      notfound: false,
+      server_error: 0,
       items1: {},
       items2: {},
       items3: {},
@@ -1918,7 +1919,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       if (Object.keys(res.data).length > 0) _this.loader = false;
     }).catch(function (err) {
       _this.loader = false;
-      _this.error = true;
       console.log(err.response);
       console.log(err.response.data);
     });
@@ -1931,7 +1931,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       if (Object.keys(res.data).length > 0) _this.loader = false;
     }).catch(function (err) {
       _this.loader = false;
-      _this.error = true;
+      _this.server_error++;if (_this.server_error == 3) _this.notfound = true;
       console.log(err.response);
       console.log(err.response.data);
     });
@@ -1944,7 +1944,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       if (Object.keys(res.data).length > 0) _this.loader = false;
     }).catch(function (err) {
       _this.loader = false;
-      _this.error = true;
+      _this.server_error++;if (_this.server_error == 3) _this.notfound = true;
       console.log(err.response.data);
     });
 
@@ -1955,7 +1955,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
       if (Object.keys(res.data).length > 0) _this.loader = false;
     }).catch(function (err) {
-      _this.error = true;
+      _this.server_error++;if (_this.server_error == 3) _this.notfound = true;
       console.log(err.response.data);
     });
   },
@@ -51721,19 +51721,23 @@ var render = function() {
                         {
                           name: "show",
                           rawName: "v-show",
-                          value: _vm.error,
-                          expression: "error"
+                          value: _vm.notfound,
+                          expression: "notfound"
                         }
                       ]
                     },
                     [
                       _c("center", [
-                        _c("h3", {
-                          staticStyle: {
-                            color: "rgb(255,100,100)",
-                            "margin-top": "-5px"
-                          }
-                        })
+                        _c(
+                          "h3",
+                          {
+                            staticStyle: {
+                              color: "rgb(255,100,100)",
+                              "margin-top": "-5px"
+                            }
+                          },
+                          [_vm._v("server error")]
+                        )
                       ])
                     ],
                     1

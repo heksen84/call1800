@@ -7,8 +7,8 @@
 <br>
 
 <!-- ошибка -->
-<div v-show="error">
-<center><h3 style="color:rgb(255,100,100);margin-top:-5px;"></h3></center>
+<div v-show="notfound">
+<center><h3 style="color:rgb(255,100,100);margin-top:-5px;">server error</h3></center>
 </div>
 
 <!-- загрузка -->
@@ -109,7 +109,8 @@
         item_index: 0,
 	row_index: 0,
         loader: true,
-	error:  false,
+	notfound: false,
+	server_error:0,
         items1: {},
         items2: {},
         items3: {},
@@ -137,7 +138,6 @@
 
 	    }).catch((err) => {
 		               this.loader = false;
-  			       this.error = true;
 			       console.log(err.response);
 			       console.log(err.response.data);
   	    });
@@ -151,7 +151,7 @@
 
 	    }).catch((err) => {
 		               this.loader = false;
-  			       this.error = true;
+ 			       this.server_error++; if (this.server_error==3) this.notfound = true;
 			       console.log(err.response);
 			       console.log(err.response.data);
   	    });
@@ -165,7 +165,7 @@
 
 	    }).catch((err) => {
  		          this.loader = false;
-			  this.error = true;
+			  this.server_error++; if (this.server_error==3) this.notfound = true;
 			  console.log(err.response.data);
   	    });
 
@@ -177,7 +177,7 @@
 	    if (Object.keys(res.data).length > 0) this.loader=false;
 
 	    }).catch((err) => {
-			  this.error = true;
+			  this.server_error++; if (this.server_error==3) this.notfound = true;
 			  console.log(err.response.data);
       });
 
