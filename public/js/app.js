@@ -1879,8 +1879,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 
 
@@ -1959,8 +1957,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
 
   methods: {
-    showFull: function showFull(e) {
+    getItemIndex: function getItemIndex() {
 
+      console.log("INDEX");
+
+      this.item_index++;
+      return this.item_index;
+    },
+    showFull: function showFull(e) {
       alert(e.target.innerText);
     }
   }
@@ -51773,16 +51777,16 @@ var render = function() {
                   _vm._v(" "),
                   _vm._l(
                     Math.ceil(Object.keys(_vm.items4).length / 4),
-                    function(i) {
+                    function(i, index) {
                       return _c(
                         "b-row",
-                        { key: i },
+                        { key: Math.random() * (100000 - 0) + 0 },
                         _vm._l(_vm.items4.slice((i - 1) * 4, i * 4), function(
                           item
                         ) {
                           return _c(
                             "b-col",
-                            { key: item.id, attrs: { md: "3" } },
+                            { key: item.number, attrs: { md: "3" } },
                             [
                               _c(
                                 "b-card-group",
@@ -51832,17 +51836,17 @@ var render = function() {
                   _vm._v(" "),
                   _vm._l(
                     Math.ceil(Object.keys(_vm.items1).length / 4),
-                    function(i) {
+                    function(i, index) {
                       return _c(
                         "b-row",
-                        { key: i },
+                        { key: Math.random() * (100000 - 0) + 0 },
                         _vm._l(_vm.items1.slice((i - 1) * 4, i * 4), function(
                           item,
                           index
                         ) {
                           return _c(
                             "b-col",
-                            { key: index, attrs: { md: "3" } },
+                            { key: item.number, attrs: { md: "3" } },
                             [
                               _c(
                                 "b-card-group",
@@ -51895,14 +51899,14 @@ var render = function() {
                     function(i) {
                       return _c(
                         "b-row",
-                        { key: i },
+                        { key: Math.random() * (100000 - 0) + 0 },
                         _vm._l(_vm.items2.slice((i - 1) * 4, i * 4), function(
                           item,
                           index
                         ) {
                           return _c(
                             "b-col",
-                            { key: index, attrs: { md: "3" } },
+                            { key: item.number, attrs: { md: "3" } },
                             [
                               _c(
                                 "b-card-group",
@@ -51955,14 +51959,14 @@ var render = function() {
                     function(i) {
                       return _c(
                         "b-row",
-                        { key: i },
+                        { key: Math.random() * (100000 - 0) + 0 },
                         _vm._l(_vm.items3.slice((i - 1) * 4, i * 4), function(
                           item,
                           index
                         ) {
                           return _c(
                             "b-col",
-                            { key: index, attrs: { md: "3" } },
+                            { key: item.number, attrs: { md: "3" } },
                             [
                               _c(
                                 "b-card-group",

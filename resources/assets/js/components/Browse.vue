@@ -21,8 +21,8 @@
 </div>
 <br>
 
-<b-row v-for="i in Math.ceil(Object.keys(items4).length / 4)" :key="i">
-  <b-col md="3" v-for="item in items4.slice((i - 1) * 4, i * 4)" :key="item.id">
+<b-row v-for="(i,index) in Math.ceil(Object.keys(items4).length / 4)" :key="Math.random() * (100000 - 0) + 0">
+  <b-col md="3" v-for="item in items4.slice((i - 1) * 4, i * 4)" :key="item.number">
     <b-card-group deck class="mb-3">
     <b-card 
 	    v-on:click="showFull($event)"
@@ -39,8 +39,8 @@
 </b-row>
 
 
-<b-row v-for="i in Math.ceil(Object.keys(items1).length / 4)" :key="i">
-  <b-col md="3" v-for="(item, index) in items1.slice((i - 1) * 4, i * 4)" :key="index">
+<b-row v-for="(i,index) in Math.ceil(Object.keys(items1).length / 4)" :key="Math.random() * (100000 - 0) + 0">
+  <b-col md="3" v-for="(item, index) in items1.slice((i - 1) * 4, i * 4)" :key="item.number">
     <b-card-group deck class="mb-3">
     <b-card 
             v-on:click="showFull($event)"
@@ -56,9 +56,8 @@
   </b-col>
 </b-row>
 
-
-<b-row v-for="i in Math.ceil(Object.keys(items2).length / 4)" :key="i">
-  <b-col md="3" v-for="(item, index) in items2.slice((i - 1) * 4, i * 4)" :key="index">
+<b-row v-for="i in Math.ceil(Object.keys(items2).length / 4)" :key="Math.random() * (100000 - 0) + 0">
+  <b-col md="3" v-for="(item, index) in items2.slice((i - 1) * 4, i * 4)" :key="item.number">
     <b-card-group deck class="mb-3">
     <b-card 
 	    v-on:click="showFull($event)"
@@ -75,8 +74,8 @@
 </b-row>
 
 
-<b-row v-for="i in Math.ceil(Object.keys(items3).length / 4)" :key="i">
-  <b-col md="3" v-for="(item, index) in items3.slice((i - 1) * 4, i * 4)" :key="index">
+<b-row v-for="i in Math.ceil(Object.keys(items3).length / 4)" :key="Math.random() * (100000 - 0) + 0">
+  <b-col md="3" v-for="(item, index) in items3.slice((i - 1) * 4, i * 4)" :key="item.number">
     <b-card-group deck class="mb-3">
     <b-card 
             v-on:click="showFull($event)"
@@ -91,7 +90,6 @@
      </b-card-group>
   </b-col>
 </b-row>
-
 
 </b-col>
 </b-row>
@@ -177,8 +175,14 @@
 
 	},
   methods: {
-    showFull(e) {
+    getItemIndex() {
+      
+      console.log("INDEX");
 
+      this.item_index++;
+      return this.item_index;
+    },
+    showFull(e) {
 	alert(e.target.innerText);
     }
   }
