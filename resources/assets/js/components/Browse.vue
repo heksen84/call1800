@@ -12,7 +12,7 @@
 </div>
 
 <!-- загрузка -->
-<div v-show="loader"><center><h4 style="color:rgb(140,140,140);margin-top:200px;">please wait</h4><div class="loader"></div></center></div>
+<div v-show="loader"><center><h4 style="color:rgb(140,140,140);margin-top:100px;">please wait</h4><div class="loader"></div></center></div>
 
 <!-- результат -->
 <div v-if="Object.keys(items1).length > 0">
