@@ -1710,65 +1710,75 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['username'],
-  components: { navbar: __WEBPACK_IMPORTED_MODULE_0__navbar_vue___default.a },
-  data: function data() {
-    return {
-      selected1: null,
-      selected2: null,
-      categories: {},
-      form: {
-        number: "",
-        name: "",
-        website: "",
-        org_info: "",
-        category_id: null,
-        country_id: null
-      },
-      countries: [{ value: null, text: 'Please select a country' }, { value: 0, text: 'USA' }, { value: 1, text: 'Canada' }]
-    };
-  },
-  created: function created() {
-    var _this = this;
+		props: ['username'],
+		components: { navbar: __WEBPACK_IMPORTED_MODULE_0__navbar_vue___default.a },
+		data: function data() {
+				return {
+						selected1: null,
+						selected2: null,
+						categories: {},
+						form: {
+								number: "",
+								name: "",
+								website: "",
+								org_info: "",
+								category_id: null,
+								country_id: null
+						},
+						countries: [{ value: null, text: 'Please select a country' }, { value: 0, text: 'USA' }, { value: 1, text: 'Canada' }]
+				};
+		},
+		created: function created() {
+				var _this = this;
 
-    this.categories = {};
-    Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/categories', null).then(function (res) {
-      _this.categories = res.data;
-      console.log(res.data);
-    }).catch(function (err) {
-      console.log(err.response.data);
-      if (err.response.status === 422) {}
-    });
-  },
+				this.categories = {};
+				Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/categories', null).then(function (res) {
+						_this.categories = res.data;
+						console.log(res.data);
+				}).catch(function (err) {
+						console.log(err.response.data);
+						if (err.response.status === 422) {}
+				});
+		},
 
-  methods: {
-    saveCategoryId: function saveCategoryId(id) {
-      this.form.category_id = id;
-    },
-    saveCountryId: function saveCountryId(id) {
-      this.form.country_id = id;
-    },
-    save: function save() {
-      var _this2 = this;
+		methods: {
+				saveCategoryId: function saveCategoryId(id) {
+						this.form.category_id = id;
+				},
+				saveCountryId: function saveCountryId(id) {
+						this.form.country_id = id;
+				},
+				save: function save() {
+						var _this2 = this;
 
-      Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('addCompany/' + this.form.number + "/" + this.form.name + "/" + this.form.website + "/" + this.form.org_info + "/" + this.form.category_id + "/" + this.selected2).then(function (res) {
-        console.log(res);
-        if (res.data == "found") alert("Such a company exists!");else {
-          alert("Record added!");
-          _this2.form = {};
-        }
-      }).catch(function (err) {
-        console.log(err.response);
-        console.log(err.response.data);
-      });
-    }
-  }
+						this.$refs.myModalRef.show();
+						Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('addCompany/' + this.form.number + "/" + this.form.name + "/" + this.form.website + "/" + this.form.org_info + "/" + this.form.category_id + "/" + this.selected2).then(function (res) {
+								console.log(res);
+								_this2.$refs.myModalRef.hide();
+								if (res.data == "found") alert("Such a company exists!");else {
+										alert("Record added!");
+										_this2.form = {};
+								}
+						}).catch(function (err) {
+								_this2.$refs.myModalRef.hide();
+								alert(err.response.data);
+								console.log(err.response);
+								console.log(err.response.data);
+						});
+				}
+		}
 
 });
 
@@ -51288,6 +51298,14 @@ var render = function() {
       _c(
         "b-container",
         [
+          _c("b-modal", { ref: "myModalRef", attrs: { "hide-footer": "" } }, [
+            _c("div", { staticClass: "d-block text-center" }, [
+              _c("h3", [_vm._v("Checking, please wait!")])
+            ]),
+            _vm._v(" "),
+            _c("br")
+          ]),
+          _vm._v(" "),
           _c(
             "b-row",
             [

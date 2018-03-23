@@ -1,8 +1,14 @@
 <template>
 <div>
 <navbar></navbar>
-<!-- контент -->
 <b-container>
+
+
+<b-modal ref="myModalRef" hide-footer>
+<div class="d-block text-center"><h3>Checking, please wait!</h3></div>
+<br>
+</b-modal>
+
 <b-row>
 <b-col>
 <center><h3>Hello, {{ username }}!</h3></center>
@@ -132,14 +138,18 @@ export default {
       	this.form.country_id = id;
       },
       save() {
+	this.$refs.myModalRef.show();
 	get('addCompany/'+this.form.number+"/"+this.form.name+"/"+this.form.website+"/"+this.form.org_info+"/"+this.form.category_id+"/"+this.selected2).then((res) => {        
             console.log(res);
+	    this.$refs.myModalRef.hide();
 	    if (res.data=="found") alert("Such a company exists!");
 	    else {
              alert("Record added!");
 	     this.form={};
 	    }
 	}).catch((err) => {		              
+   	      this.$refs.myModalRef.hide();
+	      alert(err.response.data);
 	      console.log(err.response);
               console.log(err.response.data);
         });
