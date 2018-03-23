@@ -1914,7 +1914,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       console.log(res);
       console.log("---- database ------");
       _this.items4 = res.data;
-      _this.loader = false;
+
+      if (Object.keys(res.data).length > 0) _this.loader = false;
     }).catch(function (err) {
       _this.loader = false;
       _this.error = true;
@@ -1926,7 +1927,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/getOrgList/' + this.search_string + '/0', null).then(function (res) {
       console.log(res);
       _this.items1 = res.data;
-      _this.loader = false;
+
+      if (Object.keys(res.data).length > 0) _this.loader = false;
     }).catch(function (err) {
       _this.loader = false;
       _this.error = true;
@@ -1938,7 +1940,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/getOrgList/' + this.search_string + '/1', null).then(function (res) {
       console.log(res);
       _this.items2 = res.data;
-      _this.loader = false;
+
+      if (Object.keys(res.data).length > 0) _this.loader = false;
     }).catch(function (err) {
       _this.loader = false;
       _this.error = true;
@@ -1949,7 +1952,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/getOrgList/' + this.search_string + '/2', null).then(function (res) {
       console.log(res);
       _this.items3 = res.data;
-      _this.loader = false;
+
+      if (Object.keys(res.data).length > 0) _this.loader = false;
     }).catch(function (err) {
       _this.error = true;
       console.log(err.response.data);

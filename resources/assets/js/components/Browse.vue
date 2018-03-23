@@ -132,8 +132,10 @@
             console.log(res);
             console.log("---- database ------");
             this.items4=res.data;
-            this.loader=false;
-		    }).catch((err) => {
+
+	    if (Object.keys(res.data).length > 0) this.loader=false;
+
+	    }).catch((err) => {
 		               this.loader = false;
   			       this.error = true;
 			       console.log(err.response);
@@ -144,8 +146,10 @@
         get('/getOrgList/'+this.search_string+'/0', null).then((res) => {
             console.log(res);
             this.items1=res.data;
-            this.loader=false;
-		    }).catch((err) => {
+
+       	    if (Object.keys(res.data).length > 0) this.loader=false;
+
+	    }).catch((err) => {
 		               this.loader = false;
   			       this.error = true;
 			       console.log(err.response);
@@ -156,8 +160,10 @@
         get('/getOrgList/'+this.search_string+'/1', null).then((res) => {
             console.log(res);
             this.items2=res.data;
-            this.loader=false;
-		    }).catch((err) => {
+
+	    if (Object.keys(res.data).length > 0) this.loader=false;
+
+	    }).catch((err) => {
  		          this.loader = false;
 			  this.error = true;
 			  console.log(err.response.data);
@@ -167,8 +173,10 @@
         get('/getOrgList/'+this.search_string+'/2', null).then((res) => {
             console.log(res);
             this.items3=res.data;
-            this.loader=false;
-		    }).catch((err) => {
+
+	    if (Object.keys(res.data).length > 0) this.loader=false;
+
+	    }).catch((err) => {
 			  this.error = true;
 			  console.log(err.response.data);
       });
