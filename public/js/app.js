@@ -51782,7 +51782,7 @@ var render = function() {
                           {
                             staticStyle: {
                               color: "rgb(140,140,140)",
-                              "margin-top": "50px"
+                              "margin-top": "40px"
                             }
                           },
                           [_vm._v("please wait")]
