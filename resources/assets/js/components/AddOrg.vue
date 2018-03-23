@@ -24,7 +24,7 @@
 <br>
 <center>
 
- <form v-on:submit.prevent="save" style="margin-top:-15px;width:320px" method="POST">
+ <form v-on:submit.prevent="save" style="margin-top:-15px;width:310px" method="POST">
   <b-form-group
 		    label="Number"
                     label-for="numberInput">

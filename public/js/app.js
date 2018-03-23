@@ -51336,7 +51336,7 @@ var render = function() {
                     _c(
                       "form",
                       {
-                        staticStyle: { "margin-top": "-15px", width: "320px" },
+                        staticStyle: { "margin-top": "-15px", width: "310px" },
                         attrs: { method: "POST" },
                         on: {
                           submit: function($event) {
