@@ -4,7 +4,7 @@
 <b-container>
 
 
-<b-modal ref="myModalRef" hide-footer>
+<b-modal ref="myModalRef" hide-footer hide-header-close>
 <div class="d-block text-center"><h3>Checking, please wait!</h3></div>
 <br>
 </b-modal>

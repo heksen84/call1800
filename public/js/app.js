@@ -51301,13 +51301,20 @@ var render = function() {
       _c(
         "b-container",
         [
-          _c("b-modal", { ref: "myModalRef", attrs: { "hide-footer": "" } }, [
-            _c("div", { staticClass: "d-block text-center" }, [
-              _c("h3", [_vm._v("Checking, please wait!")])
-            ]),
-            _vm._v(" "),
-            _c("br")
-          ]),
+          _c(
+            "b-modal",
+            {
+              ref: "myModalRef",
+              attrs: { "hide-footer": "", "hide-header-close": "" }
+            },
+            [
+              _c("div", { staticClass: "d-block text-center" }, [
+                _c("h3", [_vm._v("Checking, please wait!")])
+              ]),
+              _vm._v(" "),
+              _c("br")
+            ]
+          ),
           _vm._v(" "),
           _c(
             "b-row",
