@@ -78,7 +78,7 @@ class SearchController extends Controller {
            		         $attachment_ids[] = array(
              		           "number" => $dec[$i]["Number: "],
              		             "company_name" => $dec[$i]["Company Name: "],
-             		             //  "business_info" => $dec[$i]["Business Info: "],
+             		               "business_info" => $dec[$i]["Business Info: "],
              		                 "website" => "site-".$i,
              		                   "location" => "123",
              		                     "categories" => "123");
@@ -101,7 +101,7 @@ class SearchController extends Controller {
            		         $attachment_ids[] = array(
              		           "number" => $dec[$i]["Number: "],
              		             "company_name" => $dec[$i]["Company Name: "],
-             		             //  "business_info" => $dec[$i]["Business Info: "],
+             		               "business_info" => $dec[$i]["Business Info: "],
              		                 "website" => "site-".$i,
              		                   "location" => "123",
              		                     "categories" => "123");
@@ -123,7 +123,7 @@ class SearchController extends Controller {
            		         $attachment_ids[] = array(
              		           "number" => $dec[$i]["Number: "],
              		             "company_name" => $dec[$i]["Company Name: "],
-             		             //  "business_info" => $dec[$i]["Business Info: "],
+             		               "business_info" => $dec[$i]["Business Info: "],
              		                 "website" => "site-".$i,
              		                   "location" => "123",
              		                     "categories" => "123");
@@ -134,7 +134,6 @@ class SearchController extends Controller {
        }
 
       return null;
-       //return Numbers::all()->toJson();
     }
 
     public function create() {
