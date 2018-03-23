@@ -1,17 +1,14 @@
 <template>
 <div>
 <navbar></navbar>
-
 <b-container style="max-width: 370px">
 <b-modal ref="myModalRef" hide-footer hide-header-close>
 <div class="d-block text-center"><h3>Checking, please wait!</h3></div>
 <br>
 </b-modal>
-
 <b-row>
 <b-col>
 <center>
-<!--<h3>Hello, {{ username }}!</h3>-->
 <br>
 <h2>New company</h2>
 </center>
@@ -22,7 +19,6 @@
 <br>
 <br>
 <center>
-
  <form v-on:submit.prevent="save" style="margin-top:-15px" method="POST">
   <b-form-group
 		    label="Number"
@@ -79,18 +75,13 @@
   <b-form-group class="text-center">
     <b-button variant="danger" type="submit">Save</b-button>
   </b-form-group>
+<br>
 </form>
 
 </center>
 </b-col>
 </b-row>
 </b-container>
-<!--<b-container>
-<center>
-<br>
-<br>
-</center>
-</b-container>-->
 </div>
 </template>
 <script>
