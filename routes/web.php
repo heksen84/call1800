@@ -18,7 +18,7 @@ Route::get('/getOrgList/{org_name}/{server_index}', 'SearchController@getOrgList
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/categories', 'CategoriesController@index')->name('categories');
 Route::get('/categories/{item}', 'CategoriesController@getCategoryItems')->name('getCategoryItems');
-Route::get('/addCompany/{number}/{name}/{website}/{orginfo}/{category_id}', 'OrgsController@addCompany')->name('addCompany');
+Route::get('/addCompany/{number}/{name}/{website}/{orginfo}/{category_id}/{country_id}', 'OrgsController@addCompany')->name('addCompany');
 
 /*Route::get('/logout',function(){
     Auth::logout();

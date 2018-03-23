@@ -23,7 +23,8 @@ class OrgsController extends Controller
     }
 
     public function addCompany(Request $request) {
-	if (DB::table('orgs')->insert(['id' => null, 'number' => $request->number, 'company_name' => $request->name, 'business_info' => $request->orginfo, 'website' => $request->website, 'category_id' => $request->category_id]))
+	if (DB::table('orgs')->insert(['id' => null, 'number' => $request->number, 'company_name' => $request->name, 'business_info' => $request->orginfo, 
+	'website' => $request->website, 'category_id' => $request->category_id, 'country_id' => $request->country_id]))
 	return "record added";
 	return "error append record";
     }

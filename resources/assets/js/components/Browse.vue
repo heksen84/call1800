@@ -21,40 +21,12 @@
 </div>
 <br>
 
-<b-row v-for="i in Math.ceil(Object.keys(items4).length / 4)" :key="row">
-  <b-col md="3" v-for="item in items4.slice((i - 1) * 4, i * 4)" :key="123">
+<b-row v-for="i in Math.ceil(Object.keys(items4).length / 4)" :key="i">
+  <b-col md="3" v-for="item in items4.slice((i - 1) * 4, i * 4)" :key="item.id">
     <b-card-group deck class="mb-3">
-    <b-card img-src="./images/map.png"
-            img-alt="Image"
-            img-top
-            class="text-center" text-variant="grey">
-            <b><p>{{ item.number }}</p></b>
-            <p>{{ item.company_name }}</p>
-            {{ item.business_info }}</p>
-      </b-card>
-     </b-card-group>
-  </b-col>
-</b-row>
-
-<b-row v-for="i in Math.ceil(Object.keys(items1).length / 4)" v-bind:key=i>
-  <b-col md="3" v-for="item in items1.slice((i - 1) * 4, i * 4)" v-bind:key=item.id>
-    <b-card-group deck class="mb-3">
-    <b-card img-src="./images/map.png"
-            img-alt="Image"
-            img-top
-            class="text-center" text-variant="grey">
-            <b><p>{{ item.number }}</p></b>
-            <p>{{ item.company_name }}</p>
-            {{ item.business_info }}</p>
-      </b-card>
-     </b-card-group>
-  </b-col>
-</b-row>
-
-<b-row v-for="i in Math.ceil(Object.keys(items2).length / 4)" :key="index">
-  <b-col md="3" v-for="item in items2.slice((i - 1) * 4, i * 4)" :key="index">
-    <b-card-group deck class="mb-3">
-    <b-card img-src="./images/map.png"
+    <b-card 
+	    v-on:click="showFull($event)"
+	    img-src="./images/map.png"
             img-alt="Image"
             img-top
             class="text-center" text-variant="grey">
@@ -67,10 +39,12 @@
 </b-row>
 
 
-<b-row v-for="i in Math.ceil(Object.keys(items3).length / 4)" :key="index">
-  <b-col md="3" v-for="item in items3.slice((i - 1) * 4, i * 4)" :key="index">
+<b-row v-for="i in Math.ceil(Object.keys(items1).length / 4)" :key="i">
+  <b-col md="3" v-for="(item, index) in items1.slice((i - 1) * 4, i * 4)" :key="index">
     <b-card-group deck class="mb-3">
-    <b-card img-src="./images/map.png"
+    <b-card 
+            v-on:click="showFull($event)"
+	    img-src="./images/map.png"
             img-alt="Image"
             img-top
             class="text-center" text-variant="grey">
@@ -81,6 +55,43 @@
      </b-card-group>
   </b-col>
 </b-row>
+
+
+<b-row v-for="i in Math.ceil(Object.keys(items2).length / 4)" :key="i">
+  <b-col md="3" v-for="(item, index) in items2.slice((i - 1) * 4, i * 4)" :key="index">
+    <b-card-group deck class="mb-3">
+    <b-card 
+	    v-on:click="showFull($event)"
+	    img-src="./images/map.png"
+            img-alt="Image"
+            img-top
+            class="text-center" text-variant="grey">
+            <b><p>{{ item.number }}</p></b>
+            <p>{{ item.company_name }}</p>
+            {{ item.business_info }}</p>
+      </b-card>
+     </b-card-group>
+  </b-col>
+</b-row>
+
+
+<b-row v-for="i in Math.ceil(Object.keys(items3).length / 4)" :key="i">
+  <b-col md="3" v-for="(item, index) in items3.slice((i - 1) * 4, i * 4)" :key="index">
+    <b-card-group deck class="mb-3">
+    <b-card 
+            v-on:click="showFull($event)"
+	    img-src="./images/map.png"
+            img-alt="Image"
+            img-top
+            class="text-center" text-variant="grey">
+            <b><p>{{ item.number }}</p></b>
+            <p>{{ item.company_name }}</p>
+            {{ item.business_info }}</p>
+      </b-card>
+     </b-card-group>
+  </b-col>
+</b-row>
+
 
 </b-col>
 </b-row>
@@ -97,6 +108,8 @@
     components: { navbar },
     data () {
       return {
+        item_index: 0,
+	row_index: 0,
         loader: true,
 	error:  false,
         items1: {},
@@ -164,6 +177,10 @@
 
 	},
   methods: {
+    showFull(e) {
+
+	alert(e.target.innerText);
+    }
   }
   }
 </script>

@@ -1757,7 +1757,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     save: function save() {
       var _this2 = this;
 
-      Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('addCompany/' + this.form.number + "/" + this.form.name + "/" + this.form.website + "/" + this.form.org_info + "/" + this.form.category_id).then(function (res) {
+      Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('addCompany/' + this.form.number + "/" + this.form.name + "/" + this.form.website + "/" + this.form.org_info + "/" + this.form.category_id + "/" + this.selected2).then(function (res) {
         console.log(res);
         alert("record added");
         _this2.form = {};
@@ -1870,6 +1870,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -1879,6 +1890,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   components: { navbar: __WEBPACK_IMPORTED_MODULE_0__navbar_vue___default.a },
   data: function data() {
     return {
+      item_index: 0,
+      row_index: 0,
       loader: true,
       error: false,
       items1: {},
@@ -1945,7 +1958,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     });
   },
 
-  methods: {}
+  methods: {
+    showFull: function showFull(e) {
+
+      alert(e.target.innerText);
+    }
+  }
 });
 
 /***/ }),
@@ -51758,13 +51776,13 @@ var render = function() {
                     function(i) {
                       return _c(
                         "b-row",
-                        { key: _vm.row },
+                        { key: i },
                         _vm._l(_vm.items4.slice((i - 1) * 4, i * 4), function(
                           item
                         ) {
                           return _c(
                             "b-col",
-                            { key: 123, attrs: { md: "3" } },
+                            { key: item.id, attrs: { md: "3" } },
                             [
                               _c(
                                 "b-card-group",
@@ -51779,6 +51797,11 @@ var render = function() {
                                         "img-alt": "Image",
                                         "img-top": "",
                                         "text-variant": "grey"
+                                      },
+                                      on: {
+                                        click: function($event) {
+                                          _vm.showFull($event)
+                                        }
                                       }
                                     },
                                     [
@@ -51814,11 +51837,12 @@ var render = function() {
                         "b-row",
                         { key: i },
                         _vm._l(_vm.items1.slice((i - 1) * 4, i * 4), function(
-                          item
+                          item,
+                          index
                         ) {
                           return _c(
                             "b-col",
-                            { key: item.id, attrs: { md: "3" } },
+                            { key: index, attrs: { md: "3" } },
                             [
                               _c(
                                 "b-card-group",
@@ -51833,6 +51857,11 @@ var render = function() {
                                         "img-alt": "Image",
                                         "img-top": "",
                                         "text-variant": "grey"
+                                      },
+                                      on: {
+                                        click: function($event) {
+                                          _vm.showFull($event)
+                                        }
                                       }
                                     },
                                     [
@@ -51866,13 +51895,14 @@ var render = function() {
                     function(i) {
                       return _c(
                         "b-row",
-                        { key: _vm.index },
+                        { key: i },
                         _vm._l(_vm.items2.slice((i - 1) * 4, i * 4), function(
-                          item
+                          item,
+                          index
                         ) {
                           return _c(
                             "b-col",
-                            { key: _vm.index, attrs: { md: "3" } },
+                            { key: index, attrs: { md: "3" } },
                             [
                               _c(
                                 "b-card-group",
@@ -51887,6 +51917,11 @@ var render = function() {
                                         "img-alt": "Image",
                                         "img-top": "",
                                         "text-variant": "grey"
+                                      },
+                                      on: {
+                                        click: function($event) {
+                                          _vm.showFull($event)
+                                        }
                                       }
                                     },
                                     [
@@ -51920,13 +51955,14 @@ var render = function() {
                     function(i) {
                       return _c(
                         "b-row",
-                        { key: _vm.index },
+                        { key: i },
                         _vm._l(_vm.items3.slice((i - 1) * 4, i * 4), function(
-                          item
+                          item,
+                          index
                         ) {
                           return _c(
                             "b-col",
-                            { key: _vm.index, attrs: { md: "3" } },
+                            { key: index, attrs: { md: "3" } },
                             [
                               _c(
                                 "b-card-group",
@@ -51941,6 +51977,11 @@ var render = function() {
                                         "img-alt": "Image",
                                         "img-top": "",
                                         "text-variant": "grey"
+                                      },
+                                      on: {
+                                        click: function($event) {
+                                          _vm.showFull($event)
+                                        }
                                       }
                                     },
                                     [

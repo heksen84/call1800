@@ -132,7 +132,7 @@ export default {
       	this.form.country_id = id;
       },
       save() {
-	get('addCompany/'+this.form.number+"/"+this.form.name+"/"+this.form.website+"/"+this.form.org_info+"/"+this.form.category_id).then((res) => {        
+	get('addCompany/'+this.form.number+"/"+this.form.name+"/"+this.form.website+"/"+this.form.org_info+"/"+this.form.category_id+"/"+this.selected2).then((res) => {        
             console.log(res);
             alert("record added");
 	    this.form={};
