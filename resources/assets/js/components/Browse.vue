@@ -22,17 +22,16 @@
 <br>
 
 <b-row v-for="(i,index) in Math.ceil(Object.keys(items4).length / 4)" :key="Math.random() * (100000 - 0) + 0">
-  <b-col md="3" v-for="item in items4.slice((i - 1) * 4, i * 4)" :key="item.number">
+  <b-col md="3" v-for="item in items4.slice((i - 1) * 4, i * 4)" :key="item.number" v-on:click="showFull($event)" class="col_card">
     <b-card-group deck class="mb-3">
-    <b-card 
-	    v-on:click="showFull($event)"
+    <b-card 	    
 	    img-src="./images/map.png"
             img-alt="Image"
             img-top
             class="text-center" text-variant="grey">
-            <b><p>{{ item.number }}</p></b>
-            <p>{{ item.company_name }}</p>
-            {{ item.business_info }}</p>
+            <b><p class="number">{{ item.number }}</p></b>
+            <p class="company">{{ item.company_name }}</p>
+            <p class="info">{{ item.business_info }}</p>
 	    <b-button variant="danger" size="sm">call</b-button>
       </b-card>
      </b-card-group>
@@ -41,17 +40,16 @@
 
 
 <b-row v-for="(i,index) in Math.ceil(Object.keys(items1).length / 4)" :key="Math.random() * (100000 - 0) + 0">
-  <b-col md="3" v-for="(item, index) in items1.slice((i - 1) * 4, i * 4)" :key="item.number">
+  <b-col md="3" v-for="(item, index) in items1.slice((i - 1) * 4, i * 4)" :key="item.number" v-on:click="showFull($event)" class="col_card">
     <b-card-group deck class="mb-3">
     <b-card 
-            v-on:click="showFull($event)"
 	    img-src="./images/map.png"
             img-alt="Image"
             img-top
             class="text-center" text-variant="grey">
-            <b><p>{{ item.number }}</p></b>
-            <p>{{ item.company_name }}</p>
-            {{ item.business_info }}</p>
+            <b><p class="number">{{ item.number }}</p></b>
+            <p class="company">{{ item.company_name }}</p>
+            <p class="info">{{ item.business_info }}</p>
 	    <b-button variant="danger" size="sm">call</b-button>
       </b-card>
      </b-card-group>
@@ -59,17 +57,16 @@
 </b-row>
 
 <b-row v-for="i in Math.ceil(Object.keys(items2).length / 4)" :key="Math.random() * (100000 - 0) + 0">
-  <b-col md="3" v-for="(item, index) in items2.slice((i - 1) * 4, i * 4)" :key="item.number">
+  <b-col md="3" v-for="(item, index) in items2.slice((i - 1) * 4, i * 4)" :key="item.number" v-on:click="showFull($event)" class="col_card">
     <b-card-group deck class="mb-3">
     <b-card 
-	    v-on:click="showFull($event)"
 	    img-src="./images/map.png"
             img-alt="Image"
             img-top
             class="text-center" text-variant="grey">
-            <b><p>{{ item.number }}</p></b>
-            <p>{{ item.company_name }}</p>
-            {{ item.business_info }}</p>
+            <b><p class="number">{{ item.number }}</p></b>
+            <p class="company">{{ item.company_name }}</p>
+            <p class="info">{{ item.business_info }}</p>
 	    <b-button variant="danger" size="sm">call</b-button>
       </b-card>
      </b-card-group>
@@ -78,17 +75,16 @@
 
 
 <b-row v-for="i in Math.ceil(Object.keys(items3).length / 4)" :key="Math.random() * (100000 - 0) + 0">
-  <b-col md="3" v-for="(item, index) in items3.slice((i - 1) * 4, i * 4)" :key="item.number">
+  <b-col md="3" v-for="(item, index) in items3.slice((i - 1) * 4, i * 4)" :key="item.number" v-on:click="showFull($event)" class="col_card">
     <b-card-group deck class="mb-3">
     <b-card 
-            v-on:click="showFull($event)"
 	    img-src="./images/map.png"
             img-alt="Image"
             img-top
             class="text-center" text-variant="grey">
-            <b><p>{{ item.number }}</p></b>
-            <p>{{ item.company_name }}</p>
-            {{ item.business_info }}</p>
+            <b><p class="number">{{ item.number }}</p></b>
+            <p class="company">{{ item.company_name }}</p>
+            <p class="info">{{ item.business_info }}</p>
 	    <b-button variant="danger" size="sm">call</b-button>
       </b-card>
      </b-card-group>
@@ -177,6 +173,8 @@
 			  console.log(err.response.data);
       });
 
+
+
 	},
   methods: {
     getItemIndex() {      
@@ -185,8 +183,21 @@
       return this.item_index;
     },
     showFull(e) {
+
+
+
+// -------------------------------
+// ИСПОЛЬЗОВАТЬ CHILD NODES
+// -------------------------------
+
+
+
+        console.log(e.target);
 //	alert(e.target.innerText);
-          window.location="/info";
+//          window.location="/info";
+
+
+
     }
   }
   }

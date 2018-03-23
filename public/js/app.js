@@ -1879,10 +1879,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -1967,8 +1963,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       return this.item_index;
     },
     showFull: function showFull(e) {
+
+      // -------------------------------
+      // ИСПОЛЬЗОВАТЬ CHILD NODES
+      // -------------------------------
+
+
+      console.log(e.target);
       //	alert(e.target.innerText);
-      window.location = "/info";
+      //          window.location="/info";
+
     }
   }
 });
@@ -51790,7 +51794,16 @@ var render = function() {
                         ) {
                           return _c(
                             "b-col",
-                            { key: item.number, attrs: { md: "3" } },
+                            {
+                              key: item.number,
+                              staticClass: "col_card",
+                              attrs: { md: "3" },
+                              on: {
+                                click: function($event) {
+                                  _vm.showFull($event)
+                                }
+                              }
+                            },
                             [
                               _c(
                                 "b-card-group",
@@ -51805,26 +51818,22 @@ var render = function() {
                                         "img-alt": "Image",
                                         "img-top": "",
                                         "text-variant": "grey"
-                                      },
-                                      on: {
-                                        click: function($event) {
-                                          _vm.showFull($event)
-                                        }
                                       }
                                     },
                                     [
                                       _c("b", [
-                                        _c("p", [_vm._v(_vm._s(item.number))])
+                                        _c("p", { staticClass: "number" }, [
+                                          _vm._v(_vm._s(item.number))
+                                        ])
                                       ]),
                                       _vm._v(" "),
-                                      _c("p", [
+                                      _c("p", { staticClass: "company" }, [
                                         _vm._v(_vm._s(item.company_name))
                                       ]),
-                                      _vm._v(
-                                        "\r\n            " +
-                                          _vm._s(item.business_info)
-                                      ),
-                                      _c("p"),
+                                      _vm._v(" "),
+                                      _c("p", { staticClass: "info" }, [
+                                        _vm._v(_vm._s(item.business_info))
+                                      ]),
                                       _vm._v(" "),
                                       _c(
                                         "b-button",
@@ -51862,7 +51871,16 @@ var render = function() {
                         ) {
                           return _c(
                             "b-col",
-                            { key: item.number, attrs: { md: "3" } },
+                            {
+                              key: item.number,
+                              staticClass: "col_card",
+                              attrs: { md: "3" },
+                              on: {
+                                click: function($event) {
+                                  _vm.showFull($event)
+                                }
+                              }
+                            },
                             [
                               _c(
                                 "b-card-group",
@@ -51877,26 +51895,22 @@ var render = function() {
                                         "img-alt": "Image",
                                         "img-top": "",
                                         "text-variant": "grey"
-                                      },
-                                      on: {
-                                        click: function($event) {
-                                          _vm.showFull($event)
-                                        }
                                       }
                                     },
                                     [
                                       _c("b", [
-                                        _c("p", [_vm._v(_vm._s(item.number))])
+                                        _c("p", { staticClass: "number" }, [
+                                          _vm._v(_vm._s(item.number))
+                                        ])
                                       ]),
                                       _vm._v(" "),
-                                      _c("p", [
+                                      _c("p", { staticClass: "company" }, [
                                         _vm._v(_vm._s(item.company_name))
                                       ]),
-                                      _vm._v(
-                                        "\r\n            " +
-                                          _vm._s(item.business_info)
-                                      ),
-                                      _c("p"),
+                                      _vm._v(" "),
+                                      _c("p", { staticClass: "info" }, [
+                                        _vm._v(_vm._s(item.business_info))
+                                      ]),
                                       _vm._v(" "),
                                       _c(
                                         "b-button",
@@ -51934,7 +51948,16 @@ var render = function() {
                         ) {
                           return _c(
                             "b-col",
-                            { key: item.number, attrs: { md: "3" } },
+                            {
+                              key: item.number,
+                              staticClass: "col_card",
+                              attrs: { md: "3" },
+                              on: {
+                                click: function($event) {
+                                  _vm.showFull($event)
+                                }
+                              }
+                            },
                             [
                               _c(
                                 "b-card-group",
@@ -51949,26 +51972,22 @@ var render = function() {
                                         "img-alt": "Image",
                                         "img-top": "",
                                         "text-variant": "grey"
-                                      },
-                                      on: {
-                                        click: function($event) {
-                                          _vm.showFull($event)
-                                        }
                                       }
                                     },
                                     [
                                       _c("b", [
-                                        _c("p", [_vm._v(_vm._s(item.number))])
+                                        _c("p", { staticClass: "number" }, [
+                                          _vm._v(_vm._s(item.number))
+                                        ])
                                       ]),
                                       _vm._v(" "),
-                                      _c("p", [
+                                      _c("p", { staticClass: "company" }, [
                                         _vm._v(_vm._s(item.company_name))
                                       ]),
-                                      _vm._v(
-                                        "\r\n            " +
-                                          _vm._s(item.business_info)
-                                      ),
-                                      _c("p"),
+                                      _vm._v(" "),
+                                      _c("p", { staticClass: "info" }, [
+                                        _vm._v(_vm._s(item.business_info))
+                                      ]),
                                       _vm._v(" "),
                                       _c(
                                         "b-button",
@@ -52006,7 +52025,16 @@ var render = function() {
                         ) {
                           return _c(
                             "b-col",
-                            { key: item.number, attrs: { md: "3" } },
+                            {
+                              key: item.number,
+                              staticClass: "col_card",
+                              attrs: { md: "3" },
+                              on: {
+                                click: function($event) {
+                                  _vm.showFull($event)
+                                }
+                              }
+                            },
                             [
                               _c(
                                 "b-card-group",
@@ -52021,26 +52049,22 @@ var render = function() {
                                         "img-alt": "Image",
                                         "img-top": "",
                                         "text-variant": "grey"
-                                      },
-                                      on: {
-                                        click: function($event) {
-                                          _vm.showFull($event)
-                                        }
                                       }
                                     },
                                     [
                                       _c("b", [
-                                        _c("p", [_vm._v(_vm._s(item.number))])
+                                        _c("p", { staticClass: "number" }, [
+                                          _vm._v(_vm._s(item.number))
+                                        ])
                                       ]),
                                       _vm._v(" "),
-                                      _c("p", [
+                                      _c("p", { staticClass: "company" }, [
                                         _vm._v(_vm._s(item.company_name))
                                       ]),
-                                      _vm._v(
-                                        "\r\n            " +
-                                          _vm._s(item.business_info)
-                                      ),
-                                      _c("p"),
+                                      _vm._v(" "),
+                                      _c("p", { staticClass: "info" }, [
+                                        _vm._v(_vm._s(item.business_info))
+                                      ]),
                                       _vm._v(" "),
                                       _c(
                                         "b-button",
