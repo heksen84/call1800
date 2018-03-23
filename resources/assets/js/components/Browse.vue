@@ -33,6 +33,7 @@
             <b><p>{{ item.number }}</p></b>
             <p>{{ item.company_name }}</p>
             {{ item.business_info }}</p>
+	    <b-button variant="danger" size="sm">call</b-button>
       </b-card>
      </b-card-group>
   </b-col>
@@ -51,6 +52,7 @@
             <b><p>{{ item.number }}</p></b>
             <p>{{ item.company_name }}</p>
             {{ item.business_info }}</p>
+	    <b-button variant="danger" size="sm">call</b-button>
       </b-card>
      </b-card-group>
   </b-col>
@@ -68,6 +70,7 @@
             <b><p>{{ item.number }}</p></b>
             <p>{{ item.company_name }}</p>
             {{ item.business_info }}</p>
+	    <b-button variant="danger" size="sm">call</b-button>
       </b-card>
      </b-card-group>
   </b-col>
@@ -86,6 +89,7 @@
             <b><p>{{ item.number }}</p></b>
             <p>{{ item.company_name }}</p>
             {{ item.business_info }}</p>
+	    <b-button variant="danger" size="sm">call</b-button>
       </b-card>
      </b-card-group>
   </b-col>

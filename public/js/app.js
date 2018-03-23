@@ -1879,6 +1879,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -51820,8 +51824,20 @@ var render = function() {
                                         "\r\n            " +
                                           _vm._s(item.business_info)
                                       ),
-                                      _c("p")
-                                    ]
+                                      _c("p"),
+                                      _vm._v(" "),
+                                      _c(
+                                        "b-button",
+                                        {
+                                          attrs: {
+                                            variant: "danger",
+                                            size: "sm"
+                                          }
+                                        },
+                                        [_vm._v("call")]
+                                      )
+                                    ],
+                                    1
                                   )
                                 ],
                                 1
@@ -51880,8 +51896,20 @@ var render = function() {
                                         "\r\n            " +
                                           _vm._s(item.business_info)
                                       ),
-                                      _c("p")
-                                    ]
+                                      _c("p"),
+                                      _vm._v(" "),
+                                      _c(
+                                        "b-button",
+                                        {
+                                          attrs: {
+                                            variant: "danger",
+                                            size: "sm"
+                                          }
+                                        },
+                                        [_vm._v("call")]
+                                      )
+                                    ],
+                                    1
                                   )
                                 ],
                                 1
@@ -51940,8 +51968,20 @@ var render = function() {
                                         "\r\n            " +
                                           _vm._s(item.business_info)
                                       ),
-                                      _c("p")
-                                    ]
+                                      _c("p"),
+                                      _vm._v(" "),
+                                      _c(
+                                        "b-button",
+                                        {
+                                          attrs: {
+                                            variant: "danger",
+                                            size: "sm"
+                                          }
+                                        },
+                                        [_vm._v("call")]
+                                      )
+                                    ],
+                                    1
                                   )
                                 ],
                                 1
@@ -52000,8 +52040,20 @@ var render = function() {
                                         "\r\n            " +
                                           _vm._s(item.business_info)
                                       ),
-                                      _c("p")
-                                    ]
+                                      _c("p"),
+                                      _vm._v(" "),
+                                      _c(
+                                        "b-button",
+                                        {
+                                          attrs: {
+                                            variant: "danger",
+                                            size: "sm"
+                                          }
+                                        },
+                                        [_vm._v("call")]
+                                      )
+                                    ],
+                                    1
                                   )
                                 ],
                                 1
