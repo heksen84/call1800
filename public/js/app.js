@@ -1708,7 +1708,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -51498,12 +51497,12 @@ var render = function() {
                           "b-button",
                           { attrs: { variant: "danger", type: "submit" } },
                           [_vm._v("Save")]
-                        ),
-                        _vm._v(" "),
-                        _c("br")
+                        )
                       ],
                       1
-                    )
+                    ),
+                    _vm._v(" "),
+                    _c("br")
                   ])
                 ],
                 1

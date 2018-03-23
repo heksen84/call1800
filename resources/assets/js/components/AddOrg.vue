@@ -75,9 +75,8 @@
   <b-form-group class="text-center">
     <b-button variant="danger" type="submit">Save</b-button>
   </b-form-group>
-<br>
 </form>
-
+<br>
 </center>
 </b-col>
 </b-row>
