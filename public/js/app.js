@@ -51422,6 +51422,7 @@ var render = function() {
                           "b-form-select",
                           {
                             staticClass: "mb-3",
+                            attrs: { required: "" },
                             model: {
                               value: _vm.selected1,
                               callback: function($$v) {
@@ -51455,7 +51456,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("b-form-select", {
                           staticClass: "mb-3",
-                          attrs: { options: _vm.countries },
+                          attrs: { required: "", options: _vm.countries },
                           model: {
                             value: _vm.selected2,
                             callback: function($$v) {

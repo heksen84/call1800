@@ -58,14 +58,14 @@
 </b-form-group
 
 <b-form-group>
-<b-form-select v-model="selected1" class="mb-3">
+<b-form-select v-model="selected1" class="mb-3" required>
       <option :value="null">Please select category</option>
       <option v-for="item in categories" v-bind:key=item.id v-on:click="saveCategoryId(item.id)"> {{ item.name }} </option>
 </b-form-select>
 </b-form-group
 
 <b-form-group>
-<b-form-select v-model="selected2" class="mb-3" :options="countries"></b-form-select>
+<b-form-select required v-model="selected2" class="mb-3" :options="countries"></b-form-select>
 </b-form-group
 
   <b-form-group class="text-center">

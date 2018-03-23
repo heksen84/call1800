@@ -59,8 +59,8 @@ class SearchController extends Controller {
         $attachment_ids = array();
 
 	       $url = array( "http://151.80.37.10:8080/tollfreenumber?query=",
-			                 "http://151.80.37.10:5000/inter800?query=",
-			                 "http://151.80.37.10:5000/tollfreeda?query=");
+			     "http://151.80.37.10:5000/inter800?query=",
+			     "http://151.80.37.10:5000/tollfreeda?query=");
 
        // 3 server from database
        if ($request->server_index == 3 ){
@@ -78,7 +78,7 @@ class SearchController extends Controller {
            		         $attachment_ids[] = array(
              		           "number" => $dec[$i]["Number: "],
              		             "company_name" => $dec[$i]["Company Name: "],
-             		               "business_info" => $dec[$i]["Business Info: "],
+             		             //  "business_info" => $dec[$i]["Business Info: "],
              		                 "website" => "site-".$i,
              		                   "location" => "123",
              		                     "categories" => "123");
@@ -101,7 +101,7 @@ class SearchController extends Controller {
            		         $attachment_ids[] = array(
              		           "number" => $dec[$i]["Number: "],
              		             "company_name" => $dec[$i]["Company Name: "],
-             		               "business_info" => $dec[$i]["Business Info: "],
+             		             //  "business_info" => $dec[$i]["Business Info: "],
              		                 "website" => "site-".$i,
              		                   "location" => "123",
              		                     "categories" => "123");
@@ -123,7 +123,7 @@ class SearchController extends Controller {
            		         $attachment_ids[] = array(
              		           "number" => $dec[$i]["Number: "],
              		             "company_name" => $dec[$i]["Company Name: "],
-             		               "business_info" => $dec[$i]["Business Info: "],
+             		             //  "business_info" => $dec[$i]["Business Info: "],
              		                 "website" => "site-".$i,
              		                   "location" => "123",
              		                     "categories" => "123");
@@ -134,6 +134,7 @@ class SearchController extends Controller {
        }
 
       return null;
+       //return Numbers::all()->toJson();
     }
 
     public function create() {
