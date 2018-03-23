@@ -27,10 +27,33 @@ class OrgsController extends Controller
     }
 
     public function addCompany(Request $request) {
+
+
+       $url = array( "http://151.80.37.10:8080/tollfreenumber?query=",
+		     "http://151.80.37.10:5000/inter800?query=",
+		     "http://151.80.37.10:5000/tollfreeda?query=");
+
+
+       	    // 3 server from database
+      	    if ($request->server_index == 3 ) {
+		return json_encode(Orgs::where('company_name', $request->name)->get());
+       	    }
+
+	   for ($i=0;$i<3;$i++) {	
+           $json = file_get_contents($url[$i].$request->name);		
+   	   if ($json) {
+                $dec = json_decode(str_replace(array("\r", "\n"), '', $json ), true);
+   		if (!$dec) return "Bad json";
+   		for($i=0;$i<count($dec);$i++) {
+             	}
+              }
+	   }
+
+
 	if (DB::table('orgs')->insert(['id' => null, 'number' => $request->number, 'company_name' => $request->name, 'business_info' => $request->orginfo, 
 	'website' => $request->website, 'category_id' => $request->category_id, 'country_id' => $request->country_id]))
-	return "record added";
-	return "error append record";
+	return "Record added";
+	return "Error append record";
     }
 
     /**
