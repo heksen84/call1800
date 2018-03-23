@@ -35,23 +35,25 @@ class OrgsController extends Controller
 
 
        	    // 3 server from database
-      	    if ($request->server_index == 3 ) {
+      	    /*if ($request->server_index == 3 ) {
 		return json_encode(Orgs::where('company_name', $request->name)->get());
-       	    }
+       	    }*/
 
-	   for ($i=0;$i<3;$i++) {	
+//       	return $request->name;
+
+	for ( $i=0; $i<3; $i++ ) {	
            $json = file_get_contents($url[$i].$request->name);		
    	   if ($json) {
                 $dec = json_decode(str_replace(array("\r", "\n"), '', $json ), true);
-   		if (!$dec) return "Bad json";
-   		for($i=0;$i<count($dec);$i++) {
+   		if (!$dec) return "addCompany: Bad json!";
+   		for( $j=0; $j<count($dec); $j++ ) {
+                 if (strtoupper($dec[$i]["Company Name: "]) == strtoupper($request->name) || strtoupper($dec[$i]["Number: "]) == strtoupper($request->number)) return "found";
              	}
               }
 	   }
 
 
-	if (DB::table('orgs')->insert(['id' => null, 'number' => $request->number, 'company_name' => $request->name, 'business_info' => $request->orginfo, 
-	'website' => $request->website, 'category_id' => $request->category_id, 'country_id' => $request->country_id]))
+	if (DB::table('orgs')->insert(['id' => null, 'number' => $request->number, 'company_name' => $request->name, 'business_info' => $request->orginfo, 'website' => $request->website, 'category_id' => $request->category_id, 'country_id' => $request->country_id]))
 	return "Record added";
 	return "Error append record";
     }

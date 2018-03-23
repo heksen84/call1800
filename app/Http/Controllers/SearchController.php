@@ -53,8 +53,7 @@ class SearchController extends Controller {
 	     return view('search')->with("search_string", $request->company);
     }
 
-    public function getOrgList(Request $request)
-    {
+    public function getOrgList(Request $request) {
 
         $attachment_ids = array();
 

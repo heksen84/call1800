@@ -1759,8 +1759,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
       Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('addCompany/' + this.form.number + "/" + this.form.name + "/" + this.form.website + "/" + this.form.org_info + "/" + this.form.category_id + "/" + this.selected2).then(function (res) {
         console.log(res);
-        alert("record added");
-        _this2.form = {};
+        if (res.data == "found") alert("Such a company exists!");else {
+          alert("Record added!");
+          _this2.form = {};
+        }
       }).catch(function (err) {
         console.log(err.response);
         console.log(err.response.data);
