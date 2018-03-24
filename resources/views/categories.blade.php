@@ -13,7 +13,7 @@
 <link rel="icon" href="{{ asset('./voice.ico') }}">
 </head>
 <body>
-<div id="app"><categories item="{{ $item }}"></categories></div>
+<div id="app"><categories search_string="{{ $search_string }}"></categories></div>
 <script type="text/javascript" src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>

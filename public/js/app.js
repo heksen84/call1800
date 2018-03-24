@@ -2019,30 +2019,199 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['item'],
+  props: ['search_string'],
   components: { navbar: __WEBPACK_IMPORTED_MODULE_0__navbar_vue___default.a },
   data: function data() {
     return {
-      items: {}
+      item_index: 0,
+      row_index: 0,
+      loader: true,
+      notfound: false,
+      server_error: 0,
+      items1: {},
+      items2: {},
+      items3: {},
+      items4: {}
     };
   },
   created: function created() {
-    this.items = {};
-    /*  get('/getOrgList', { org_name: this.search_string }).then((res) => {
-          console.log(res);
-          this.items=res.data;
-    }).catch((err) => {
-    console.log(err.response.data);
-    if(err.response.status === 422) {
-    }
-    });*/
+    var _this = this;
+
+    this.items1 = {};
+    this.items2 = {};
+    this.items3 = {};
+    this.items4 = {};
+
+    console.log("org_name: " + this.search_string);
+
+    // from database
+    Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/getOrgList/' + this.search_string + '/3', null).then(function (res) {
+      console.log("---- database ------");
+      console.log(res);
+      console.log("---- database ------");
+      _this.items4 = res.data;
+
+      if (Object.keys(res.data).length > 0) _this.loader = false;
+    }).catch(function (err) {
+      _this.loader = false;
+      console.log(err.response);
+      console.log(err.response.data);
+    });
+
+    // 1 запрос
+    Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/getOrgList/' + this.search_string + '/0', null).then(function (res) {
+      console.log(res);
+      _this.items1 = res.data;
+
+      if (Object.keys(res.data).length > 0) _this.loader = false;
+    }).catch(function (err) {
+      _this.loader = false;
+      _this.server_error++;if (_this.server_error == 3) _this.notfound = true;
+      console.log(err.response);
+      console.log(err.response.data);
+    });
+
+    // 2 запрос
+    Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/getOrgList/' + this.search_string + '/1', null).then(function (res) {
+      console.log(res);
+      _this.items2 = res.data;
+
+      if (Object.keys(res.data).length > 0) _this.loader = false;
+    }).catch(function (err) {
+      _this.loader = false;
+      _this.server_error++;if (_this.server_error == 3) _this.notfound = true;
+      console.log(err.response.data);
+    });
+
+    // 3 запрос
+    Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/getOrgList/' + this.search_string + '/2', null).then(function (res) {
+      console.log(res);
+      _this.items3 = res.data;
+
+      if (Object.keys(res.data).length > 0) _this.loader = false;
+    }).catch(function (err) {
+      _this.server_error++;if (_this.server_error == 3) _this.notfound = true;
+      console.log(err.response.data);
+    });
   },
 
-  methods: {}
+  methods: {
+    getItemIndex: function getItemIndex() {
+      console.log("INDEX");
+      this.item_index++;
+      return this.item_index;
+    },
+    showFull: function showFull(e) {
+
+      // -------------------------------
+      // ИСПОЛЬЗОВАТЬ CHILD NODES
+      // -------------------------------
+
+      var number = e.target.childNodes[0].innerText;
+      var name = e.target.childNodes[1].nextSibling.innerText;
+      var info = e.target.childNodes[3].nextSibling.innerText;
+
+      console.log(number);
+      console.log(name);
+      console.log(info);
+
+      //          window.location="/info";
+
+    }
+  }
 });
 
 /***/ }),
@@ -51555,15 +51724,389 @@ var render = function() {
           _c(
             "b-row",
             [
-              _c("b-col", [
-                _c("br"),
-                _vm._v(" "),
-                _c("h2", { staticStyle: { color: "rgb(90,90,90)" } }, [
-                  _c("ins", [_vm._v(_vm._s(_vm.item))])
-                ]),
-                _vm._v(" "),
-                _c("br")
-              ])
+              _c(
+                "b-col",
+                [
+                  _c("br"),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.notfound,
+                          expression: "notfound"
+                        }
+                      ]
+                    },
+                    [
+                      _c("center", [
+                        _c(
+                          "h3",
+                          {
+                            staticStyle: {
+                              color: "rgb(255,100,100)",
+                              "margin-top": "-5px"
+                            }
+                          },
+                          [_vm._v("server error")]
+                        )
+                      ])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.loader,
+                          expression: "loader"
+                        }
+                      ]
+                    },
+                    [
+                      _c("center", [
+                        _c(
+                          "h4",
+                          {
+                            staticStyle: {
+                              color: "rgb(140,140,140)",
+                              "margin-top": "40px"
+                            }
+                          },
+                          [_vm._v("please wait")]
+                        ),
+                        _c("div", { staticClass: "loader" })
+                      ])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  Object.keys(_vm.items1).length > 0
+                    ? _c("div", [
+                        _c("h5", { staticStyle: { color: "grey" } }, [
+                          _vm._v("Search results for:")
+                        ]),
+                        _vm._v(" "),
+                        _c("ins", [
+                          _c(
+                            "h3",
+                            { staticStyle: { color: "rgb(70,70,70)" } },
+                            [_vm._v(_vm._s(_vm.search_string))]
+                          )
+                        ])
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _vm._l(
+                    Math.ceil(Object.keys(_vm.items4).length / 4),
+                    function(i, index) {
+                      return _c(
+                        "b-row",
+                        { key: Math.random() * (100000 - 0) + 0 },
+                        _vm._l(_vm.items4.slice((i - 1) * 4, i * 4), function(
+                          item
+                        ) {
+                          return _c(
+                            "b-col",
+                            {
+                              key: item.number,
+                              staticClass: "col_card",
+                              attrs: { md: "3" }
+                            },
+                            [
+                              _c(
+                                "b-card-group",
+                                { staticClass: "mb-3", attrs: { deck: "" } },
+                                [
+                                  _c(
+                                    "b-card",
+                                    {
+                                      staticClass: "text-center",
+                                      attrs: {
+                                        "img-src": "../images/map.png",
+                                        "img-alt": "Image",
+                                        "img-top": "",
+                                        "text-variant": "grey"
+                                      },
+                                      on: {
+                                        click: function($event) {
+                                          _vm.showFull($event)
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c("p", { staticClass: "number" }, [
+                                        _vm._v(_vm._s(item.number))
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", { staticClass: "company" }, [
+                                        _vm._v(_vm._s(item.company_name))
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", { staticClass: "info" }, [
+                                        _vm._v(_vm._s(item.business_info))
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "b-button",
+                                        {
+                                          attrs: {
+                                            variant: "danger",
+                                            size: "sm"
+                                          }
+                                        },
+                                        [_vm._v("call")]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        })
+                      )
+                    }
+                  ),
+                  _vm._v(" "),
+                  _vm._l(
+                    Math.ceil(Object.keys(_vm.items1).length / 4),
+                    function(i, index) {
+                      return _c(
+                        "b-row",
+                        { key: Math.random() * (100000 - 0) + 0 },
+                        _vm._l(_vm.items1.slice((i - 1) * 4, i * 4), function(
+                          item,
+                          index
+                        ) {
+                          return _c(
+                            "b-col",
+                            {
+                              key: item.number,
+                              staticClass: "col_card",
+                              attrs: { md: "3" }
+                            },
+                            [
+                              _c(
+                                "b-card-group",
+                                { staticClass: "mb-3", attrs: { deck: "" } },
+                                [
+                                  _c(
+                                    "b-card",
+                                    {
+                                      staticClass: "text-center",
+                                      attrs: {
+                                        "img-src": "../images/map.png",
+                                        "img-alt": "Image",
+                                        "img-top": "",
+                                        "text-variant": "grey"
+                                      },
+                                      on: {
+                                        click: function($event) {
+                                          _vm.showFull($event)
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c("p", { staticClass: "number" }, [
+                                        _vm._v(_vm._s(item.number))
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", { staticClass: "company" }, [
+                                        _vm._v(_vm._s(item.company_name))
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", { staticClass: "info" }, [
+                                        _vm._v(_vm._s(item.business_info))
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "b-button",
+                                        {
+                                          attrs: {
+                                            variant: "danger",
+                                            size: "sm"
+                                          }
+                                        },
+                                        [_vm._v("call")]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        })
+                      )
+                    }
+                  ),
+                  _vm._v(" "),
+                  _vm._l(
+                    Math.ceil(Object.keys(_vm.items2).length / 4),
+                    function(i) {
+                      return _c(
+                        "b-row",
+                        { key: Math.random() * (100000 - 0) + 0 },
+                        _vm._l(_vm.items2.slice((i - 1) * 4, i * 4), function(
+                          item,
+                          index
+                        ) {
+                          return _c(
+                            "b-col",
+                            {
+                              key: item.number,
+                              staticClass: "col_card",
+                              attrs: { md: "3" }
+                            },
+                            [
+                              _c(
+                                "b-card-group",
+                                { staticClass: "mb-3", attrs: { deck: "" } },
+                                [
+                                  _c(
+                                    "b-card",
+                                    {
+                                      staticClass: "text-center",
+                                      attrs: {
+                                        "img-src": "../images/map.png",
+                                        "img-alt": "Image",
+                                        "img-top": "",
+                                        "text-variant": "grey"
+                                      },
+                                      on: {
+                                        click: function($event) {
+                                          _vm.showFull($event)
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c("p", { staticClass: "number" }, [
+                                        _vm._v(_vm._s(item.number))
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", { staticClass: "company" }, [
+                                        _vm._v(_vm._s(item.company_name))
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", { staticClass: "info" }, [
+                                        _vm._v(_vm._s(item.business_info))
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "b-button",
+                                        {
+                                          attrs: {
+                                            variant: "danger",
+                                            size: "sm"
+                                          }
+                                        },
+                                        [_vm._v("call")]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        })
+                      )
+                    }
+                  ),
+                  _vm._v(" "),
+                  _vm._l(
+                    Math.ceil(Object.keys(_vm.items3).length / 4),
+                    function(i) {
+                      return _c(
+                        "b-row",
+                        { key: Math.random() * (100000 - 0) + 0 },
+                        _vm._l(_vm.items3.slice((i - 1) * 4, i * 4), function(
+                          item,
+                          index
+                        ) {
+                          return _c(
+                            "b-col",
+                            {
+                              key: item.number,
+                              staticClass: "col_card",
+                              attrs: { md: "3" }
+                            },
+                            [
+                              _c(
+                                "b-card-group",
+                                { staticClass: "mb-3", attrs: { deck: "" } },
+                                [
+                                  _c(
+                                    "b-card",
+                                    {
+                                      staticClass: "text-center",
+                                      attrs: {
+                                        "img-src": "../images/map.png",
+                                        "img-alt": "Image",
+                                        "img-top": "",
+                                        "text-variant": "grey"
+                                      },
+                                      on: {
+                                        click: function($event) {
+                                          _vm.showFull($event)
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c("p", { staticClass: "number" }, [
+                                        _vm._v(_vm._s(item.number))
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", { staticClass: "company" }, [
+                                        _vm._v(_vm._s(item.company_name))
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", { staticClass: "info" }, [
+                                        _vm._v(_vm._s(item.business_info))
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "b-button",
+                                        {
+                                          attrs: {
+                                            variant: "danger",
+                                            size: "sm"
+                                          }
+                                        },
+                                        [_vm._v("call")]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        })
+                      )
+                    }
+                  )
+                ],
+                2
+              )
             ],
             1
           )
@@ -51865,9 +52408,14 @@ var render = function() {
                                         _vm._v(_vm._s(item.company_name))
                                       ]),
                                       _vm._v(" "),
-                                      _c("p", { staticClass: "info" }, [
-                                        _vm._v(_vm._s(item.business_info))
-                                      ]),
+                                      _c(
+                                        "p",
+                                        {
+                                          staticClass: "info",
+                                          staticStyle: { display: "none" }
+                                        },
+                                        [_vm._v(_vm._s(item.business_info))]
+                                      ),
                                       _vm._v(" "),
                                       _c(
                                         "b-button",
@@ -51940,9 +52488,14 @@ var render = function() {
                                         _vm._v(_vm._s(item.company_name))
                                       ]),
                                       _vm._v(" "),
-                                      _c("p", { staticClass: "info" }, [
-                                        _vm._v(_vm._s(item.business_info))
-                                      ]),
+                                      _c(
+                                        "p",
+                                        {
+                                          staticClass: "info",
+                                          staticStyle: { display: "none" }
+                                        },
+                                        [_vm._v(_vm._s(item.business_info))]
+                                      ),
                                       _vm._v(" "),
                                       _c(
                                         "b-button",
@@ -52015,9 +52568,14 @@ var render = function() {
                                         _vm._v(_vm._s(item.company_name))
                                       ]),
                                       _vm._v(" "),
-                                      _c("p", { staticClass: "info" }, [
-                                        _vm._v(_vm._s(item.business_info))
-                                      ]),
+                                      _c(
+                                        "p",
+                                        {
+                                          staticClass: "info",
+                                          staticStyle: { display: "none" }
+                                        },
+                                        [_vm._v(_vm._s(item.business_info))]
+                                      ),
                                       _vm._v(" "),
                                       _c(
                                         "b-button",
@@ -52090,9 +52648,14 @@ var render = function() {
                                         _vm._v(_vm._s(item.company_name))
                                       ]),
                                       _vm._v(" "),
-                                      _c("p", { staticClass: "info" }, [
-                                        _vm._v(_vm._s(item.business_info))
-                                      ]),
+                                      _c(
+                                        "p",
+                                        {
+                                          staticClass: "info",
+                                          staticStyle: { display: "none" }
+                                        },
+                                        [_vm._v(_vm._s(item.business_info))]
+                                      ),
                                       _vm._v(" "),
                                       _c(
                                         "b-button",

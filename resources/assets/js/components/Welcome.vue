@@ -1,7 +1,7 @@
 <template>
 <div>
 <navbar :auth="auth"></navbar>
-  <!-- контент -->
+ <!-- контент -->
 <b-container style="max-width: 370px;">
 <b-row>
   <b-col>

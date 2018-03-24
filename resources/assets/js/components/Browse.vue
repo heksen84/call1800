@@ -32,7 +32,7 @@
             class="text-center" text-variant="grey">
             <p class="number">{{ item.number }}</p>
             <p class="company">{{ item.company_name }}</p>
-            <p class="info">{{ item.business_info }}</p>
+            <p class="info" style="display:none">{{ item.business_info }}</p>
 	    <b-button variant="danger" size="sm">call</b-button>
       </b-card>
      </b-card-group>
@@ -51,7 +51,7 @@
             class="text-center" text-variant="grey">
             <p class="number">{{ item.number }}</p>
             <p class="company">{{ item.company_name }}</p>
-            <p class="info">{{ item.business_info }}</p>
+            <p class="info" style="display:none">{{ item.business_info }}</p>
 	    <b-button variant="danger" size="sm">call</b-button>
       </b-card>
      </b-card-group>
@@ -69,7 +69,7 @@
             class="text-center" text-variant="grey">
             <p class="number">{{ item.number }}</p>
             <p class="company">{{ item.company_name }}</p>
-            <p class="info">{{ item.business_info }}</p>
+            <p class="info" style="display:none">{{ item.business_info }}</p>
 	    <b-button variant="danger" size="sm">call</b-button>
       </b-card>
      </b-card-group>
@@ -88,7 +88,7 @@
             class="text-center" text-variant="grey">
             <p class="number">{{ item.number }}</p>
             <p class="company">{{ item.company_name }}</p>
-            <p class="info">{{ item.business_info }}</p>
+            <p class="info" style="display:none">{{ item.business_info }}</p>
 	    <b-button variant="danger" size="sm">call</b-button>
       </b-card>
      </b-card-group>
