@@ -72,8 +72,8 @@
 	},
     methods: {
       redirect: function(event) {
-        console.log(event.target.textContent);
-          window.location="categories/"+event.target.textContent.toLowerCase();;
+	  var str = event.target.textContent.toLowerCase().replace( " ", "" );
+          window.location="categories/"+event.target.textContent.toLowerCase();
 
       },
       search_numbers() {
