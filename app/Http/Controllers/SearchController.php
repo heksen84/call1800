@@ -58,8 +58,8 @@ class SearchController extends Controller {
         $attachment_ids = array();
 
 	       $url = array( "http://151.80.37.10:8080/tollfreenumber?query=",
-			     "http://151.80.37.10:5000/inter800?query=",
-			     "http://151.80.37.10:5000/tollfreeda?query=");
+			     "http://151.80.37.10:8080/inter800?query=",
+			     "http://151.80.37.10:8080/tollfreeda?query=");
 
        // 3 server from database
        if ($request->server_index == 3 ){
