@@ -1887,6 +1887,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -2202,8 +2203,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.item_index++;
       return this.item_index;
     },
+    call: function call(e) {
+      alert("call");
+    },
     showFull: function showFull(e) {
-
       // -------------------------------
       // ИСПОЛЬЗОВАТЬ CHILD NODES
       // -------------------------------
@@ -51864,16 +51867,18 @@ var render = function() {
                                         _vm._v(_vm._s(item.business_info))
                                       ]),
                                       _vm._v(" "),
-                                      _c(
-                                        "b-button",
-                                        {
-                                          attrs: {
-                                            variant: "danger",
-                                            size: "sm"
-                                          }
+                                      _c("b-img", {
+                                        attrs: {
+                                          src: "./images/phone.png",
+                                          fluid: "",
+                                          alt: "Responsive image"
                                         },
-                                        [_vm._v("call")]
-                                      )
+                                        on: {
+                                          click: function($event) {
+                                            _vm.call($event)
+                                          }
+                                        }
+                                      })
                                     ],
                                     1
                                   )
@@ -51939,16 +51944,18 @@ var render = function() {
                                         _vm._v(_vm._s(item.business_info))
                                       ]),
                                       _vm._v(" "),
-                                      _c(
-                                        "b-button",
-                                        {
-                                          attrs: {
-                                            variant: "danger",
-                                            size: "sm"
-                                          }
+                                      _c("b-img", {
+                                        attrs: {
+                                          src: "./images/phone.png",
+                                          fluid: "",
+                                          alt: "Responsive image"
                                         },
-                                        [_vm._v("call")]
-                                      )
+                                        on: {
+                                          click: function($event) {
+                                            _vm.call($event)
+                                          }
+                                        }
+                                      })
                                     ],
                                     1
                                   )
@@ -52014,16 +52021,18 @@ var render = function() {
                                         _vm._v(_vm._s(item.business_info))
                                       ]),
                                       _vm._v(" "),
-                                      _c(
-                                        "b-button",
-                                        {
-                                          attrs: {
-                                            variant: "danger",
-                                            size: "sm"
-                                          }
+                                      _c("b-img", {
+                                        attrs: {
+                                          src: "./images/phone.png",
+                                          fluid: "",
+                                          alt: "Responsive image"
                                         },
-                                        [_vm._v("call")]
-                                      )
+                                        on: {
+                                          click: function($event) {
+                                            _vm.call($event)
+                                          }
+                                        }
+                                      })
                                     ],
                                     1
                                   )
@@ -52089,16 +52098,18 @@ var render = function() {
                                         _vm._v(_vm._s(item.business_info))
                                       ]),
                                       _vm._v(" "),
-                                      _c(
-                                        "b-button",
-                                        {
-                                          attrs: {
-                                            variant: "danger",
-                                            size: "sm"
-                                          }
+                                      _c("b-img", {
+                                        attrs: {
+                                          src: "./images/phone.png",
+                                          fluid: "",
+                                          alt: "Responsive image"
                                         },
-                                        [_vm._v("call")]
-                                      )
+                                        on: {
+                                          click: function($event) {
+                                            _vm.call($event)
+                                          }
+                                        }
+                                      })
                                     ],
                                     1
                                   )
@@ -52425,21 +52436,18 @@ var render = function() {
                                         [_vm._v(_vm._s(item.business_info))]
                                       ),
                                       _vm._v(" "),
-                                      _c(
-                                        "b-button",
-                                        {
-                                          attrs: {
-                                            variant: "danger",
-                                            size: "sm"
-                                          },
-                                          on: {
-                                            click: function($event) {
-                                              _vm.call($event)
-                                            }
-                                          }
+                                      _c("b-img", {
+                                        attrs: {
+                                          src: "./images/phone.png",
+                                          fluid: "",
+                                          alt: "Responsive image"
                                         },
-                                        [_vm._v("call")]
-                                      )
+                                        on: {
+                                          click: function($event) {
+                                            _vm.call($event)
+                                          }
+                                        }
+                                      })
                                     ],
                                     1
                                   )
@@ -52510,21 +52518,18 @@ var render = function() {
                                         [_vm._v(_vm._s(item.business_info))]
                                       ),
                                       _vm._v(" "),
-                                      _c(
-                                        "b-button",
-                                        {
-                                          attrs: {
-                                            variant: "danger",
-                                            size: "sm"
-                                          },
-                                          on: {
-                                            click: function($event) {
-                                              _vm.call($event)
-                                            }
-                                          }
+                                      _c("b-img", {
+                                        attrs: {
+                                          src: "./images/phone.png",
+                                          fluid: "",
+                                          alt: "Responsive image"
                                         },
-                                        [_vm._v("call")]
-                                      )
+                                        on: {
+                                          click: function($event) {
+                                            _vm.call($event)
+                                          }
+                                        }
+                                      })
                                     ],
                                     1
                                   )
@@ -52595,21 +52600,18 @@ var render = function() {
                                         [_vm._v(_vm._s(item.business_info))]
                                       ),
                                       _vm._v(" "),
-                                      _c(
-                                        "b-button",
-                                        {
-                                          attrs: {
-                                            variant: "danger",
-                                            size: "sm"
-                                          },
-                                          on: {
-                                            click: function($event) {
-                                              _vm.call($event)
-                                            }
-                                          }
+                                      _c("b-img", {
+                                        attrs: {
+                                          src: "./images/phone.png",
+                                          fluid: "",
+                                          alt: "Responsive image"
                                         },
-                                        [_vm._v("call")]
-                                      )
+                                        on: {
+                                          click: function($event) {
+                                            _vm.call($event)
+                                          }
+                                        }
+                                      })
                                     ],
                                     1
                                   )
@@ -52680,21 +52682,18 @@ var render = function() {
                                         [_vm._v(_vm._s(item.business_info))]
                                       ),
                                       _vm._v(" "),
-                                      _c(
-                                        "b-button",
-                                        {
-                                          attrs: {
-                                            variant: "danger",
-                                            size: "sm"
-                                          },
-                                          on: {
-                                            click: function($event) {
-                                              _vm.call($event)
-                                            }
-                                          }
+                                      _c("b-img", {
+                                        attrs: {
+                                          src: "./images/phone.png",
+                                          fluid: "",
+                                          alt: "Responsive image"
                                         },
-                                        [_vm._v("call")]
-                                      )
+                                        on: {
+                                          click: function($event) {
+                                            _vm.call($event)
+                                          }
+                                        }
+                                      })
                                     ],
                                     1
                                   )
