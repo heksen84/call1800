@@ -33,7 +33,7 @@
             <p class="number">{{ item.number }}</p>
             <p class="company">{{ item.company_name }}</p>
             <p class="info">{{ item.business_info }}</p>
-	          <b-img src="./images/phone.png" fluid alt="Responsive image" v-on:click="call($event)"/>
+	          <b-img src="../images/phone.png" fluid alt="Responsive image" v-on:click="call($event)"/>
       </b-card>
      </b-card-group>
   </b-col>
@@ -52,7 +52,7 @@
             <p class="number">{{ item.number }}</p>
             <p class="company">{{ item.company_name }}</p>
             <p class="info">{{ item.business_info }}</p>
-	          <b-img src="./images/phone.png" fluid alt="Responsive image" v-on:click="call($event)"/>
+	          <b-img src="../images/phone.png" fluid alt="Responsive image" v-on:click="call($event)"/>
       </b-card>
      </b-card-group>
   </b-col>
@@ -70,7 +70,7 @@
             <p class="number">{{ item.number }}</p>
             <p class="company">{{ item.company_name }}</p>
             <p class="info">{{ item.business_info }}</p>
-	          <b-img src="./images/phone.png" fluid alt="Responsive image" v-on:click="call($event)"/>
+	          <b-img src="../images/phone.png" fluid alt="Responsive image" v-on:click="call($event)"/>
       </b-card>
      </b-card-group>
   </b-col>
@@ -89,7 +89,7 @@
             <p class="number">{{ item.number }}</p>
             <p class="company">{{ item.company_name }}</p>
             <p class="info">{{ item.business_info }}</p>
-	          <b-img src="./images/phone.png" fluid alt="Responsive image" v-on:click="call($event)"/>
+	          <b-img src="../images/phone.png" fluid alt="Responsive image" v-on:click="call($event)"/>
       </b-card>
      </b-card-group>
   </b-col>

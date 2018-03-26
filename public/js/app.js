@@ -51868,7 +51868,7 @@ var render = function() {
                                       _vm._v(" "),
                                       _c("b-img", {
                                         attrs: {
-                                          src: "./images/phone.png",
+                                          src: "../images/phone.png",
                                           fluid: "",
                                           alt: "Responsive image"
                                         },
@@ -51945,7 +51945,7 @@ var render = function() {
                                       _vm._v(" "),
                                       _c("b-img", {
                                         attrs: {
-                                          src: "./images/phone.png",
+                                          src: "../images/phone.png",
                                           fluid: "",
                                           alt: "Responsive image"
                                         },
@@ -52022,7 +52022,7 @@ var render = function() {
                                       _vm._v(" "),
                                       _c("b-img", {
                                         attrs: {
-                                          src: "./images/phone.png",
+                                          src: "../images/phone.png",
                                           fluid: "",
                                           alt: "Responsive image"
                                         },
@@ -52099,7 +52099,7 @@ var render = function() {
                                       _vm._v(" "),
                                       _c("b-img", {
                                         attrs: {
-                                          src: "./images/phone.png",
+                                          src: "../images/phone.png",
                                           fluid: "",
                                           alt: "Responsive image"
                                         },
