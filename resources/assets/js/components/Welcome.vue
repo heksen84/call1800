@@ -10,7 +10,7 @@
   <h1 id="title">Call1800</h1>
   <h5 style="color:grey;margin-top:-30px">Get a toll free number</h5>
   </center>
-  <br>  
+  <br>
   <form v-on:submit.prevent="search_numbers" style="margin-top:-15px">
   <b-form-group id="searchGroup"
                     label="Search"
@@ -32,7 +32,7 @@
 <b-container>
 <center>
 <br>
-<h4 style="color:rgb(90,90,90);margin-bottom:20px;"><ins>categories</ins></h4>
+<h3 style="color:rgb(90,90,90);margin-bottom:20px;"><ins>categories</ins></h3>
 <br>
 <b-row v-for="i in Math.ceil(Object.keys(categories).length / 4)" v-bind:key=i>
   <b-col md="3" v-for="item in categories.slice((i - 1) * 4, i * 4)" v-bind:key=item.name>

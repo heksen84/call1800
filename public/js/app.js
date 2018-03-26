@@ -1974,6 +1974,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.item_index++;
       return this.item_index;
     },
+    call: function call(e) {
+      alert("call!");
+    },
     showFull: function showFull(e) {
 
       // -------------------------------
@@ -52423,6 +52426,11 @@ var render = function() {
                                           attrs: {
                                             variant: "danger",
                                             size: "sm"
+                                          },
+                                          on: {
+                                            click: function($event) {
+                                              _vm.call($event)
+                                            }
                                           }
                                         },
                                         [_vm._v("call")]
@@ -52503,6 +52511,11 @@ var render = function() {
                                           attrs: {
                                             variant: "danger",
                                             size: "sm"
+                                          },
+                                          on: {
+                                            click: function($event) {
+                                              _vm.call($event)
+                                            }
                                           }
                                         },
                                         [_vm._v("call")]
@@ -52583,6 +52596,11 @@ var render = function() {
                                           attrs: {
                                             variant: "danger",
                                             size: "sm"
+                                          },
+                                          on: {
+                                            click: function($event) {
+                                              _vm.call($event)
+                                            }
                                           }
                                         },
                                         [_vm._v("call")]
@@ -52663,6 +52681,11 @@ var render = function() {
                                           attrs: {
                                             variant: "danger",
                                             size: "sm"
+                                          },
+                                          on: {
+                                            click: function($event) {
+                                              _vm.call($event)
+                                            }
                                           }
                                         },
                                         [_vm._v("call")]
@@ -52816,7 +52839,7 @@ var render = function() {
               _c("br"),
               _vm._v(" "),
               _c(
-                "h4",
+                "h3",
                 {
                   staticStyle: {
                     color: "rgb(90,90,90)",
