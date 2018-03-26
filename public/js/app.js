@@ -52437,10 +52437,18 @@ var render = function() {
                                       ),
                                       _vm._v(" "),
                                       _c("b-img", {
+                                        directives: [
+                                          {
+                                            name: "b-tooltip",
+                                            rawName: "v-b-tooltip.hover",
+                                            modifiers: { hover: true }
+                                          }
+                                        ],
                                         attrs: {
                                           src: "./images/phone.png",
                                           fluid: "",
-                                          alt: "Responsive image"
+                                          alt: "Responsive image",
+                                          title: "call"
                                         },
                                         on: {
                                           click: function($event) {

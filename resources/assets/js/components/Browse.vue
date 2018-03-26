@@ -34,7 +34,7 @@
             <p class="company">{{ item.company_name }}</p>
             <p class="info" style="display:none">{{ item.business_info }}</p>
 	    <!--<b-button variant="danger" size="sm" v-on:click="call($event)">call</b-button>-->
-      <b-img src="./images/phone.png" fluid alt="Responsive image" v-on:click="call($event)"/>
+      <b-img src="./images/phone.png" fluid alt="Responsive image" v-on:click="call($event)" v-b-tooltip.hover title="call"/>
       </b-card>
      </b-card-group>
   </b-col>
@@ -222,9 +222,7 @@ console.log(info);
 
 //          window.location="/info";
 
-
-
     }
-  }
-  }
+}
+}
 </script>
