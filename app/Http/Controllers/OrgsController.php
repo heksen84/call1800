@@ -29,7 +29,7 @@ class OrgsController extends Controller
     public function addCompany(Request $request) {
 
 
-       $url = array( "http://151.80.37.10:8080/tollfreenumber?query=",
+/*       $url = array( "http://151.80.37.10:8080/tollfreenumber?query=",
 		     "http://151.80.37.10:5000/inter800?query=",
 		     "http://151.80.37.10:5000/tollfreeda?query=");
 
@@ -41,7 +41,7 @@ class OrgsController extends Controller
 
 //       	return $request->name;
 
-	for ( $i=0; $i<3; $i++ ) {	
+/*	for ( $i=0; $i<3; $i++ ) {	
            $json = file_get_contents($url[$i].$request->name);		
    	   if ($json) {
                 $dec = json_decode(str_replace(array("\r", "\n"), '', $json ), true);
@@ -51,7 +51,7 @@ class OrgsController extends Controller
              	}
               }
 	   }
-
+*/
 
 	if (DB::table('orgs')->insert(['id' => null, 'number' => $request->number, 'company_name' => $request->name, 'business_info' => $request->orginfo, 'website' => $request->website, 'category_id' => $request->category_id, 'country_id' => $request->country_id]))
 	return "Record added";

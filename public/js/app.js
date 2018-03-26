@@ -1975,7 +1975,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       return this.item_index;
     },
     call: function call(e) {
-      alert("call!");
+
+      var number = e.target.parentNode.childNodes[0].innerText;
+      var name = e.target.parentNode.childNodes[1].nextSibling.innerText;
+      var info = e.target.parentNode.childNodes[3].nextSibling.innerText;
+
+      alert(number + "\n" + name + "\n" + info);
     },
     showFull: function showFull(e) {
 
