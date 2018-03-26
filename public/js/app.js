@@ -1998,7 +1998,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       console.log(info);
 
       //          window.location="/info";
-
     }
   }
 });
@@ -52802,7 +52801,7 @@ var render = function() {
                             attrs: {
                               id: "emailInput",
                               type: "text",
-                              placeholder: "Enter a Company Name",
+                              placeholder: "Enter a keyword",
                               required: ""
                             },
                             model: {

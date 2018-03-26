@@ -18,7 +18,7 @@
         <b-form-input id="emailInput"
                     type="text"
                     v-model="form.search"
-                    placeholder="Enter a Company Name"
+                    placeholder="Enter a keyword"
                     required>
         </b-form-input>
   </b-form-group>
