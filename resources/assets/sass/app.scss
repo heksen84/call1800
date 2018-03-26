@@ -68,12 +68,16 @@ body h1,h2,h3,h4,h5 {
   font-size: 12px;
 }
 .items{
-  margin:5px;
-  width:170px;
+  margin:10px;
+  height:auto;
+  border: 1px solid rgb(200,200,200);
+  border-radius: 5px;
+  padding: 2px;
 }
 .items:hover {
- cursor:default;
- text-decoration:underline;
+ cursor:pointer;
+ background: rgb(240,100,100);
+ color:white;
 }
 
 .loader {
