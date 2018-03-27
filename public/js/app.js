@@ -1900,6 +1900,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -52315,13 +52317,22 @@ var render = function() {
               "div",
               { staticClass: "d-block text-center" },
               [
-                _c("h3", { staticStyle: { color: "rgb(50,50,50)" } }, [
-                  _vm._v(_vm._s(_vm.number))
-                ]),
+                _c(
+                  "h3",
+                  {
+                    staticStyle: {
+                      color: "rgb(80,80,80)",
+                      "margin-top": "15px"
+                    }
+                  },
+                  [_vm._v(_vm._s(_vm.number))]
+                ),
                 _vm._v(" "),
                 _c("h4", { staticStyle: { color: "rgb(120,120,120)" } }, [
                   _vm._v(_vm._s(_vm.name))
                 ]),
+                _vm._v(" "),
+                _c("hr"),
                 _vm._v(" "),
                 _c("h6", { staticStyle: { color: "rgb(100,100,100)" } }, [
                   _vm._v(_vm._s(_vm.info))
@@ -52477,9 +52488,18 @@ var render = function() {
                                       }
                                     },
                                     [
-                                      _c("p", { staticClass: "number" }, [
-                                        _vm._v(_vm._s(item.number))
-                                      ]),
+                                      _c(
+                                        "p",
+                                        {
+                                          staticClass: "number",
+                                          staticStyle: {
+                                            "font-weight": "bold",
+                                            "font-size": "20px",
+                                            color: "rgb(70,70,70)"
+                                          }
+                                        },
+                                        [_vm._v(_vm._s(item.number))]
+                                      ),
                                       _vm._v(" "),
                                       _c("p", { staticClass: "company" }, [
                                         _vm._v(_vm._s(item.company_name))
@@ -52513,7 +52533,26 @@ var render = function() {
                                             _vm.call($event)
                                           }
                                         }
-                                      })
+                                      }),
+                                      _vm._v(" "),
+                                      _c("br"),
+                                      _vm._v(" "),
+                                      _c(
+                                        "b-button",
+                                        {
+                                          staticStyle: {
+                                            color: "rgb(50,100,50)",
+                                            "margin-top": "15px"
+                                          },
+                                          attrs: { variant: "link" },
+                                          on: {
+                                            click: function($event) {
+                                              _vm.call($event)
+                                            }
+                                          }
+                                        },
+                                        [_vm._v("MORE INFO")]
+                                      )
                                     ],
                                     1
                                   )

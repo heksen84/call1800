@@ -5,9 +5,10 @@
 
 
 <b-modal ref="myModalRef" hide-footer>
-  <div class="d-block text-center">    
-    <h3 style="color:rgb(50,50,50)">{{ number }}</h3>
+  <div class="d-block text-center">
+    <h3 style="color:rgb(80,80,80);margin-top:15px">{{ number }}</h3>
     <h4 style="color:rgb(120,120,120)">{{ name }}</h4>
+    <hr>
     <h6 style="color:rgb(100,100,100)">{{ info }}</h6>
     <br>
     <b-img src="./images/phone.png" fluid alt="Responsive image" v-on:click="call($event)" v-b-tooltip.hover title="call"/>
@@ -42,11 +43,12 @@
             img-alt="Image"
             img-top
             class="text-center" text-variant="grey">
-            <p class="number">{{ item.number }}</p>
+            <p class="number" style="font-weight:bold;font-size:20px;color:rgb(70,70,70)">{{ item.number }}</p>
             <p class="company">{{ item.company_name }}</p>
             <p class="info" style="display:none">{{ item.business_info }}</p>
-	    <!--<b-button variant="danger" size="sm" v-on:click="call($event)">call</b-button>-->
       <b-img src="./images/phone.png" fluid alt="Responsive image" v-on:click="call($event)" v-b-tooltip.hover title="call"/>
+      <br>
+      <b-button variant="link" v-on:click="call($event)" style="color:rgb(50,100,50);margin-top:15px">MORE INFO</b-button>
       </b-card>
      </b-card-group>
   </b-col>

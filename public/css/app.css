@@ -77,14 +77,14 @@ h5 {
 .items {
   margin: 7px;
   height: auto;
-  border: 1px solid #c8c8c8;
+  border: 1px solid #e6e6e6;
   border-radius: 5px;
-  padding: 3px;
+  padding: 4px;
 }
 
 .items:hover {
   cursor: pointer;
-  background: #f06464;
+  background: #fa6e6e;
   color: white;
 }
 
