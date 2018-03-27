@@ -52541,7 +52541,7 @@ var render = function() {
                                         "b-button",
                                         {
                                           staticStyle: {
-                                            color: "rgb(50,100,50)",
+                                            color: "rgb(50,50,150)",
                                             "margin-top": "15px"
                                           },
                                           attrs: { variant: "link" },
