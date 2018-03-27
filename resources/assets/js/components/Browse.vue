@@ -48,7 +48,7 @@
             <p class="info" style="display:none">{{ item.business_info }}</p>
       <b-img src="./images/phone.png" fluid alt="Responsive image" v-on:click="call($event)" v-b-tooltip.hover title="call"/>
       <br>
-      <b-button variant="link" v-on:click="call($event)" style="color:rgb(50,50,150);margin-top:15px">MORE INFO</b-button>
+      <b-button variant="link" v-on:click="call($event)" style="color:rgb(150,50,50);margin-top:15px">MORE INFO</b-button>
       </b-card>
      </b-card-group>
   </b-col>
