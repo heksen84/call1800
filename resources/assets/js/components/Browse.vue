@@ -2,6 +2,18 @@
 <div>
 <navbar></navbar>
 <b-container>
+
+
+<b-modal ref="myModalRef" hide-footer>
+  <div class="d-block text-center">    
+    <h3 style="color:rgb(50,50,50)">{{ number }}</h3>
+    <h4 style="color:rgb(120,120,120)">{{ name }}</h4>
+    <h6 style="color:rgb(100,100,100)">{{ info }}</h6>
+    <br>
+    <b-img src="./images/phone.png" fluid alt="Responsive image" v-on:click="call($event)" v-b-tooltip.hover title="call"/>
+  </div>
+</b-modal>
+
 <b-row>
 <b-col>
 <br>
@@ -110,10 +122,13 @@
     props: ['search_string'],
     components: { navbar },
     data () {
-      return {
-        item_index: 0,
+  return {
+  number: "",
+  name:  "",
+  info: "",
+  item_index: 0,
 	row_index: 0,
-        loader: true,
+  loader: true,
 	notfound: false,
 	server_error:0,
         items1: {},
@@ -197,11 +212,11 @@
     },
     call(e) {
 
-      var number =  e.target.parentNode.childNodes[0].innerText;
-      var name   =  e.target.parentNode.childNodes[1].nextSibling.innerText;
-      var info   =  e.target.parentNode.childNodes[3].nextSibling.innerText;
+      this.number =  e.target.parentNode.childNodes[0].innerText;
+      this.name   =  e.target.parentNode.childNodes[1].nextSibling.innerText;
+      this.info   =  e.target.parentNode.childNodes[3].nextSibling.innerText;
 
-      alert(number+"\n"+name+"\n"+info);
+      this.$refs.myModalRef.show();
 
     },
     showFull(e) {

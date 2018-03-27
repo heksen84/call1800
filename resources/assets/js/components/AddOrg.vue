@@ -106,13 +106,13 @@ export default {
 	 },
 	countries: [
         	 { value: null, text: 'Please select a country' },
-	         { value: 0, text: 'USA' },	
+	         { value: 0, text: 'USA' },
 	         { value: 1, text: 'Canada' }
 	        ]
       	}
     },
     created() {
-	this.categories = {}	
+	this.categories = {}
         get('/categories', null).then((res) => {
             this.categories=res.data;
 		console.log(res.data);
@@ -131,7 +131,7 @@ export default {
       },
       save() {
 	this.$refs.myModalRef.show();
-	get('addCompany/'+this.form.number+"/"+this.form.name+"/"+this.form.website+"/"+this.form.org_info+"/"+this.form.category_id+"/"+this.selected2).then((res) => {        
+	get('addCompany/'+this.form.number+"/"+this.form.name+"/"+this.form.website+"/"+this.form.org_info+"/"+this.form.category_id+"/"+this.selected2).then((res) => {
             console.log(res);
 	    this.$refs.myModalRef.hide();
 	    if (res.data=="found") alert("Such a company exists!");
@@ -139,7 +139,7 @@ export default {
              alert("Record added!");
 	     this.form={};
 	    }
-	}).catch((err) => {		              
+	}).catch((err) => {
    	      this.$refs.myModalRef.hide();
 	      console.log(err.response);
               console.log(err.response.data);

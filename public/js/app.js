@@ -1888,6 +1888,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -1897,6 +1909,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   components: { navbar: __WEBPACK_IMPORTED_MODULE_0__navbar_vue___default.a },
   data: function data() {
     return {
+      number: "",
+      name: "",
+      info: "",
       item_index: 0,
       row_index: 0,
       loader: true,
@@ -1977,11 +1992,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     call: function call(e) {
 
-      var number = e.target.parentNode.childNodes[0].innerText;
-      var name = e.target.parentNode.childNodes[1].nextSibling.innerText;
-      var info = e.target.parentNode.childNodes[3].nextSibling.innerText;
+      this.number = e.target.parentNode.childNodes[0].innerText;
+      this.name = e.target.parentNode.childNodes[1].nextSibling.innerText;
+      this.info = e.target.parentNode.childNodes[3].nextSibling.innerText;
 
-      alert(number + "\n" + name + "\n" + info);
+      this.$refs.myModalRef.show();
     },
     showFull: function showFull(e) {
 
@@ -52295,6 +52310,50 @@ var render = function() {
       _c(
         "b-container",
         [
+          _c("b-modal", { ref: "myModalRef", attrs: { "hide-footer": "" } }, [
+            _c(
+              "div",
+              { staticClass: "d-block text-center" },
+              [
+                _c("h3", { staticStyle: { color: "rgb(50,50,50)" } }, [
+                  _vm._v(_vm._s(_vm.number))
+                ]),
+                _vm._v(" "),
+                _c("h4", { staticStyle: { color: "rgb(120,120,120)" } }, [
+                  _vm._v(_vm._s(_vm.name))
+                ]),
+                _vm._v(" "),
+                _c("h6", { staticStyle: { color: "rgb(100,100,100)" } }, [
+                  _vm._v(_vm._s(_vm.info))
+                ]),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(" "),
+                _c("b-img", {
+                  directives: [
+                    {
+                      name: "b-tooltip",
+                      rawName: "v-b-tooltip.hover",
+                      modifiers: { hover: true }
+                    }
+                  ],
+                  attrs: {
+                    src: "./images/phone.png",
+                    fluid: "",
+                    alt: "Responsive image",
+                    title: "call"
+                  },
+                  on: {
+                    click: function($event) {
+                      _vm.call($event)
+                    }
+                  }
+                })
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
           _c(
             "b-row",
             [
