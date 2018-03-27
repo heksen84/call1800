@@ -75,11 +75,11 @@ h5 {
 }
 
 .items {
-  margin: 7px;
+  margin: 6px;
   height: auto;
   border: 1px solid #e6e6e6;
   border-radius: 5px;
-  padding: 4px;
+  padding: 3px;
 }
 
 .items:hover {
