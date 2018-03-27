@@ -162,7 +162,7 @@
 		               this.loader = false;
 			       console.log(err.response);
 			       console.log(err.response.data);
-  	    });
+  	   });
 
         // 1 запрос
         get('/getOrgList/'+this.search_string+'/0', null).then((res) => {
