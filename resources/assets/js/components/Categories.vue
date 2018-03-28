@@ -8,7 +8,7 @@
 
 <!-- ошибка -->
 <div v-show="notfound">
-<center><h3 style="color:rgb(255,100,100);margin-top:-5px;">server error</h3></center>
+<center><h3 style="color:rgb(255,100,100);margin-top:-5px;"></h3></center>
 </div>
 
 <!-- загрузка -->
