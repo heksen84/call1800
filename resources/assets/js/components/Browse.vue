@@ -3,7 +3,6 @@
 <navbar></navbar>
 <b-container>
 
-
 <b-modal ref="myModalRef" hide-footer>
   <div class="d-block text-center">
     <h3 style="color:rgb(80,80,80);margin-top:15px">{{ number }}</h3>
@@ -38,7 +37,6 @@
   <b-col md="3" v-for="item in items4.slice((i - 1) * 4, i * 4)" :key="item.number" class="col_card">
     <b-card-group deck class="mb-3">
     <b-card
-	    v-on:click="showFull($event)"
 	    img-src="./images/map.png"
             img-alt="Image"
             img-top
@@ -48,18 +46,16 @@
             <p class="info" style="display:none">{{ item.business_info }}</p>
       <b-img src="./images/phone.png" fluid alt="Responsive image" v-on:click="call($event)" v-b-tooltip.hover title="call"/>
       <br>
-      <b-button variant="link" v-on:click="call($event)" style="color:rgb(150,50,50);margin-top:15px">MORE INFO</b-button>
+      <b-button variant="link" v-on:click="more($event)" style="color:rgb(150,50,50);margin-top:15px">MORE INFO</b-button>
       </b-card>
      </b-card-group>
   </b-col>
 </b-row>
 
-
 <b-row v-for="(i,index) in Math.ceil(Object.keys(items1).length / 4)" :key="Math.random() * (100000 - 0) + 0">
   <b-col md="3" v-for="(item, index) in items1.slice((i - 1) * 4, i * 4)" :key="item.number" class="col_card">
     <b-card-group deck class="mb-3">
     <b-card
-	    v-on:click="showFull($event)"
 	    img-src="./images/map.png"
             img-alt="Image"
             img-top
@@ -68,6 +64,8 @@
             <p class="company">{{ item.company_name }}</p>
             <p class="info" style="display:none">{{ item.business_info }}</p>
 	    <b-img src="./images/phone.png" fluid alt="Responsive image" v-on:click="call($event)"/>
+      <br>
+      <b-button variant="link" v-on:click="more($event)" style="color:rgb(150,50,50);margin-top:15px">MORE INFO</b-button>
       </b-card>
      </b-card-group>
   </b-col>
@@ -77,7 +75,6 @@
   <b-col md="3" v-for="(item, index) in items2.slice((i - 1) * 4, i * 4)" :key="item.number" class="col_card">
     <b-card-group deck class="mb-3">
     <b-card
-	    v-on:click="showFull($event)"
 	    img-src="./images/map.png"
             img-alt="Image"
             img-top
@@ -86,17 +83,17 @@
             <p class="company">{{ item.company_name }}</p>
             <p class="info" style="display:none">{{ item.business_info }}</p>
 	    <b-img src="./images/phone.png" fluid alt="Responsive image" v-on:click="call($event)"/>
+      <br>
+      <b-button variant="link" v-on:click="more($event)" style="color:rgb(150,50,50);margin-top:15px">MORE INFO</b-button>
       </b-card>
      </b-card-group>
   </b-col>
 </b-row>
 
-
 <b-row v-for="i in Math.ceil(Object.keys(items3).length / 4)" :key="Math.random() * (100000 - 0) + 0">
   <b-col md="3" v-for="(item, index) in items3.slice((i - 1) * 4, i * 4)" :key="item.number" class="col_card">
     <b-card-group deck class="mb-3">
     <b-card
-	    v-on:click="showFull($event)"
 	    img-src="./images/map.png"
             img-alt="Image"
             img-top
@@ -105,6 +102,8 @@
             <p class="company">{{ item.company_name }}</p>
             <p class="info" style="display:none">{{ item.business_info }}</p>
             <b-img src="./images/phone.png" fluid alt="Responsive image" v-on:click="call($event)"/>
+            <br>
+            <b-button variant="link" v-on:click="more($event)" style="color:rgb(150,50,50);margin-top:15px">MORE INFO</b-button>
       </b-card>
      </b-card-group>
   </b-col>
@@ -124,22 +123,21 @@
     props: ['search_string'],
     components: { navbar },
     data () {
-  return {
-  number: "",
-  name:  "",
-  info: "",
-  item_index: 0,
-	row_index: 0,
-  loader: true,
-	notfound: false,
-	server_error:0,
-        items1: {},
-        items2: {},
-        items3: {},
-        items4: {}
-      }
+      return {
+        number: "",
+        name:  "",
+        info: "",
+        item_index: 0,
+	       row_index: 0,
+         loader: true,
+	        notfound: false,
+	         server_error:0,
+           items1: {},
+           items2: {},
+           items3: {},
+           items4: {}
+         }
     },
-
        created() {
 
        this.items1 = {}
@@ -202,9 +200,6 @@
 			  this.server_error++; if (this.server_error==3) this.notfound = true;
 			  console.log(err.response.data);
       });
-
-
-
 	},
   methods: {
     getItemIndex() {
@@ -213,32 +208,13 @@
       return this.item_index;
     },
     call(e) {
-
+      alert("in progress...");
+    },
+    more(e) {
       this.number =  e.target.parentNode.childNodes[0].innerText;
       this.name   =  e.target.parentNode.childNodes[1].nextSibling.innerText;
       this.info   =  e.target.parentNode.childNodes[3].nextSibling.innerText;
-
       this.$refs.myModalRef.show();
-
-    },
-    showFull(e) {
-
-
-
-// -------------------------------
-// ИСПОЛЬЗОВАТЬ CHILD NODES
-// -------------------------------
-
-var number =  e.target.childNodes[0].innerText;
-var name   =  e.target.childNodes[1].nextSibling.innerText;
-var info   =  e.target.childNodes[3].nextSibling.innerText;
-
-console.log(number);
-console.log(name);
-console.log(info);
-
-//          window.location="/info";
-
     }
 }
 }

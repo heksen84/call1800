@@ -1901,7 +1901,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -1993,28 +1992,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       return this.item_index;
     },
     call: function call(e) {
-
+      alert("in progress...");
+    },
+    more: function more(e) {
       this.number = e.target.parentNode.childNodes[0].innerText;
       this.name = e.target.parentNode.childNodes[1].nextSibling.innerText;
       this.info = e.target.parentNode.childNodes[3].nextSibling.innerText;
-
       this.$refs.myModalRef.show();
-    },
-    showFull: function showFull(e) {
-
-      // -------------------------------
-      // ИСПОЛЬЗОВАТЬ CHILD NODES
-      // -------------------------------
-
-      var number = e.target.childNodes[0].innerText;
-      var name = e.target.childNodes[1].nextSibling.innerText;
-      var info = e.target.childNodes[3].nextSibling.innerText;
-
-      console.log(number);
-      console.log(name);
-      console.log(info);
-
-      //          window.location="/info";
     }
   }
 });
@@ -52480,11 +52464,6 @@ var render = function() {
                                         "img-alt": "Image",
                                         "img-top": "",
                                         "text-variant": "grey"
-                                      },
-                                      on: {
-                                        click: function($event) {
-                                          _vm.showFull($event)
-                                        }
                                       }
                                     },
                                     [
@@ -52547,7 +52526,7 @@ var render = function() {
                                           attrs: { variant: "link" },
                                           on: {
                                             click: function($event) {
-                                              _vm.call($event)
+                                              _vm.more($event)
                                             }
                                           }
                                         },
@@ -52598,11 +52577,6 @@ var render = function() {
                                         "img-alt": "Image",
                                         "img-top": "",
                                         "text-variant": "grey"
-                                      },
-                                      on: {
-                                        click: function($event) {
-                                          _vm.showFull($event)
-                                        }
                                       }
                                     },
                                     [
@@ -52634,7 +52608,26 @@ var render = function() {
                                             _vm.call($event)
                                           }
                                         }
-                                      })
+                                      }),
+                                      _vm._v(" "),
+                                      _c("br"),
+                                      _vm._v(" "),
+                                      _c(
+                                        "b-button",
+                                        {
+                                          staticStyle: {
+                                            color: "rgb(150,50,50)",
+                                            "margin-top": "15px"
+                                          },
+                                          attrs: { variant: "link" },
+                                          on: {
+                                            click: function($event) {
+                                              _vm.more($event)
+                                            }
+                                          }
+                                        },
+                                        [_vm._v("MORE INFO")]
+                                      )
                                     ],
                                     1
                                   )
@@ -52680,11 +52673,6 @@ var render = function() {
                                         "img-alt": "Image",
                                         "img-top": "",
                                         "text-variant": "grey"
-                                      },
-                                      on: {
-                                        click: function($event) {
-                                          _vm.showFull($event)
-                                        }
                                       }
                                     },
                                     [
@@ -52716,7 +52704,26 @@ var render = function() {
                                             _vm.call($event)
                                           }
                                         }
-                                      })
+                                      }),
+                                      _vm._v(" "),
+                                      _c("br"),
+                                      _vm._v(" "),
+                                      _c(
+                                        "b-button",
+                                        {
+                                          staticStyle: {
+                                            color: "rgb(150,50,50)",
+                                            "margin-top": "15px"
+                                          },
+                                          attrs: { variant: "link" },
+                                          on: {
+                                            click: function($event) {
+                                              _vm.more($event)
+                                            }
+                                          }
+                                        },
+                                        [_vm._v("MORE INFO")]
+                                      )
                                     ],
                                     1
                                   )
@@ -52762,11 +52769,6 @@ var render = function() {
                                         "img-alt": "Image",
                                         "img-top": "",
                                         "text-variant": "grey"
-                                      },
-                                      on: {
-                                        click: function($event) {
-                                          _vm.showFull($event)
-                                        }
                                       }
                                     },
                                     [
@@ -52798,7 +52800,26 @@ var render = function() {
                                             _vm.call($event)
                                           }
                                         }
-                                      })
+                                      }),
+                                      _vm._v(" "),
+                                      _c("br"),
+                                      _vm._v(" "),
+                                      _c(
+                                        "b-button",
+                                        {
+                                          staticStyle: {
+                                            color: "rgb(150,50,50)",
+                                            "margin-top": "15px"
+                                          },
+                                          attrs: { variant: "link" },
+                                          on: {
+                                            click: function($event) {
+                                              _vm.more($event)
+                                            }
+                                          }
+                                        },
+                                        [_vm._v("MORE INFO")]
+                                      )
                                     ],
                                     1
                                   )
