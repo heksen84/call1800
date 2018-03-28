@@ -12,7 +12,7 @@
   </b-form-group>
 
   <b-form-group label="Name:">
-    <h1 style="color:rgb(120,120,120)">{{ name }}</h1>
+    <h1 style="color:rgb(120,120,120)"><ins>{{ name }}</ins></h1>
   </b-form-group>
 
   <b-form-group label="Business info:">
