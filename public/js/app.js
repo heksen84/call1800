@@ -1928,6 +1928,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   created: function created() {
     var _this = this;
 
+    /*function httpGet(theUrl)
+    {
+        if (window.XMLHttpRequest)
+        {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp=new XMLHttpRequest();
+        }
+        else
+        {// code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function()
+        {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+                return xmlhttp.responseText;
+            }
+        }
+        xmlhttp.open("GET", theUrl, false );
+        xmlhttp.send();
+    }*/
+
     this.items1 = {};
     this.items2 = {};
     this.items3 = {};
@@ -2117,6 +2138,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2126,6 +2170,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   components: { navbar: __WEBPACK_IMPORTED_MODULE_0__navbar_vue___default.a },
   data: function data() {
     return {
+      number: "",
+      name: "",
+      info: "",
       item_index: 0,
       row_index: 0,
       loader: true,
@@ -2139,6 +2186,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   created: function created() {
     var _this = this;
+
+    /*function httpGet(theUrl)
+    {
+        if (window.XMLHttpRequest)
+        {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp=new XMLHttpRequest();
+        }
+        else
+        {// code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function()
+        {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+                return xmlhttp.responseText;
+            }
+        }
+        xmlhttp.open("GET", theUrl, false );
+        xmlhttp.send();
+    }*/
 
     this.items1 = {};
     this.items2 = {};
@@ -2205,23 +2273,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       return this.item_index;
     },
     call: function call(e) {
-      alert("call");
+      alert("in progress...");
     },
-    showFull: function showFull(e) {
-      // -------------------------------
-      // ИСПОЛЬЗОВАТЬ CHILD NODES
-      // -------------------------------
-
-      var number = e.target.childNodes[0].innerText;
-      var name = e.target.childNodes[1].nextSibling.innerText;
-      var info = e.target.childNodes[3].nextSibling.innerText;
-
-      console.log(number);
-      console.log(name);
-      console.log(info);
-
-      //          window.location="/info";
-
+    more: function more(e) {
+      this.number = e.target.parentNode.childNodes[0].innerText;
+      this.name = e.target.parentNode.childNodes[1].nextSibling.innerText;
+      this.info = e.target.parentNode.childNodes[3].nextSibling.innerText;
+      this.$refs.myModalRef.show();
     }
   }
 });
@@ -51726,6 +51784,69 @@ var render = function() {
       _c(
         "b-container",
         [
+          _c("b-modal", { ref: "myModalRef", attrs: { "hide-footer": "" } }, [
+            _c(
+              "div",
+              { staticClass: "d-block text-center" },
+              [
+                _c(
+                  "b-form",
+                  [
+                    _c("b-form-group", { attrs: { label: "Number:" } }, [
+                      _c("h3", { staticStyle: { color: "rgb(80,80,80)" } }, [
+                        _vm._v(_vm._s(_vm.number))
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("b-form-group", { attrs: { label: "Name:" } }, [
+                      _c("h1", { staticStyle: { color: "rgb(120,120,120)" } }, [
+                        _vm._v(_vm._s(_vm.name))
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("b-form-group", { attrs: { label: "Business info:" } }, [
+                      _c("h4", { staticStyle: { color: "rgb(100,100,100)" } }, [
+                        _vm._v(_vm._s(_vm.info))
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("hr"),
+                    _vm._v(" "),
+                    _c(
+                      "b-form-group",
+                      { attrs: { label: "<b>Call</b>" } },
+                      [
+                        _c("b-img", {
+                          directives: [
+                            {
+                              name: "b-tooltip",
+                              rawName: "v-b-tooltip.hover",
+                              modifiers: { hover: true }
+                            }
+                          ],
+                          attrs: {
+                            src: "../images/phone.png",
+                            fluid: "",
+                            alt: "Responsive image",
+                            title: "call"
+                          },
+                          on: {
+                            click: function($event) {
+                              _vm.call($event)
+                            }
+                          }
+                        })
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
           _c(
             "b-row",
             [
@@ -51833,42 +51954,78 @@ var render = function() {
                                     {
                                       staticClass: "text-center",
                                       attrs: {
-                                        "img-src": "../images/map.png",
+                                        "img-src": "./images/map.png",
                                         "img-alt": "Image",
                                         "img-top": "",
                                         "text-variant": "grey"
-                                      },
-                                      on: {
-                                        click: function($event) {
-                                          _vm.showFull($event)
-                                        }
                                       }
                                     },
                                     [
-                                      _c("p", { staticClass: "number" }, [
-                                        _vm._v(_vm._s(item.number))
-                                      ]),
+                                      _c(
+                                        "p",
+                                        {
+                                          staticClass: "number",
+                                          staticStyle: {
+                                            "font-weight": "bold",
+                                            "font-size": "20px",
+                                            color: "rgb(70,70,70)"
+                                          }
+                                        },
+                                        [_vm._v(_vm._s(item.number))]
+                                      ),
                                       _vm._v(" "),
                                       _c("p", { staticClass: "company" }, [
                                         _vm._v(_vm._s(item.company_name))
                                       ]),
                                       _vm._v(" "),
-                                      _c("p", { staticClass: "info" }, [
-                                        _vm._v(_vm._s(item.business_info))
-                                      ]),
+                                      _c(
+                                        "p",
+                                        {
+                                          staticClass: "info",
+                                          staticStyle: { display: "none" }
+                                        },
+                                        [_vm._v(_vm._s(item.business_info))]
+                                      ),
                                       _vm._v(" "),
                                       _c("b-img", {
+                                        directives: [
+                                          {
+                                            name: "b-tooltip",
+                                            rawName: "v-b-tooltip.hover",
+                                            modifiers: { hover: true }
+                                          }
+                                        ],
                                         attrs: {
                                           src: "../images/phone.png",
                                           fluid: "",
-                                          alt: "Responsive image"
+                                          alt: "Responsive image",
+                                          title: "call"
                                         },
                                         on: {
                                           click: function($event) {
                                             _vm.call($event)
                                           }
                                         }
-                                      })
+                                      }),
+                                      _vm._v(" "),
+                                      _c("br"),
+                                      _vm._v(" "),
+                                      _c(
+                                        "b-button",
+                                        {
+                                          staticStyle: {
+                                            color: "rgb(150,50,50)",
+                                            "margin-top": "15px"
+                                          },
+                                          attrs: { variant: "link" },
+                                          on: {
+                                            click: function($event) {
+                                              _vm.more($event)
+                                            }
+                                          }
+                                        },
+                                        [_vm._v("MORE INFO")]
+                                      )
                                     ],
                                     1
                                   )
@@ -51914,11 +52071,6 @@ var render = function() {
                                         "img-alt": "Image",
                                         "img-top": "",
                                         "text-variant": "grey"
-                                      },
-                                      on: {
-                                        click: function($event) {
-                                          _vm.showFull($event)
-                                        }
                                       }
                                     },
                                     [
@@ -51930,9 +52082,14 @@ var render = function() {
                                         _vm._v(_vm._s(item.company_name))
                                       ]),
                                       _vm._v(" "),
-                                      _c("p", { staticClass: "info" }, [
-                                        _vm._v(_vm._s(item.business_info))
-                                      ]),
+                                      _c(
+                                        "p",
+                                        {
+                                          staticClass: "info",
+                                          staticStyle: { display: "none" }
+                                        },
+                                        [_vm._v(_vm._s(item.business_info))]
+                                      ),
                                       _vm._v(" "),
                                       _c("b-img", {
                                         attrs: {
@@ -51945,7 +52102,26 @@ var render = function() {
                                             _vm.call($event)
                                           }
                                         }
-                                      })
+                                      }),
+                                      _vm._v(" "),
+                                      _c("br"),
+                                      _vm._v(" "),
+                                      _c(
+                                        "b-button",
+                                        {
+                                          staticStyle: {
+                                            color: "rgb(150,50,50)",
+                                            "margin-top": "15px"
+                                          },
+                                          attrs: { variant: "link" },
+                                          on: {
+                                            click: function($event) {
+                                              _vm.more($event)
+                                            }
+                                          }
+                                        },
+                                        [_vm._v("MORE INFO")]
+                                      )
                                     ],
                                     1
                                   )
@@ -51991,11 +52167,6 @@ var render = function() {
                                         "img-alt": "Image",
                                         "img-top": "",
                                         "text-variant": "grey"
-                                      },
-                                      on: {
-                                        click: function($event) {
-                                          _vm.showFull($event)
-                                        }
                                       }
                                     },
                                     [
@@ -52007,9 +52178,14 @@ var render = function() {
                                         _vm._v(_vm._s(item.company_name))
                                       ]),
                                       _vm._v(" "),
-                                      _c("p", { staticClass: "info" }, [
-                                        _vm._v(_vm._s(item.business_info))
-                                      ]),
+                                      _c(
+                                        "p",
+                                        {
+                                          staticClass: "info",
+                                          staticStyle: { display: "none" }
+                                        },
+                                        [_vm._v(_vm._s(item.business_info))]
+                                      ),
                                       _vm._v(" "),
                                       _c("b-img", {
                                         attrs: {
@@ -52022,7 +52198,26 @@ var render = function() {
                                             _vm.call($event)
                                           }
                                         }
-                                      })
+                                      }),
+                                      _vm._v(" "),
+                                      _c("br"),
+                                      _vm._v(" "),
+                                      _c(
+                                        "b-button",
+                                        {
+                                          staticStyle: {
+                                            color: "rgb(150,50,50)",
+                                            "margin-top": "15px"
+                                          },
+                                          attrs: { variant: "link" },
+                                          on: {
+                                            click: function($event) {
+                                              _vm.more($event)
+                                            }
+                                          }
+                                        },
+                                        [_vm._v("MORE INFO")]
+                                      )
                                     ],
                                     1
                                   )
@@ -52068,11 +52263,6 @@ var render = function() {
                                         "img-alt": "Image",
                                         "img-top": "",
                                         "text-variant": "grey"
-                                      },
-                                      on: {
-                                        click: function($event) {
-                                          _vm.showFull($event)
-                                        }
                                       }
                                     },
                                     [
@@ -52084,9 +52274,14 @@ var render = function() {
                                         _vm._v(_vm._s(item.company_name))
                                       ]),
                                       _vm._v(" "),
-                                      _c("p", { staticClass: "info" }, [
-                                        _vm._v(_vm._s(item.business_info))
-                                      ]),
+                                      _c(
+                                        "p",
+                                        {
+                                          staticClass: "info",
+                                          staticStyle: { display: "none" }
+                                        },
+                                        [_vm._v(_vm._s(item.business_info))]
+                                      ),
                                       _vm._v(" "),
                                       _c("b-img", {
                                         attrs: {
@@ -52099,7 +52294,26 @@ var render = function() {
                                             _vm.call($event)
                                           }
                                         }
-                                      })
+                                      }),
+                                      _vm._v(" "),
+                                      _c("br"),
+                                      _vm._v(" "),
+                                      _c(
+                                        "b-button",
+                                        {
+                                          staticStyle: {
+                                            color: "rgb(150,50,50)",
+                                            "margin-top": "15px"
+                                          },
+                                          attrs: { variant: "link" },
+                                          on: {
+                                            click: function($event) {
+                                              _vm.more($event)
+                                            }
+                                          }
+                                        },
+                                        [_vm._v("MORE INFO")]
+                                      )
                                     ],
                                     1
                                   )

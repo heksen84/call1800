@@ -2,6 +2,27 @@
 <div>
 <navbar></navbar>
 <b-container>
+
+<b-modal ref="myModalRef" hide-footer>
+  <div class="d-block text-center">
+  <b-form>
+  <b-form-group label="Number:">
+    <h3 style="color:rgb(80,80,80)">{{ number }}</h3>
+  </b-form-group>
+  <b-form-group label="Name:">
+    <h1 style="color:rgb(120,120,120)">{{ name }}</h1>
+  </b-form-group>
+  <b-form-group label="Business info:">
+    <h4 style="color:rgb(100,100,100)">{{ info }}</h4>
+  </b-form-group>
+  <hr>
+  <b-form-group label="<b>Call</b>">
+    <b-img src="../images/phone.png" fluid alt="Responsive image" v-on:click="call($event)" v-b-tooltip.hover title="call"/>
+  </b-form-group>
+</b-form>
+</div>
+</b-modal>
+
 <b-row>
 <b-col>
 <br>
@@ -25,34 +46,35 @@
   <b-col md="3" v-for="item in items4.slice((i - 1) * 4, i * 4)" :key="item.number" class="col_card">
     <b-card-group deck class="mb-3">
     <b-card
-	    v-on:click="showFull($event)"
-	    img-src="../images/map.png"
+	    img-src="./images/map.png"
             img-alt="Image"
             img-top
             class="text-center" text-variant="grey">
-            <p class="number">{{ item.number }}</p>
+            <p class="number" style="font-weight:bold;font-size:20px;color:rgb(70,70,70)">{{ item.number }}</p>
             <p class="company">{{ item.company_name }}</p>
-            <p class="info">{{ item.business_info }}</p>
-	          <b-img src="../images/phone.png" fluid alt="Responsive image" v-on:click="call($event)"/>
+            <p class="info" style="display:none">{{ item.business_info }}</p>
+      <b-img src="../images/phone.png" fluid alt="Responsive image" v-on:click="call($event)" v-b-tooltip.hover title="call"/>
+      <br>
+      <b-button variant="link" v-on:click="more($event)" style="color:rgb(150,50,50);margin-top:15px">MORE INFO</b-button>
       </b-card>
      </b-card-group>
   </b-col>
 </b-row>
 
-
 <b-row v-for="(i,index) in Math.ceil(Object.keys(items1).length / 4)" :key="Math.random() * (100000 - 0) + 0">
   <b-col md="3" v-for="(item, index) in items1.slice((i - 1) * 4, i * 4)" :key="item.number" class="col_card">
     <b-card-group deck class="mb-3">
     <b-card
-	    v-on:click="showFull($event)"
 	    img-src="../images/map.png"
             img-alt="Image"
             img-top
             class="text-center" text-variant="grey">
             <p class="number">{{ item.number }}</p>
             <p class="company">{{ item.company_name }}</p>
-            <p class="info">{{ item.business_info }}</p>
-	          <b-img src="../images/phone.png" fluid alt="Responsive image" v-on:click="call($event)"/>
+            <p class="info" style="display:none">{{ item.business_info }}</p>
+	    <b-img src="../images/phone.png" fluid alt="Responsive image" v-on:click="call($event)"/>
+      <br>
+      <b-button variant="link" v-on:click="more($event)" style="color:rgb(150,50,50);margin-top:15px">MORE INFO</b-button>
       </b-card>
      </b-card-group>
   </b-col>
@@ -62,34 +84,35 @@
   <b-col md="3" v-for="(item, index) in items2.slice((i - 1) * 4, i * 4)" :key="item.number" class="col_card">
     <b-card-group deck class="mb-3">
     <b-card
-	    v-on:click="showFull($event)"
 	    img-src="../images/map.png"
             img-alt="Image"
             img-top
             class="text-center" text-variant="grey">
             <p class="number">{{ item.number }}</p>
             <p class="company">{{ item.company_name }}</p>
-            <p class="info">{{ item.business_info }}</p>
-	          <b-img src="../images/phone.png" fluid alt="Responsive image" v-on:click="call($event)"/>
+            <p class="info" style="display:none">{{ item.business_info }}</p>
+	    <b-img src="../images/phone.png" fluid alt="Responsive image" v-on:click="call($event)"/>
+      <br>
+      <b-button variant="link" v-on:click="more($event)" style="color:rgb(150,50,50);margin-top:15px">MORE INFO</b-button>
       </b-card>
      </b-card-group>
   </b-col>
 </b-row>
 
-
 <b-row v-for="i in Math.ceil(Object.keys(items3).length / 4)" :key="Math.random() * (100000 - 0) + 0">
   <b-col md="3" v-for="(item, index) in items3.slice((i - 1) * 4, i * 4)" :key="item.number" class="col_card">
     <b-card-group deck class="mb-3">
     <b-card
-	    v-on:click="showFull($event)"
 	    img-src="../images/map.png"
             img-alt="Image"
             img-top
             class="text-center" text-variant="grey">
             <p class="number">{{ item.number }}</p>
             <p class="company">{{ item.company_name }}</p>
-            <p class="info">{{ item.business_info }}</p>
-	          <b-img src="../images/phone.png" fluid alt="Responsive image" v-on:click="call($event)"/>
+            <p class="info" style="display:none">{{ item.business_info }}</p>
+            <b-img src="../images/phone.png" fluid alt="Responsive image" v-on:click="call($event)"/>
+            <br>
+            <b-button variant="link" v-on:click="more($event)" style="color:rgb(150,50,50);margin-top:15px">MORE INFO</b-button>
       </b-card>
      </b-card-group>
   </b-col>
@@ -110,19 +133,49 @@
     components: { navbar },
     data () {
       return {
+        number: "",
+        name:  "",
+        info: "",
         item_index: 0,
-	row_index: 0,
-        loader: true,
-	notfound: false,
-	server_error:0,
-        items1: {},
-        items2: {},
-        items3: {},
-        items4: {}
-      }
+	       row_index: 0,
+         loader: true,
+	        notfound: false,
+	         server_error:0,
+           items1: {},
+           items2: {},
+           items3: {},
+           items4: {}
+         }
     },
-
        created() {
+
+
+
+         /*function httpGet(theUrl)
+         {
+             if (window.XMLHttpRequest)
+             {// code for IE7+, Firefox, Chrome, Opera, Safari
+                 xmlhttp=new XMLHttpRequest();
+             }
+             else
+             {// code for IE6, IE5
+                 xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+             }
+             xmlhttp.onreadystatechange=function()
+             {
+                 if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                 {
+                     return xmlhttp.responseText;
+                 }
+             }
+             xmlhttp.open("GET", theUrl, false );
+             xmlhttp.send();
+         }*/
+
+
+
+
+
 
        this.items1 = {}
        this.items2 = {}
@@ -144,7 +197,7 @@
 		               this.loader = false;
 			       console.log(err.response);
 			       console.log(err.response.data);
-  	    });
+  	   });
 
         // 1 запрос
         get('/getOrgList/'+this.search_string+'/0', null).then((res) => {
@@ -184,9 +237,6 @@
 			  this.server_error++; if (this.server_error==3) this.notfound = true;
 			  console.log(err.response.data);
       });
-
-
-
 	},
   methods: {
     getItemIndex() {
@@ -195,26 +245,14 @@
       return this.item_index;
     },
     call(e) {
-      alert("call");
+      alert("in progress...");
     },
-    showFull(e) {
-// -------------------------------
-// ИСПОЛЬЗОВАТЬ CHILD NODES
-// -------------------------------
-
-var number =  e.target.childNodes[0].innerText;
-var name   =  e.target.childNodes[1].nextSibling.innerText;
-var info   =  e.target.childNodes[3].nextSibling.innerText;
-
-console.log(number);
-console.log(name);
-console.log(info);
-
-//          window.location="/info";
-
-
-
+    more(e) {
+      this.number =  e.target.parentNode.childNodes[0].innerText;
+      this.name   =  e.target.parentNode.childNodes[1].nextSibling.innerText;
+      this.info   =  e.target.parentNode.childNodes[3].nextSibling.innerText;
+      this.$refs.myModalRef.show();
     }
-  }
-  }
+}
+}
 </script>
