@@ -5,13 +5,26 @@
 
 <b-modal ref="myModalRef" hide-footer>
   <div class="d-block text-center">
-    <h3 style="color:rgb(80,80,80);margin-top:15px">{{ number }}</h3>
-    <h4 style="color:rgb(120,120,120)">{{ name }}</h4>
-    <hr>
-    <h6 style="color:rgb(100,100,100)">{{ info }}</h6>
-    <br>
+
+  <b-form>
+  <b-form-group label="Number:">
+    <h3 style="color:rgb(80,80,80)">{{ number }}</h3>
+  </b-form-group>
+
+  <b-form-group label="Name:">
+    <h1 style="color:rgb(120,120,120)">{{ name }}</h1>
+  </b-form-group>
+
+  <b-form-group label="Business info:">
+    <h4 style="color:rgb(100,100,100)">{{ info }}</h4>
+  </b-form-group>
+
+  <b-form-group label="<b>Call</b>">
     <b-img src="./images/phone.png" fluid alt="Responsive image" v-on:click="call($event)" v-b-tooltip.hover title="call"/>
-  </div>
+  </b-form-group>
+
+</b-form>
+</div>
 </b-modal>
 
 <b-row>

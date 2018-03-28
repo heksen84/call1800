@@ -1901,6 +1901,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -52302,48 +52315,56 @@ var render = function() {
               { staticClass: "d-block text-center" },
               [
                 _c(
-                  "h3",
-                  {
-                    staticStyle: {
-                      color: "rgb(80,80,80)",
-                      "margin-top": "15px"
-                    }
-                  },
-                  [_vm._v(_vm._s(_vm.number))]
-                ),
-                _vm._v(" "),
-                _c("h4", { staticStyle: { color: "rgb(120,120,120)" } }, [
-                  _vm._v(_vm._s(_vm.name))
-                ]),
-                _vm._v(" "),
-                _c("hr"),
-                _vm._v(" "),
-                _c("h6", { staticStyle: { color: "rgb(100,100,100)" } }, [
-                  _vm._v(_vm._s(_vm.info))
-                ]),
-                _vm._v(" "),
-                _c("br"),
-                _vm._v(" "),
-                _c("b-img", {
-                  directives: [
-                    {
-                      name: "b-tooltip",
-                      rawName: "v-b-tooltip.hover",
-                      modifiers: { hover: true }
-                    }
+                  "b-form",
+                  [
+                    _c("b-form-group", { attrs: { label: "Number:" } }, [
+                      _c("h3", { staticStyle: { color: "rgb(80,80,80)" } }, [
+                        _vm._v(_vm._s(_vm.number))
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("b-form-group", { attrs: { label: "Name:" } }, [
+                      _c("h1", { staticStyle: { color: "rgb(120,120,120)" } }, [
+                        _vm._v(_vm._s(_vm.name))
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("b-form-group", { attrs: { label: "Business info:" } }, [
+                      _c("h4", { staticStyle: { color: "rgb(100,100,100)" } }, [
+                        _vm._v(_vm._s(_vm.info))
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "b-form-group",
+                      { attrs: { label: "<b>Call</b>" } },
+                      [
+                        _c("b-img", {
+                          directives: [
+                            {
+                              name: "b-tooltip",
+                              rawName: "v-b-tooltip.hover",
+                              modifiers: { hover: true }
+                            }
+                          ],
+                          attrs: {
+                            src: "./images/phone.png",
+                            fluid: "",
+                            alt: "Responsive image",
+                            title: "call"
+                          },
+                          on: {
+                            click: function($event) {
+                              _vm.call($event)
+                            }
+                          }
+                        })
+                      ],
+                      1
+                    )
                   ],
-                  attrs: {
-                    src: "./images/phone.png",
-                    fluid: "",
-                    alt: "Responsive image",
-                    title: "call"
-                  },
-                  on: {
-                    click: function($event) {
-                      _vm.call($event)
-                    }
-                  }
-                })
+                  1
+                )
               ],
               1
             )
