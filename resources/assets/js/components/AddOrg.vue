@@ -62,19 +62,19 @@
 </b-form-group
 
 <b-form-group>
-<b-form-select v-model="selected1" class="mb-3" required @change="saveCategoryId">
+<b-form-select v-model="selected1" class="mb-3" required>
       <option :value="null">Please select category</option>
-      <option v-for="item in categories" :key="item.id">{{ item.name }}</option>
+      <option :value="item.id" v-for="item in categories" :key="item.id">{{ item.name }}</option>
 </b-form-select>
 </b-form-group
 
 <b-form-group>
-<b-form-select required v-model="selected2" class="mb-3" :options="countries"></b-form-select>
+  <b-form-select required v-model="selected2" class="mb-3" :options="countries"></b-form-select>
 </b-form-group
 
-  <b-form-group class="text-center">
-    <b-button variant="danger" type="submit">Save</b-button>
-  </b-form-group>
+<b-form-group class="text-center">
+  <b-button variant="danger" type="submit">Save</b-button>
+</b-form-group>
 </form>
 <br>
 </center>
@@ -101,7 +101,6 @@ export default {
 		name: "",
 		website: "",
 		org_info: "",
-		category_id: null,
 		country_id:  null
 	 },
 	countries: [
@@ -117,20 +116,14 @@ export default {
               this.categories=res.data;
 		          console.log(res.data);
 		          }).catch((err) => {
-			             console.log(err.response.data);
+			        console.log(err.response.data);
   	     });
     },
     methods: {
-	     saveCategoryId: function (event) {
-         console.log(event);
-         alert(event);
-      	//this.form.category_id = id;
-      },
       save() {
 	       this.$refs.myModalRef.show();
-          alert(this.form.category_id);
-	        get('addCompany/'+this.form.number+"/"+this.form.name+"/"+this.form.website+"/"+this.form.org_info+"/"+this.form.category_id+"/"+this.selected2).then((res) => {
-              console.log(res);
+	        get('addCompany/'+this.form.number+"/"+this.form.name+"/"+this.form.website+"/"+this.form.org_info+"/"+this.selected1+"/"+this.selected2).then((res) => {
+            console.log(res);
 	           this.$refs.myModalRef.hide();
 	            if (res.data=="found") alert("Such a company exists!");
 	             else {

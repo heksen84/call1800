@@ -1714,62 +1714,55 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['username'],
-  components: { navbar: __WEBPACK_IMPORTED_MODULE_0__navbar_vue___default.a },
-  data: function data() {
-    return {
-      selected1: null,
-      selected2: null,
-      categories: {},
-      form: {
-        number: "",
-        name: "",
-        website: "",
-        org_info: "",
-        category_id: null,
-        country_id: null
-      },
-      countries: [{ value: null, text: 'Please select a country' }, { value: 0, text: 'USA' }, { value: 1, text: 'Canada' }]
-    };
-  },
-  created: function created() {
-    var _this = this;
+		props: ['username'],
+		components: { navbar: __WEBPACK_IMPORTED_MODULE_0__navbar_vue___default.a },
+		data: function data() {
+				return {
+						selected1: null,
+						selected2: null,
+						categories: {},
+						form: {
+								number: "",
+								name: "",
+								website: "",
+								org_info: "",
+								country_id: null
+						},
+						countries: [{ value: null, text: 'Please select a country' }, { value: 0, text: 'USA' }, { value: 1, text: 'Canada' }]
+				};
+		},
+		created: function created() {
+				var _this = this;
 
-    this.categories = {};
-    Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/categories', null).then(function (res) {
-      _this.categories = res.data;
-      console.log(res.data);
-    }).catch(function (err) {
-      console.log(err.response.data);
-    });
-  },
+				this.categories = {};
+				Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/categories', null).then(function (res) {
+						_this.categories = res.data;
+						console.log(res.data);
+				}).catch(function (err) {
+						console.log(err.response.data);
+				});
+		},
 
-  methods: {
-    saveCategoryId: function saveCategoryId(event) {
-      console.log(event);
-      alert(event);
-      //this.form.category_id = id;
-    },
-    save: function save() {
-      var _this2 = this;
+		methods: {
+				save: function save() {
+						var _this2 = this;
 
-      this.$refs.myModalRef.show();
-      alert(this.form.category_id);
-      Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('addCompany/' + this.form.number + "/" + this.form.name + "/" + this.form.website + "/" + this.form.org_info + "/" + this.form.category_id + "/" + this.selected2).then(function (res) {
-        console.log(res);
-        _this2.$refs.myModalRef.hide();
-        if (res.data == "found") alert("Such a company exists!");else {
-          alert("Record added!");
-          _this2.form = {};
-        }
-      }).catch(function (err) {
-        _this2.$refs.myModalRef.hide();
-        console.log(err.response);
-        console.log(err.response.data);
-        alert("Error:\n" + err.response.data.message);
-      });
-    }
-  }
+						this.$refs.myModalRef.show();
+						Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('addCompany/' + this.form.number + "/" + this.form.name + "/" + this.form.website + "/" + this.form.org_info + "/" + this.selected1 + "/" + this.selected2).then(function (res) {
+								console.log(res);
+								_this2.$refs.myModalRef.hide();
+								if (res.data == "found") alert("Such a company exists!");else {
+										alert("Record added!");
+										_this2.form = {};
+								}
+						}).catch(function (err) {
+								_this2.$refs.myModalRef.hide();
+								console.log(err.response);
+								console.log(err.response.data);
+								alert("Error:\n" + err.response.data.message);
+						});
+				}
+		}
 
 });
 
@@ -51646,7 +51639,6 @@ var render = function() {
                           {
                             staticClass: "mb-3",
                             attrs: { required: "" },
-                            on: { change: _vm.saveCategoryId },
                             model: {
                               value: _vm.selected1,
                               callback: function($$v) {
@@ -51661,9 +51653,11 @@ var render = function() {
                             ]),
                             _vm._v(" "),
                             _vm._l(_vm.categories, function(item) {
-                              return _c("option", { key: item.id }, [
-                                _vm._v(_vm._s(item.name))
-                              ])
+                              return _c(
+                                "option",
+                                { key: item.id, domProps: { value: item.id } },
+                                [_vm._v(_vm._s(item.name))]
+                              )
                             })
                           ],
                           2
