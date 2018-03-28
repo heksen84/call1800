@@ -19,6 +19,8 @@
     <h4 style="color:rgb(100,100,100)">{{ info }}</h4>
   </b-form-group>
 
+  <hr>
+
   <b-form-group label="<b>Call</b>">
     <b-img src="./images/phone.png" fluid alt="Responsive image" v-on:click="call($event)" v-b-tooltip.hover title="call"/>
   </b-form-group>
