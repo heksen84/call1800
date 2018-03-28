@@ -62,9 +62,9 @@
 </b-form-group
 
 <b-form-group>
-<b-form-select v-model="selected1" class="mb-3" required>
+<b-form-select v-model="selected1" class="mb-3" required @change="saveCategoryId">
       <option :value="null">Please select category</option>
-      <option v-for="item in categories" v-bind:key=item.id v-on:click="saveCategoryId(item.id)"> {{ item.name }} </option>
+      <option v-for="item in categories" :key="item.id">{{ item.name }}</option>
 </b-form-select>
 </b-form-group
 
@@ -97,9 +97,9 @@ export default {
       selected2: null,
       categories: {},
 	form: {
-		number:   "",
-		name: 	  "",
-		website:  "",
+		number: "",
+		name: "",
+		website: "",
 		org_info: "",
 		category_id: null,
 		country_id:  null
@@ -112,39 +112,37 @@ export default {
       	}
     },
     created() {
-	this.categories = {}
+	     this.categories = {}
         get('/categories', null).then((res) => {
-            this.categories=res.data;
-		console.log(res.data);
-		}).catch((err) => {
-			console.log(err.response.data);
-			if(err.response.status === 422) {
-			}
-  	});
+              this.categories=res.data;
+		          console.log(res.data);
+		          }).catch((err) => {
+			             console.log(err.response.data);
+  	     });
     },
     methods: {
-	saveCategoryId: function (id) {
-      	this.form.category_id = id;
-      },
-	saveCountryId: function (id) {
-      	this.form.country_id = id;
+	     saveCategoryId: function (event) {
+         console.log(event);
+         alert(event);
+      	//this.form.category_id = id;
       },
       save() {
-	this.$refs.myModalRef.show();
-	get('addCompany/'+this.form.number+"/"+this.form.name+"/"+this.form.website+"/"+this.form.org_info+"/"+this.form.category_id+"/"+this.selected2).then((res) => {
-            console.log(res);
-	    this.$refs.myModalRef.hide();
-	    if (res.data=="found") alert("Such a company exists!");
-	    else {
-             alert("Record added!");
-	     this.form={};
-	    }
-	}).catch((err) => {
-   	      this.$refs.myModalRef.hide();
-	      console.log(err.response);
-              console.log(err.response.data);
-	      alert("Error:\n"+err.response.data.message);
-        });
+	       this.$refs.myModalRef.show();
+          alert(this.form.category_id);
+	        get('addCompany/'+this.form.number+"/"+this.form.name+"/"+this.form.website+"/"+this.form.org_info+"/"+this.form.category_id+"/"+this.selected2).then((res) => {
+              console.log(res);
+	           this.$refs.myModalRef.hide();
+	            if (res.data=="found") alert("Such a company exists!");
+	             else {
+                 alert("Record added!");
+	                this.form={};
+	               }
+	              }).catch((err) => {
+   	              this.$refs.myModalRef.hide();
+	                 console.log(err.response);
+                   console.log(err.response.data);
+	                  alert("Error:\n"+err.response.data.message);
+            });
       }
     }
 
