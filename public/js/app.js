@@ -1910,12 +1910,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 
 
@@ -52327,7 +52321,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("b-form-group", { attrs: { label: "Name:" } }, [
                       _c("h1", { staticStyle: { color: "rgb(120,120,120)" } }, [
-                        _c("ins", [_vm._v(_vm._s(_vm.name))])
+                        _vm._v(_vm._s(_vm.name))
                       ])
                     ]),
                     _vm._v(" "),
